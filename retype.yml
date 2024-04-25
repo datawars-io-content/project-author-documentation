@@ -1,0 +1,11 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: DataWars Project Author documentation
+  label: Docs
+links:
+- text: DataWars platform
+  link: https://app.datawars.io
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
