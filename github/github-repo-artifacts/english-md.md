@@ -3,6 +3,8 @@ icon: markdown
 order: 1000
 ---
 
+[!embed](https://www.loom.com/embed/b317af55911648ba894c96ec69d240d0?sid=f2ebb0bf-f4ad-45dd-9116-116b698e4d9e)
+
 # english.md
 
 The `english.md` file defines the content on the left panel of a project. It's a markdown file with special HTML tags defined by us. The main tags you have to know are `<page>` and `<activity>`. All tags must contain a UNIQUE ID (unique within the project).

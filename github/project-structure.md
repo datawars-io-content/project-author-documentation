@@ -2,6 +2,7 @@
 icon: package
 order: 900
 ---
+[!embed](https://www.loom.com/embed/810f369756bc4c38ac59da83e73d5083?sid=f4d3dee4-88cb-4194-a6b4-fdbeb1eda0da)
 
 # Github project structure
 
