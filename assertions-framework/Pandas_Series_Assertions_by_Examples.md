@@ -1,241 +1,99 @@
----
-jupyter:
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
-  language_info:
-    codemirror_mode:
-      name: ipython
-      version: 3
-    file_extension: .py
-    mimetype: text/x-python
-    name: python
-    nbconvert_exporter: python
-    pygments_lexer: ipython3
-    version: 3.8.0
-  nbformat: 4
-  nbformat_minor: 5
----
+In this you'll learn how to use most used Pandas Series assertion
+functions. Below are the functions that are covered.
 
-<div class="cell markdown">
+  1.  `assert_pd_series_variable_equals_variable()`
+  2.  `assert_pd_series_variable_equals_csv()`
 
-In this notebook, I've covered most used Pandas Series assertion
-functions. Below are the functions that I've covered in this notebook.
 
-1.  `assert_pd_series_variable_equals_csv()`
-
-</div>
-
-<div class="cell code">
+Load the `utils.py` file to use the assertion functions. 
 
 ``` python
 exec(open('utils.py').read())
 ```
 
-</div>
-
-<div class="cell code">
-
 ``` python
 import pandas as pd
 ```
 
-</div>
-
-<div class="cell code">
-
-``` python
-df = pd.read_csv('nba_player_stats_1985.csv', index_col='Player')
-```
-
-</div>
-
-<div class="cell code">
-
-``` python
-df.head()
-```
-
-</div>
-
-<div class="cell code">
-
-``` python
-# Game info
-games_played = df['G']
-minutes_played = df['MP']
-
-# Field Goals info
-field_goals = df['FG']
-field_goals_attempts = df['FGA']
-
-# Free Throws info
-free_throws = df['FT']
-free_throws_attempts = df['FTA']
-```
-
-</div>
-
-<div class="cell markdown">
-
 ### Activities
 
-</div>
+Now, with activities examples, you'll learn how to use the assertion functions.
 
-<div class="cell markdown">
 
-##### Activity 1. Calculate field goal accuracy
++++Activity 1
+##### 1. Create a student series
 
-</div>
-
-<div class="cell code">
+Use below data to create a series named `student_data`.
 
 ``` python
-field_goal_perc = ...
+data = ['Albert', 'John', 'Peter', 'James', 'Robert']
 ```
 
-</div>
+```python
+student_data = ...
+```
 
-<div class="cell markdown">
-
++++Solution
 Solution:
 
-</div>
-
-<div class="cell code" scrolled="true">
-
 ``` python
-field_goal_perc = (field_goals / field_goals_attempts) * 100
-field_goal_perc.head()
+data = ['Albert', 'John', 'Peter', 'James', 'Robert']
+student_data = pd.Series(data)
 ```
 
-</div>
++++Assertions
 
-<div class="cell code">
-
-``` python
-field_goal_perc.to_csv('activity_solutions_files/activity_1.csv',)
-```
-
-</div>
-
-<div class="cell markdown">
+As the expected output is small series, so we use `assert_pd_series_variable_equals_variable()` function to assert the solution with the student series.
 
 Assertions:
 
-</div>
+``` python
+expected_output = pd.Series(['Albert', 'John', 'Peter', 'James', 'Robert'])
+assert_pd_series_variable_equals_variable('student_data', 'expected_output')
+```
 
-<div class="cell code">
+Here, we passed first student variable then expected variable.
++++
+
+
++++Activity 2
+##### 2. Create a prime number series
+
+Create a series named `prime_numbers_series` which contains the first 10,000 prime numbers.
+
+``` python
+prime_numbers_series = ...
+```
+
++++Solution
+Solution:
+
+``` python
+prime_numbers = []
+num = 2
+while len(prime_numbers) < 10000:
+    for i in range(2, num):
+        if num % i == 0:
+            break
+    else:
+        prime_numbers.append(num)
+    num += 1
+
+prime_numbers_series = pd.Series(prime_numbers)
+```
+
++++Assertions
+
+In previous example, the expected series is small, so we've used `assert_pd_series_variable_equals_variable()` function to assert the solution with the student series but in this example, the expected series is large, so we'll save the expected series to a csv file and then use `assert_pd_series_variable_equals_csv()` function to assert the solution with the csv file.
+
+``` python
+prime_numbers_series.to_csv('activity_solutions_files/activity_1.csv', index=False)
+```
+
+Assertions:
 
 ``` python
 assert_pd_series_variable_equals_csv('field_goal_perc', 'activity_1.csv')
 ```
++++
 
-</div>
-
-<div class="cell markdown">
-
-##### 2. Field goals per Game
-
-</div>
-
-<div class="cell code">
-
-``` python
-field_goals_per_game = ...
-```
-
-</div>
-
-<div class="cell markdown">
-
-Solution:
-
-</div>
-
-<div class="cell code">
-
-``` python
-field_goals_per_game = field_goals / games_played
-```
-
-</div>
-
-<div class="cell code">
-
-``` python
-field_goals_per_game.to_csv('activity_solutions_files/activity_2.csv',)
-```
-
-</div>
-
-<div class="cell markdown">
-
-Assertions:
-
-</div>
-
-<div class="cell code">
-
-``` python
-assert_pd_series_variable_equals_csv('field_goals_per_game', 'activity_2.csv')
-```
-
-</div>
-
-<div class="cell markdown">
-
-##### 3. Calculate "Total Points"
-
-</div>
-
-<div class="cell code">
-
-``` python
-total_points = ...
-```
-
-</div>
-
-<div class="cell markdown">
-
-Solution:
-
-</div>
-
-<div class="cell code">
-
-``` python
-total_points = (field_goals * 2) + free_throws
-```
-
-</div>
-
-<div class="cell code">
-
-``` python
-total_points.to_csv('activity_solutions_files/activity_3.csv',)
-```
-
-</div>
-
-<div class="cell markdown">
-
-Assertions:
-
-</div>
-
-<div class="cell code">
-
-``` python
-assert_pd_series_variable_equals_csv('total_points', 'activity_3.csv')
-```
-
-</div>
-
-<div class="cell markdown">
-
-### The End!
-
-</div>
