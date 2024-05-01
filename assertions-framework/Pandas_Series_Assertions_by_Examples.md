@@ -1,8 +1,8 @@
 In this you'll learn how to use most used Pandas Series assertion
 functions. Below are the functions that are covered.
 
-  1.  `assert_pd_series_variable_equals_variable()`
-  2.  `assert_pd_series_variable_equals_csv()`
+  1.  `assert_pd_series_variable_equals_variable(student_variable_name, expected_outcome_variable_name)`: Checks that the student's Series in `student_variable_name` matches the variable in `expected_outcome_variable_name`.
+  2.  `assert_pd_series_variable_equals_csv(student_variable_name, solution_csv_name, read_csv_kwargs=None)`: Checks that the student's Series in `student_variable_name` matches the Series contained in the solution CSV file named `solution_csv_name`.
 
 
 Load the `utils.py` file to use the assertion functions. 
