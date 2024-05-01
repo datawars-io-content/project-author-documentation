@@ -9,32 +9,33 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Welcome</title>
-    <meta name="title" content="Welcome">
-    <meta name="description" content="Welcome to the official DataWars' documentation for Project Authors.">
+    <title>Pandas Series Assertions by Examples</title>
+    <meta name="title" content="Pandas Series Assertions by Examples">
+    <meta name="description" content="In this notebook, I've covered most used Pandas Series assertion functions. Below are the functions that I've covered in this notebook.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/assertions-framework/pandas_series_assertions_by_examples/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/">
-    <meta property="og:title" content="Welcome">
-    <meta property="og:description" content="Welcome to the official DataWars' documentation for Project Authors.">
+    <meta property="og:url" content="/assertions-framework/pandas_series_assertions_by_examples/">
+    <meta property="og:title" content="Pandas Series Assertions by Examples">
+    <meta property="og:description" content="In this notebook, I've covered most used Pandas Series assertion functions. Below are the functions that I've covered in this notebook.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/">
-    <meta property="twitter:title" content="Welcome">
-    <meta property="twitter:description" content="Welcome to the official DataWars' documentation for Project Authors.">
+    <meta property="twitter:url" content="/assertions-framework/pandas_series_assertions_by_examples/">
+    <meta property="twitter:title" content="Pandas Series Assertions by Examples">
+    <meta property="twitter:description" content="In this notebook, I've covered most used Pandas Series assertion functions. Below are the functions that I've covered in this notebook.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.767871148724" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767871148724" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.767871148724" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.767871148724" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767871148724" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767871148724" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767871148724" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">DataWars Project Author documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -163,14 +164,173 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="welcome" class="break-words">
+<doc-anchor-target id="pandas-series-assertions-by-examples" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#welcome">#</doc-anchor-trigger>
-        <span>Welcome</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pandas-series-assertions-by-examples">#</doc-anchor-trigger>
+        <span>Pandas Series Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<p>Welcome to the official DataWars&#x27; documentation for Project Authors.</p>
-<p>This is a work in progress. For now, it&#x27;s mostly videos that we&#x27;ll start turning into text documentation soon.</p>
+<div class="cell markdown">
+<p>In this notebook, I&#x27;ve covered most used Pandas Series assertion
+functions. Below are the functions that I&#x27;ve covered in this notebook.</p>
+<ol>
+<li><code v-pre>assert_pd_series_variable_equals_csv()</code></li>
+</ol>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">exec(open('utils.py').read())</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import pandas as pd</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">df = pd.read_csv('nba_player_stats_1985.csv', index_col='Player')</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">df.head()</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Game info
+games_played = df['G']
+minutes_played = df['MP']
+
+# Field Goals info
+field_goals = df['FG']
+field_goals_attempts = df['FGA']
+
+# Free Throws info
+free_throws = df['FT']
+free_throws_attempts = df['FTA']</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<doc-anchor-target id="activities">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
+        <span>Activities</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<div class="cell markdown">
+<doc-anchor-target id="activity-1-calculate-field-goal-accuracy">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-1-calculate-field-goal-accuracy">#</doc-anchor-trigger>
+        <span>Activity 1. Calculate field goal accuracy</span>
+    </h5>
+</doc-anchor-target>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">field_goal_perc = ...</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<p>Solution:</p>
+</div>
+<div class="cell code" scrolled="true">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">field_goal_perc = (field_goals / field_goals_attempts) * 100
+field_goal_perc.head()</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">field_goal_perc.to_csv('activity_solutions_files/activity_1.csv',)</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<p>Assertions:</p>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_series_variable_equals_csv('field_goal_perc', 'activity_1.csv')</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<doc-anchor-target id="2-field-goals-per-game">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-field-goals-per-game">#</doc-anchor-trigger>
+        <span>2. Field goals per Game</span>
+    </h5>
+</doc-anchor-target>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">field_goals_per_game = ...</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<p>Solution:</p>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">field_goals_per_game = field_goals / games_played</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">field_goals_per_game.to_csv('activity_solutions_files/activity_2.csv',)</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<p>Assertions:</p>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_series_variable_equals_csv('field_goals_per_game', 'activity_2.csv')</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<doc-anchor-target id="3-calculate-total-points">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-calculate-total-points">#</doc-anchor-trigger>
+        <span>3. Calculate &quot;Total Points&quot;</span>
+    </h5>
+</doc-anchor-target>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">total_points = ...</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<p>Solution:</p>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">total_points = (field_goals * 2) + free_throws</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">total_points.to_csv('activity_solutions_files/activity_3.csv',)</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<p>Assertions:</p>
+</div>
+<div class="cell code">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_series_variable_equals_csv('total_points', 'activity_3.csv')</code></pre>
+</doc-codeblock></div>
+</div>
+<div class="cell markdown">
+<doc-anchor-target id="the-end">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
+        <span>The End!</span>
+    </h3>
+</doc-anchor-target>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -180,13 +340,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/pandas_dataframe_assertions_by_examples/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Pandas Data​Frame Assertions by Examples</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="datawars/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/sets_assertions_by_examples/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Understanding Data​Wars</span>
+                                                <span class="block mt-1">Sets Assertions by Examples</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -230,6 +397,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Welcome", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Pandas Series Assertions by Examples", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
