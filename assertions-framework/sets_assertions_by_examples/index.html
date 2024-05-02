@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767877091866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Sets Assertions by Examples</title>
     <meta name="title" content="Sets Assertions by Examples">
-    <meta name="description" content="In this notebook, I've covered most used Sets assertion functions. Below are these functions:">
+    <meta name="description" content="In this notebook, you'll learn how to use most used Sets assertion functions. Below are these functions:">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assertions-framework/sets_assertions_by_examples/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assertions-framework/sets_assertions_by_examples/">
     <meta property="og:title" content="Sets Assertions by Examples">
-    <meta property="og:description" content="In this notebook, I've covered most used Sets assertion functions. Below are these functions:">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used Sets assertion functions. Below are these functions:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assertions-framework/sets_assertions_by_examples/">
     <meta property="twitter:title" content="Sets Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, I've covered most used Sets assertion functions. Below are these functions:">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Sets assertion functions. Below are these functions:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767877091866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767877091866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767949141087" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,113 +170,69 @@
         <span>Sets Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<div class="cell markdown">
-<p>In this notebook, I&#x27;ve covered most used Sets assertion functions. Below
+<p>In this notebook, you&#x27;ll learn how to use most used Sets assertion functions. Below
 are these functions:</p>
 <ol>
-<li><code v-pre>assert_set_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code></li>
-<li><code v-pre>assert_set_variable_equals_json(student_variable_name, json_file_name)</code></li>
-<li><code v-pre>assert_set_variable_equals_pickle(student_variable_name, pickle_file_name)</code></li>
+<li><code v-pre>assert_set_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks if student set variable is equals to expected set variable.</li>
+<li><code v-pre>assert_set_variable_equals_json(student_variable_name, json_file_name)</code>: Checks if student set variable is equals to expected json file.</li>
+<li><code v-pre>assert_set_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks if student set variable is equals to expected pickle file.</li>
 </ol>
-</div>
-<div class="cell code">
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="warm-up-activities">
+<doc-anchor-target id="activities">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#warm-up-activities">#</doc-anchor-trigger>
-        <span>Warm Up Activities</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
+        <span>Activities</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-1-course-enrollments-and-common-students">
+<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions.</p>
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-course-enrollments-and-common-students">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-1-course-enrollments-and-common-students">#</doc-anchor-trigger>
-        <span>Activity 1. Course Enrollments and Common Students</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-course-enrollments-and-common-students">#</doc-anchor-trigger>
+        <span>1. Course Enrollments and Common Students</span>
     </h5>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>You have two sets of students enrolled in two different courses. The sets are as follows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">course_a_students = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;}
+course_b_students = {&quot;Bob&quot;, &quot;David&quot;, &quot;Eve&quot;, &quot;Frank&quot;}</code></pre>
+</doc-codeblock></div>
+<p>Find the common students enrolled in both courses.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Try your solution here</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">course_a_students = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;}
 course_b_students = {&quot;Bob&quot;, &quot;David&quot;, &quot;Eve&quot;, &quot;Frank&quot;}
 common_students = course_a_students.intersection(course_b_students)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected set is small and have only few elements, we can easily compare it with the student set, we can use <code v-pre>assert_set_variable_equals_variable()</code> function to assert the solution with the student set.
+Assertions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">common_students</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-expected_common_students = {&quot;Bob&quot;, &quot;David&quot;}
+<pre class="language-python"><code v-pre class="language-python">expected_common_students = {&quot;Bob&quot;, &quot;David&quot;}
 assert_set_variable_equals_variable(&quot;common_students&quot;, &quot;expected_common_students&quot;)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-2-unique-keywords-in-articles">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-2-unique-keywords-in-articles">#</doc-anchor-trigger>
-        <span>Activity 2. Unique Keywords in Articles</span>
-    </h5>
-</doc-anchor-target>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your solution here</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">article1_keywords = {&quot;data&quot;, &quot;analysis&quot;, &quot;Python&quot;, &quot;statistics&quot;}
-article2_keywords = {&quot;machine learning&quot;, &quot;Python&quot;, &quot;data&quot;, &quot;programming&quot;}
-unique_keywords = article1_keywords.symmetric_difference(article2_keywords)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">unique_keywords</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-expected_unique_keywords = {&quot;analysis&quot;, &quot;machine learning&quot;, &quot;programming&quot;, &quot;statistics&quot;}
-assert_set_variable_equals_variable(&quot;unique_keywords&quot;, &quot;expected_unique_keywords&quot;)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="activities-on-badge-data">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#activities-on-badge-data">#</doc-anchor-trigger>
         <span>Activities on Badge Data</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>For other assertions examples, we will use the badge data. The badge data is stored in a JSON file named <code v-pre>badge_details.json</code>. The JSON file contains the details of three badges: Data Novice, Data Explorer, and Analytics Enthusiast. Each badge has a set of students who have earned that badge.(This dataset is large around 10000+ badge holders)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">import json
 
@@ -287,108 +243,42 @@ with open(&quot;badge_details.json&quot;, &quot;r&quot;) as json_file:
 # Recreate badge sets from the loaded data
 data_novice_badge = set(badge_details[&quot;Data Novice&quot;])
 data_explorer_badge = set(badge_details[&quot;Data Explorer&quot;])
-analytics_enthusiast_badge = set(badge_details[&quot;Analytics Enthusiast&quot;])
-
-# Display the first 5 details of each badge
-print(&quot;Data Novice:&quot;, list(data_novice_badge)[:5])
-print(&quot;Data Explorer:&quot;, list(data_explorer_badge)[:5])
-print(&quot;Analytics Enthusiast:&quot;, list(analytics_enthusiast_badge)[:5])</code></pre>
+analytics_enthusiast_badge = set(badge_details[&quot;Analytics Enthusiast&quot;])</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Above, we display as python lists because sets are not subscriptable.</p>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-3-add-new-student-to-data-novice-badge">
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-add-new-student-to-data-novice-badge">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-3-add-new-student-to-data-novice-badge">#</doc-anchor-trigger>
-        <span>Activity 3. Add New Student to Data Novice Badge</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-add-new-student-to-data-novice-badge">#</doc-anchor-trigger>
+        <span>2. Add New Student to Data Novice Badge</span>
     </h5>
 </doc-anchor-target>
 <p>Incorporate the new student named Sam into the Data Novice badge group.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your solution here</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">data_novice_badge.add(&quot;Sam&quot;)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As we added only one student to set but the set is quite large(10000+ elements), we can save the set in a pickle file and assert it with the expected pickle file using <code v-pre>assert_set_variable_equals_pickle()</code> function.</p>
+<p>This is how you can save the set in a pickle file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save in pickle
 import pickle
 with open(&quot;activity_solutions_files/solution_03.pickle&quot;, &quot;wb&quot;) as pickle_file:
     pickle.dump(data_novice_badge, pickle_file)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_set_variable_equals_pickle(&quot;data_novice_badge&quot;, &quot;solution_03.pickle&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">assert_set_variable_equals_pickle(&quot;data_novice_badge&quot;, &quot;solution_03.pickle&quot;)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-4-find-the-union-of-data-explorer-and-analytics-enthusiast-badge-sets">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-4-find-the-union-of-data-explorer-and-analytics-enthusiast-badge-sets">#</doc-anchor-trigger>
-        <span>Activity 4. Find the union of &#x27;Data Explorer&#x27; and &#x27;Analytics Enthusiast&#x27; badge sets.</span>
-    </h5>
-</doc-anchor-target>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your solution here
-union_de_ae = ...</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">union_de_ae = data_explorer_badge.union(analytics_enthusiast_badge)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">union_de_ae</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save in pickle
-import pickle
-with open(&quot;activity_solutions_files/solution_04.pickle&quot;, &quot;wb&quot;) as pickle_file:
-    pickle.dump(union_de_ae, pickle_file)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_set_variable_equals_pickle(&quot;union_de_ae&quot;, &quot;solution_04.pickle&quot;)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="the-end">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
-        <span>The End!</span>
-    </h3>
-</doc-anchor-target>
-</div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->

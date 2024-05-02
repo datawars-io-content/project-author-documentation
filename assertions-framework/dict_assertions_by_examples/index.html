@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767877091866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Dict Assertions by Examples</title>
     <meta name="title" content="Dict Assertions by Examples">
-    <meta name="description" content="In this notebook, I've covered most used Dictionary assertion functions. Below are these functions:">
+    <meta name="description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assertions-framework/dict_assertions_by_examples/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assertions-framework/dict_assertions_by_examples/">
     <meta property="og:title" content="Dict Assertions by Examples">
-    <meta property="og:description" content="In this notebook, I've covered most used Dictionary assertion functions. Below are these functions:">
+    <meta property="og:description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assertions-framework/dict_assertions_by_examples/">
     <meta property="twitter:title" content="Dict Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, I've covered most used Dictionary assertion functions. Below are these functions:">
+    <meta property="twitter:description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767877091866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767877091866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767949141087" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,52 +170,110 @@
         <span>Dict Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<div class="cell markdown">
-<p>In this notebook, I&#x27;ve covered most used Dictionary assertion functions.
-Below are these functions:</p>
+<p>In this you&#x27;ll learn how to use most used Dictionary assertion
+functions. Below are the functions that are covered.</p>
 <ol>
-<li><code v-pre>assert_dict_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code></li>
-<li><code v-pre>assert_dict_variable_equals_json(student_variable_name, json_file_name)</code></li>
-<li><code v-pre>assert_dict_variable_equals_pickle(student_variable_name, pickle_file_name)</code></li>
+<li><code v-pre>assert_dict_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary in <code v-pre>expected_variable_name</code>.</li>
+<li><code v-pre>assert_dict_variable_equals_json(student_variable_name, json_file_name)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary contained in the solution JSON file named <code v-pre>json_file_name</code>.</li>
+<li><code v-pre>assert_dict_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary contained in the solution pickle file named <code v-pre>pickle_file_name</code>.</li>
 </ol>
-</div>
-<div class="cell code">
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <doc-anchor-target id="activities">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
         <span>Activities</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions.</p>
+<p>We&#x27;ll use the below fruits data for the activities.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">fruits_data = [('apple', 'red', 0.99), ('banana', 'yellow', 0.59), ('orange', 'orange', 0.79), ('grape', 'purple', 1.29), ('kiwi', 'green', 1.09), ('pineapple', 'yellow', 1.99), ('strawberry', 'red', 0.69), ('watermelon', 'green', 2.49), ('mango', 'orange', 1.49), ('peach', 'orange', 1.79), ('pear', 'green', 0.89), ('plum', 'purple', 0.79), ('raspberry', 'red', 2.99), ('blueberry', 'blue', 3.99), ('blackberry', 'black', 4.99)]
 fruits_data</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-1-create-a-fruits-dictionary">
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-create-a-student-dictionary">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-1-create-a-fruits-dictionary">#</doc-anchor-trigger>
-        <span>Activity 1. Create a fruits dictionary</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-student-dictionary">#</doc-anchor-trigger>
+        <span>1. Create a student dictionary</span>
     </h5>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>Use below data to create a dictionary named <code v-pre>student_dict</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_name = ['Albert', 'John', 'Peter', 'James', 'Robert']
+student_age = [23, 24, 22, 25, 23]
+student_city = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']</code></pre>
+</doc-codeblock></div>
+<p>Expected Output:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">{'Albert': {'age': 23, 'city': 'New York'},
+ 'John': {'age': 24, 'city': 'Los Angeles'},
+ 'Peter': {'age': 22, 'city': 'Chicago'},
+ 'James': {'age': 25, 'city': 'Houston'},
+ 'Robert': {'age': 23, 'city': 'Phoenix'}}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_name = ['Albert', 'John', 'Peter', 'James', 'Robert']
+student_age = [23, 24, 22, 25, 23]
+student_city = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']
+
+student_dict = {}
+
+for i in range(len(student_name)):
+    student_dict[student_name[i]] = {'age': student_age[i], 'city': student_city[i]}
+
+student_dict</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected output is small dictionary, so we use <code v-pre>assert_dict_variable_equals_variable()</code> function to assert the solution with the student dictionary.</p>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">expected_output = {'Albert': {'age': 23, 'city': 'New York'},
+ 'John': {'age': 24, 'city': 'Los Angeles'},
+ 'Peter': {'age': 22, 'city': 'Chicago'},
+ 'James': {'age': 25, 'city': 'Houston'},
+ 'Robert': {'age': 23, 'city': 'Phoenix'}}
+assert_dict_variable_equals_variable('student_dict', 'expected_output')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-create-a-fruits-dictionary">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-create-a-fruits-dictionary">#</doc-anchor-trigger>
+        <span>2. Create a fruits dictionary</span>
+    </h5>
+</doc-anchor-target>
+<p>Use the <code v-pre>fruits_data</code> list to create a dictionary named <code v-pre>fruits</code> where the key is the fruit name and the value is a dictionary containing the color and price of the fruit.</p>
+<p>Expected Output:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">{'apple': {'color': 'red', 'price': 0.99},
+ 'banana': {'color': 'yellow', 'price': 0.59},
+ 'orange': {'color': 'orange', 'price': 0.79},
+ 'grape': {'color': 'purple', 'price': 1.29},
+ ...
+}</code></pre>
+</doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Try your solution here
 fruits = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">fruits = {}
 for fruit in fruits_data:
@@ -226,87 +284,41 @@ for fruit in fruits_data:
 
 fruits</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>In the previous activity, we used <code v-pre>assert_dict_variable_equals_variable()</code> function to assert the solution with the student dictionary. But here the expected output is large, so we use <code v-pre>assert_dict_variable_equals_json()</code> function to assert the solution with the student dictionary.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save json file
 import json
 with open('activity_solutions_files/solution_01.json', 'w') as f:
     json.dump(fruits, f)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># new assertions
 assert_dict_variable_equals_json('fruits', 'solution_01.json')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-2-create-a-dictionary-of-colors-and-fruits">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="3-create-a-dictionary-of-only-red-color-fruits">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-2-create-a-dictionary-of-colors-and-fruits">#</doc-anchor-trigger>
-        <span>Activity 2. Create a Dictionary of Colors and Fruits</span>
-    </h5>
-</doc-anchor-target>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your solution here
-colors = ...</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">colors = {}
-
-for fruit in fruits:
-    name = fruit
-    colors.setdefault(fruits[name]['color'], []).append(name)
-
-colors</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save json file
-with open('activity_solutions_files/solution_02.json', 'w') as f:
-    json.dump(colors, f)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_dict_variable_equals_json('colors', 'solution_02.json')</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-3-create-a-dictionary-of-only-red-color-fruits">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-3-create-a-dictionary-of-only-red-color-fruits">#</doc-anchor-trigger>
-        <span>Activity 3. Create a Dictionary of only red color fruits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-create-a-dictionary-of-only-red-color-fruits">#</doc-anchor-trigger>
+        <span>3. Create a Dictionary of only red color fruits</span>
     </h5>
 </doc-anchor-target>
 <p>Store the result in a variable <code v-pre>red_fruits</code>.</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Try your solution here
 red_fruits = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">red_fruits = {}
 
@@ -317,39 +329,38 @@ for fruit in fruits:
         
 red_fruits</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">expected_red_fruits = {'apple': {'color': 'red', 'price': 0.99},
  'strawberry': {'color': 'red', 'price': 0.69},
  'raspberry': {'color': 'red', 'price': 2.99}}
 assert_dict_variable_equals_variable('red_fruits', 'expected_red_fruits')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-4-create-a-dictionary-of-only-red-and-blue-color-fruits">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="4-create-a-dictionary-of-only-red-and-blue-color-fruits">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-4-create-a-dictionary-of-only-red-and-blue-color-fruits">#</doc-anchor-trigger>
-        <span>Activity 4. Create a Dictionary of only red and blue color fruits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-create-a-dictionary-of-only-red-and-blue-color-fruits">#</doc-anchor-trigger>
+        <span>4. Create a Dictionary of only red and blue color fruits</span>
     </h5>
 </doc-anchor-target>
 <p>Store the result in a variable <code v-pre>red_blue_fruits</code>, here the key is the
 color and value is the tuple containing two values - color and its
 price.</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Write your solution here
 red_blue_fruits = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code" execution_count="10">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">red_blue_fruits = {}
 
@@ -360,40 +371,31 @@ for fruit in fruits:
         
 red_blue_fruits</code></pre>
 </doc-codeblock></div>
-<div class="output execute_result" execution_count="10">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">{'apple': ('red', 0.99),
- 'strawberry': ('red', 0.69),
- 'raspberry': ('red', 2.99),
- 'blueberry': ('blue', 3.99)}</code></pre>
+<pre class="language-none"><code v-pre class="language-none">{
+  'apple': ('red', 0.99),
+  'strawberry': ('red', 0.69),
+  'raspberry': ('red', 2.99),
+  'blueberry': ('blue', 3.99)
+}</code></pre>
 </doc-codeblock></div>
-</div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As we know that when we save tuple in json file, it will be saved as list. So, we use pickle file to save the expected output and then use <code v-pre>assert_dict_variable_equals_pickle()</code> function to assert the solution with the student dictionary.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save in pickle file
 import pickle
 with open('activity_solutions_files/solution_04.pkl', 'wb') as f:
     pickle.dump(red_blue_fruits, f)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># new assertions
 assert_dict_variable_equals_pickle('red_blue_fruits', 'solution_04.pkl')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="the-end">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
-        <span>The End!</span>
-    </h3>
-</doc-anchor-target>
-</div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->

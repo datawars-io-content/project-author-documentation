@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767877091866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>List Assertions by Examples</title>
     <meta name="title" content="List Assertions by Examples">
-    <meta name="description" content="In this notebook, I've covered most used List assertion functions. Below are these functions:">
+    <meta name="description" content="In this notebook, you'll learn how to use most used List assertion functions. Below are these functions:">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assertions-framework/list_assertions_by_examples/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assertions-framework/list_assertions_by_examples/">
     <meta property="og:title" content="List Assertions by Examples">
-    <meta property="og:description" content="In this notebook, I've covered most used List assertion functions. Below are these functions:">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used List assertion functions. Below are these functions:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assertions-framework/list_assertions_by_examples/">
     <meta property="twitter:title" content="List Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, I've covered most used List assertion functions. Below are these functions:">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used List assertion functions. Below are these functions:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767877091866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767877091866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767949141087" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,148 +170,107 @@
         <span>List Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<div class="cell markdown">
-<p>In this notebook, I&#x27;ve covered most used List assertion functions. Below
+<p>In this notebook, you&#x27;ll learn how to use most used List assertion functions. Below
 are these functions:</p>
 <ol>
-<li><code v-pre>assert_list_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code></li>
-<li><code v-pre>assert_list_variable_equals_json(student_variable_name, json_file_name)</code></li>
-<li><code v-pre>assert_list_variable_equals_pickle(student_variable_name, pickle_file_name)</code></li>
+<li><code v-pre>assert_list_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks that the student&#x27;s list in <code v-pre>student_variable_name</code> matches the list in <code v-pre>expected_variable_name</code>.</li>
+<li><code v-pre>assert_list_variable_equals_json(student_variable_name, json_file_name)</code>: Checks that the student&#x27;s list in <code v-pre>student_variable_name</code> matches the list contained in the solution JSON file named <code v-pre>json_file_name</code>.</li>
+<li><code v-pre>assert_list_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks that the student&#x27;s list in <code v-pre>student_variable_name</code> matches the list contained in the solution pickle file named <code v-pre>pickle_file_name</code>.</li>
 </ol>
-</div>
-<div class="cell code">
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="student-data-activities">
+<doc-anchor-target id="student-data-for-activities">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#student-data-activities">#</doc-anchor-trigger>
-        <span>Student Data Activities</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#student-data-for-activities">#</doc-anchor-trigger>
+        <span>Student Data for Activities</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>In the activities, we&#x27;ll use the below student data. Format of the data is <code v-pre>name, marks, age, grade, subject</code>.</p>
+<blockquote>
+<p>There are total 500 students in the list, but we are showing only a few here.</p>
+</blockquote>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Import the data from the text file into a list
-student_list = []
-with open(&quot;student.txt&quot;, &quot;r&quot;) as file:
-    for line in file:
-        student = line.strip().split(',')
-        student_list.append(student)
-
-# Print the first 5 students
-student_list[:5]</code></pre>
+student_list = [['Gabriel', '53', '18', 'D', 'English'],
+                ['Nora', '79', '18', 'F', 'Math'],
+                ['Luna', '2', '18', 'A', 'English'],
+                ['Anthony', '76', '18', 'A', 'Math'],
+                ['Logan', '56', '17', 'D', 'History'],
+                ['Luna', '25', '18', 'E', 'Geography'],
+                ['Daniel', '29', '18', 'C', 'History'],
+                ['Sarah', '92', '17', 'B', 'History'],
+                ['Victoria', '91', '17', 'D', 'History'],
+                ['Zoe', '47', '18', 'E', 'Geography']
+                ...
+                ]</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="1-put-the-students-from-the-index-98-to-214-into-the-list-best_students">
+<doc-anchor-target id="activities">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
+        <span>Activities</span>
+    </h3>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-put-the-students-from-the-index-98-to-104-into-the-list-best_students">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-put-the-students-from-the-index-98-to-214-into-the-list-best_students">#</doc-anchor-trigger>
-        <span>1. Put the students from the index 98 to 214 into the list <code v-pre>best_students</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-put-the-students-from-the-index-98-to-104-into-the-list-best_students">#</doc-anchor-trigger>
+        <span>1. Put the students from the index 98 to 104 into the list <code v-pre>best_students</code></span>
     </h4>
 </doc-anchor-target>
 <p>Create a list <code v-pre>select_student</code> from the original list(<code v-pre>student_list</code>),
-starting at index 98 up to, but not including, index 214.</p>
+starting at index 98 up to, but not including, index 104.</p>
 <blockquote>
 <p>Make sure to not change the order of the students.</p>
 </blockquote>
-</div>
-<div class="cell code">
+<p>Expected output:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">[['Luna', '25', '18', 'E', 'Geography'],
+ ['Daniel', '29', '18', 'C', 'History'],
+ ['Sarah', '92', '17', 'B', 'History'],
+ ['Victoria', '91', '17', 'D', 'History'],
+ ['Zoe', '47', '18', 'E', 'Geography'],
+ ...
+]</code></pre>
+</doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">select_student = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solutions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">select_student = student_list[98:214]
+<pre class="language-python"><code v-pre class="language-python">select_student = student_list[98:104]
 select_student</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save json file
-import json
-with open('activity_solutions_files/solution_01.json', 'w') as f:
-    json.dump(select_student, f)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As we can see the expected output is a list of list which is small(only 6 students), so we use <code v-pre>assert_list_variable_equals_variable()</code> function to assert the solution with the student list.</p>
 <p>Assertion:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_list_variable_equals_json(&quot;select_student&quot;, &quot;solution_01.json&quot;)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="2-find-the-name-age-grade-subject-of-the-last-student-from-our-select_students-list">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-find-the-name-age-grade-subject-of-the-last-student-from-our-select_students-list">#</doc-anchor-trigger>
-        <span>2. Find the <code v-pre>name, age, grade, subject</code> of the last student from our <code v-pre>select_students</code> list.</span>
-    </h5>
-</doc-anchor-target>
-<p>From the previous activity, we have the list <code v-pre>select_student</code> which
-contains the students from the index 98 to 214. Now we need to find the
-<code v-pre>name, age, grade, subject</code> of the last student from our
-<code v-pre>select_student</code> list. Store the values in the variables
-<code v-pre>name, age, grade, and subject</code> respectively.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">name = ...
-age = ...
-grade = ...
-subject = ...</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solutions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">name = select_student[-1][0]
-age = select_student[-1][2]
-grade = select_student[-1][3]
-subject = select_student[-1][4]
+<pre class="language-python"><code v-pre class="language-python">expected_output = [['Luna', '25', '18', 'E', 'Geography'],
+ ['Daniel', '29', '18', 'C', 'History'],
+ ['Sarah', '92', '17', 'B', 'History'],
+ ['Victoria', '91', '17', 'D', 'History'],
+ ['Zoe', '47', '18', 'E', 'Geography'],
+ ['Ava', '18', 'A', 'Art']]
 
-print(f&quot;name: {name} age: {age} grade: {grade} &amp; subject: {subject}&quot;)</code></pre>
+assert_list_variable_equals_variable('select_student', 'expected_output')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertion:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-expected_name = &quot;Audrey&quot;
-expected_age = &quot;17&quot;
-expected_grade = &quot;E&quot;
-expected_subject = &quot;History&quot;
-assert_variable_equals_variable(&quot;name&quot;, &quot;expected_name&quot;)
-assert_variable_equals_variable(&quot;age&quot;, &quot;expected_age&quot;)
-assert_variable_equals_variable(&quot;grade&quot;, &quot;expected_grade&quot;)
-assert_variable_equals_variable(&quot;subject&quot;, &quot;expected_subject&quot;)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="list-iteration-with-conditional-statements">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#list-iteration-with-conditional-statements">#</doc-anchor-trigger>
-        <span>List Iteration with Conditional Statements</span>
-    </h2>
-</doc-anchor-target>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="3-get-the-ages-of-each-student-and-store-it-in-the-list-students_age">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-get-the-ages-of-each-student-and-store-it-in-the-list-students_age">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-get-the-ages-of-each-student-and-store-it-in-the-list-students_age">#</doc-anchor-trigger>
-        <span>3. Get the ages of each student and store it in the list <code v-pre>students_age</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-get-the-ages-of-each-student-and-store-it-in-the-list-students_age">#</doc-anchor-trigger>
+        <span>2. Get the ages of each student and store it in the list <code v-pre>students_age</code></span>
     </h5>
 </doc-anchor-target>
 <blockquote>
@@ -319,16 +278,13 @@ assert_variable_equals_variable(&quot;subject&quot;, &quot;expected_subject&quot
 </blockquote>
 <p>Loop through the list <code v-pre>student_list</code>, access the age, cast it to int,
 and append it to the new list variable <code v-pre>students_age</code>.</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">students_age = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solutions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">students_age = []
 for student in student_list:
@@ -337,96 +293,31 @@ for student in student_list:
 
 students_age</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">len(students_age)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected output is a list of integers containing total of 500 students and it is a large list, so we use <code v-pre>assert_list_variable_equals_json()</code> function to assert the solution with the student list.</p>
+<p>This is how we can save the expected output in a json file:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save json file
 import json
 with open('activity_solutions_files/solution_03.json', 'w') as f:
     json.dump(students_age, f)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertion:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># new assertions
 assert_list_variable_equals_json(&quot;students_age&quot;, &quot;solution_03.json&quot;)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="4-how-many-students-have-history-as-their-favorite-subject-how-many-have-english-and-how-many-have-math">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="4-separate-all-a-graders-and-all-b-graders-from-the-list-student_list">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-how-many-students-have-history-as-their-favorite-subject-how-many-have-english-and-how-many-have-math">#</doc-anchor-trigger>
-        <span>4. How many students have <code v-pre>History</code> as their favorite subject, how many have <code v-pre>English</code> and how many have <code v-pre>Math</code>.</span>
-    </h5>
-</doc-anchor-target>
-<p>Iterate through the list <code v-pre>student_list</code> and check for each of these
-subjects, incrementing each time the variable for the corresponding
-subject and store the result in the variables <code v-pre>history_lovers</code>,
-<code v-pre>english_lovers</code> and <code v-pre>maths_lovers</code> respectively.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">history_lovers = ...
-maths_lovers = ...
-english_lovers = ...</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solutions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">history_lovers_student = []
-english_lovers_student = []
-maths_lovers_student = []
-
-for student in student_list:
-    if &quot;History&quot; in student[4]:
-        if student[0] not in history_lovers_student:
-            history_lovers_student.append(student[0])
-    if &quot;English&quot; in student[4]:
-        if student[0] not in english_lovers_student:
-            english_lovers_student.append(student[0])
-    if &quot;Math&quot; in student[4]:
-        if student[0] not in maths_lovers_student:
-            maths_lovers_student.append(student[0])
-
-history_lovers = len(history_lovers_student)
-english_lovers = len(english_lovers_student)
-maths_lovers = len(maths_lovers_student)
-
-print(f&quot;History lovers: {history_lovers}&quot;)
-print(f&quot;English lovers: {english_lovers}&quot;)
-print(f&quot;Maths lovers: {maths_lovers}&quot;)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-expected_history_lovers = 52
-expected_english_lovers = 49
-expected_maths_lovers = 63
-assert_variable_equals_variable(&quot;history_lovers&quot;, &quot;expected_history_lovers&quot;)
-assert_variable_equals_variable(&quot;english_lovers&quot;, &quot;expected_english_lovers&quot;)
-assert_variable_equals_variable(&quot;maths_lovers&quot;, &quot;expected_maths_lovers&quot;)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="5-separate-all-a-graders-and-all-b-graders-from-the-list-student_list">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-separate-all-a-graders-and-all-b-graders-from-the-list-student_list">#</doc-anchor-trigger>
-        <span>5. Separate all <code v-pre>A</code> graders and all <code v-pre>B</code> graders from the list <code v-pre>student_list</code>.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-separate-all-a-graders-and-all-b-graders-from-the-list-student_list">#</doc-anchor-trigger>
+        <span>4. Separate all <code v-pre>A</code> graders and all <code v-pre>B</code> graders from the list <code v-pre>student_list</code>.</span>
     </h5>
 </doc-anchor-target>
 <p>Create two lists <code v-pre>a_graders</code> and <code v-pre>b_graders</code> with the name, age, grade,
@@ -445,17 +336,14 @@ the list <code v-pre>a_graders</code> and students with <code v-pre>B</code> gra
  ...
 ]</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">a_graders = ...
 b_graders = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solutions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">a_graders = []
 b_graders = []
@@ -476,13 +364,11 @@ for student in student_list:
 
 print(f&quot;len a {len(a_graders)}, len b: {len(b_graders)}&quot;)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">a_graders</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>We use <code v-pre>assert_list_variable_equals_json()</code> function to assert the solution with the student list as the expected output is a list of list which is is quite large.</p>
+<p>Here, we have two expected outputs, so we save them in two different json files and then use <code v-pre>assert_list_variable_equals_json()</code> function to assert the solution with the student list.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save json file
 import json
@@ -492,74 +378,21 @@ with open('activity_solutions_files/solution_04_a.json', 'w') as f:
 with open('activity_solutions_files/solution_04_b.json', 'w') as f:
     json.dump(b_graders, f)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># new assertions
 assert_list_variable_equals_json(&quot;a_graders&quot;, &quot;solution_04_a.json&quot;)
 assert_list_variable_equals_json(&quot;b_graders&quot;, &quot;solution_04_b.json&quot;)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="6-remove-the-student-luna-18-e-geography-from-the-list-student_list">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="4-convert-the-student_list-into-list-of-tuples">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-remove-the-student-luna-18-e-geography-from-the-list-student_list">#</doc-anchor-trigger>
-        <span>6. Remove the student <code v-pre>['Luna', '18', 'E', 'Geography']</code> from the list <code v-pre>student_list</code>.</span>
-    </h5>
-</doc-anchor-target>
-<p>Remove the student whose name is <code v-pre>Luna</code>, age is <code v-pre>18</code>, grade is <code v-pre>E</code> and
-subject is <code v-pre>Geography</code> from the list <code v-pre>student_list</code>. If there are
-multiple students with the same name, age, grade, and subject, remove
-all of them.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your code here</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solutions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_to_remove = ['Luna', '18', 'E', 'Geography']
-
-students_to_remove = []
-
-for student in student_list:
-    if student[0] == student_to_remove[0] and student[2] == student_to_remove[1] and student[3] == student_to_remove[2] and student[4] == student_to_remove[3]:
-        students_to_remove.append(student)
-
-print(students_to_remove)
-
-for student in students_to_remove:
-    student_list.remove(student)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save json file
-with open('activity_solutions_files/solution_05.json', 'w') as f:
-    json.dump(student_list, f)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_list_variable_equals_json(&quot;student_list&quot;, &quot;solution_05.json&quot;)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="6-convert-the-student_list-into-list-of-tuples">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-convert-the-student_list-into-list-of-tuples">#</doc-anchor-trigger>
-        <span>6. Convert the <code v-pre>student_list</code> into list of tuples.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-convert-the-student_list-into-list-of-tuples">#</doc-anchor-trigger>
+        <span>4. Convert the <code v-pre>student_list</code> into list of tuples.</span>
     </h5>
 </doc-anchor-target>
 <p>Given the list <code v-pre>student_list</code> is a list of lists. Convert it into a list
@@ -580,17 +413,14 @@ of tuples and store it in the variable <code v-pre>student_list_tuple</code>.</p
 <p>This is just a simple conversion from list of lists to list of tuples.
 Expected output is different from above example list of tuples.</p>
 </blockquote>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Try your code here
 student_list_tuple = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">student_list_tuple = []
 
@@ -599,8 +429,11 @@ for student in student_list:
     
 student_list_tuple[:5]</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected output is a list of tuples which is small, so we use <code v-pre>assert_list_variable_equals_pickle()</code> function to assert the solution with the student list as JSON can&#x27;t save tuples.</p>
+<p>This is how we can save the expected output in a pickle file:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save in a pickle file
 import pickle
@@ -608,24 +441,13 @@ import pickle
 with open('activity_solutions_files/solution_06.pkl', 'wb') as f:
     pickle.dump(student_list_tuple, f)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># new assertions
 assert_list_variable_equals_pickle(&quot;student_list_tuple&quot;, &quot;solution_06.pkl&quot;)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="the-end">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
-        <span>The End!</span>
-    </h3>
-</doc-anchor-target>
-</div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->

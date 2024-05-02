@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767877091866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Function Assertions by Examples</title>
     <meta name="title" content="Function Assertions by Examples">
-    <meta name="description" content="In this notebook, I've covered most used Functions checking assertion functions. Below are the functions that I've covered in this notebook.">
+    <meta name="description" content="In this notebook, you'll learn how to use most used Functions checking assertion functions. Below are the functions that I've covered in this notebook.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assertions-framework/function_assertions_by_examples/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assertions-framework/function_assertions_by_examples/">
     <meta property="og:title" content="Function Assertions by Examples">
-    <meta property="og:description" content="In this notebook, I've covered most used Functions checking assertion functions. Below are the functions that I've covered in this notebook.">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used Functions checking assertion functions. Below are the functions that I've covered in this notebook.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assertions-framework/function_assertions_by_examples/">
     <meta property="twitter:title" content="Function Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, I've covered most used Functions checking assertion functions. Below are the functions that I've covered in this notebook.">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Functions checking assertion functions. Below are the functions that I've covered in this notebook.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767877091866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767877091866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767949141087" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,89 +170,77 @@
         <span>Function Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<div class="cell markdown">
-<p>In this notebook, I&#x27;ve covered most used Functions checking assertion
+<p>In this notebook, you&#x27;ll learn how to use most used Functions checking assertion
 functions. Below are the functions that I&#x27;ve covered in this notebook.</p>
 <ol>
-<li><code v-pre>assert_student_function_name_equals()</code></li>
-<li><code v-pre>assert_student_function_test_cases()</code></li>
+<li><code v-pre>assert_student_function_name_equals(student_function_name, fn_args=None, fn_kwargs=None, expected_value=DataWarsConstants.EMPTY)</code>: Checks that the student&#x27;s function named <code v-pre>student_function_name</code> returns the expected value.</li>
+<li><code v-pre>assert_student_function_test_cases(student_function_name, test_cases)</code>: Checks that the student&#x27;s function named <code v-pre>student_function_name</code> returns the expected value for each test case in the list <code v-pre>test_cases</code>.</li>
 </ol>
-</div>
-<div class="cell code">
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <doc-anchor-target id="activities">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
         <span>Activities</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-1-create-a-function-add">
+<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions.</p>
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-create-a-function-add">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-1-create-a-function-add">#</doc-anchor-trigger>
-        <span>Activity 1. Create a function <code v-pre>add()</code>.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-function-add">#</doc-anchor-trigger>
+        <span>1. Create a function <code v-pre>add()</code>.</span>
     </h5>
 </doc-anchor-target>
 <p>Create a functions <code v-pre>add()</code> that takes two arguments and returns the sum
 of the two arguments.</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">def add(a, b):
     pass</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">def add(a, b):
     return a + b</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Out expected function should return the sum of the two arguments. So, we use <code v-pre>assert_student_function_name_equals()</code> function to assert the solution with the student function.</p>
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">assert_function_name_equals('add', (2, 6), expected_value=8)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-2-implement-a-function-to-define-a-movie-dictionary">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-implement-a-function-to-define-a-movie-dictionary">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-2-implement-a-function-to-define-a-movie-dictionary">#</doc-anchor-trigger>
-        <span>Activity 2. Implement a Function to Define a Movie Dictionary</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-implement-a-function-to-define-a-movie-dictionary">#</doc-anchor-trigger>
+        <span>2. Implement a Function to Define a Movie Dictionary</span>
     </h5>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>Define a function <code v-pre>define_movies</code> that takes a dictionary, <code v-pre>id</code>, <code v-pre>name</code>, <code v-pre>year</code>, and <code v-pre>rank</code> as arguments and returns the dictionary with the movie details. Function also takes empty dictionary as first argument which will be used to store the movie details.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">movies = {}</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">def define_movies(dictionary, id, name, year, rank):
+<pre class="language-python"><code v-pre class="language-python">movies = {}
+
+def define_movies(dictionary, id, name, year, rank):
     # Your code goes here
     return dictionary</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Insert Values in movies dictionary using above created function</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">def define_movies(dictionary, id, name, year, rank):
     dictionary[id] = {
@@ -262,19 +250,16 @@ of the two arguments.</p>
     }
     return dictionary</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">define_movies(movies, 0, 'Carmencita', 1894, 5.6)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Here we have two expected outputs, so we save them in two different dictionaries and then use <code v-pre>assert_student_function_test_cases()</code> function to assert the solution with the student function.
+Assertions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-# For the function `define_movies()`
+<pre class="language-python"><code v-pre class="language-python"># For the function `define_movies()`
 expedted_movies_1 = {}
 expedted_movies_2 = {}
 
@@ -289,16 +274,18 @@ assert_student_function_test_cases(
     ]
 )</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-3-define-a-function-define_roles">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="3-define-a-function-define_roles">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-3-define-a-function-define_roles">#</doc-anchor-trigger>
-        <span>Activity 3. Define a function <code v-pre>define_roles</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-define-a-function-define_roles">#</doc-anchor-trigger>
+        <span>3. Define a function <code v-pre>define_roles</code></span>
     </h5>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>Define a function <code v-pre>define_roles</code> that takes a dictionary, <code v-pre>actor_id</code>, and <code v-pre>role</code> as arguments and returns the dictionary with the actor&#x27;s roles. Function also takes empty dictionary as first argument which will be used to store the actor&#x27;s roles.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">roles = {}
 
@@ -306,16 +293,10 @@ def define_roles(dictionary, actor_id, role):
     # Your code goes here
     return dictionary</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Insert the data into `roles` dictionary</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">def define_roles(dictionary, actor_id, role):
     if actor_id in dictionary:
@@ -326,18 +307,16 @@ def define_roles(dictionary, actor_id, role):
         }
     return dictionary</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">define_roles(roles, 4, 'Actor')
 define_roles(roles, 4, 'Singer')
 define_roles(roles, 3, 'Actor')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Here we have two expected outputs, so we save them in two different dictionaries and then use <code v-pre>assert_student_function_test_cases()</code> function to assert the solution with the student function.</p>
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># For the function `define_roles()`
 expedted_roles_1 = {}
@@ -354,81 +333,8 @@ assert_student_function_test_cases(
     ]
 )</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-4-define-a-function-define_movies_generes">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-4-define-a-function-define_movies_generes">#</doc-anchor-trigger>
-        <span>Activity 4. Define a function <code v-pre>define_movies_generes</code></span>
-    </h5>
-</doc-anchor-target>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">movies_genres = {}
-
-def define_movies_genres(dictionary, movie_id, genre):
-    # Your code goes here
-    return dictionary</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Insert the data into `movies_genres` dictionary using function `define_movies_genres()`</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">def define_movies_genres(dictionary, movie_id, genre):
-    if movie_id in dictionary:
-        dictionary[movie_id]['genre'].append(genre)
-    else:
-        dictionary[movie_id] = {
-            'genre': [genre]
-        }
-    return dictionary</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">define_movies_genres(movies_genres, 1, 'Short')
-define_movies_genres(movies_genres, 2, 'Short')</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-
-# For the function `define_movies_genres()`
-expedted_movies_genres_1 = {}
-expedted_movies_genres_2 = {}
-
-assert_student_function_test_cases(
-    &quot;define_movies_genres&quot;,
-    [
-    student_function_test_case((expedted_movies_genres_1, 1, 'Short'), expected_value={1: {'genre': ['Short']}}),
-    student_function_test_case((expedted_movies_genres_2, 1, 'Short'), expected_value={1: {'genre': ['Short']}}),
-     
-    #  Add one more in expeted_movies_genres_1
-    student_function_test_case((expedted_movies_genres_1, 1, 'Comedy'), expected_value={1: {'genre': ['Short', 'Comedy']}}),
-    ]
-)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="the-end">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
-        <span>The End!</span>
-    </h3>
-</doc-anchor-target>
-</div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->

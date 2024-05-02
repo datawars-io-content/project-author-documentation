@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767877091866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Matplotlib Assertions by Examples</title>
     <meta name="title" content="Matplotlib Assertions by Examples">
-    <meta name="description" content="In this notebook, I've covered most used matplotlib assertion functions. There is only one assertion function for checking the expected figure">
+    <meta name="description" content="In this notebook, you'll learn how to use most used matplotlib assertion functions. There is only one assertion function for checking the expected...">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assertions-framework/matplotlib_assertions_by_examples/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assertions-framework/matplotlib_assertions_by_examples/">
     <meta property="og:title" content="Matplotlib Assertions by Examples">
-    <meta property="og:description" content="In this notebook, I've covered most used matplotlib assertion functions. There is only one assertion function for checking the expected figure">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used matplotlib assertion functions. There is only one assertion function for checking the expected...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assertions-framework/matplotlib_assertions_by_examples/">
     <meta property="twitter:title" content="Matplotlib Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, I've covered most used matplotlib assertion functions. There is only one assertion function for checking the expected figure">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used matplotlib assertion functions. There is only one assertion function for checking the expected...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767877091866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767877091866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767949141087" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,45 +170,34 @@
         <span>Matplotlib Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<div class="cell markdown">
-<p>In this notebook, I&#x27;ve covered most used matplotlib assertion functions.
+<p>In this notebook, you&#x27;ll learn how to use most used matplotlib assertion functions.
 There is only one assertion function for checking the expected figure
 with the actual figure.</p>
 <ol>
-<li><code v-pre>assert_plt_student_fig_matches_png_fname()</code></li>
+<li><code v-pre>assert_plt_student_fig_matches_png_fname(student_figure_variable_name, expected_png_fname)</code>: Checks if student figure object is equals to expected png image.</li>
 </ol>
-</div>
-<div class="cell code">
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">df = pd.read_csv('hs_rate_poverty.csv')
 df.head()</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <doc-anchor-target id="activities">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
         <span>Activities</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-1-plotting-and-comparing-socio-economic-indicators-with-matplotlib">
+<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions. We have <code v-pre>df</code> dataframe that contains the data of high school graduation rates and poverty rates across different U.S. states.</p>
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-plotting-and-comparing-socio-economic-indicators-with-matplotlib">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-1-plotting-and-comparing-socio-economic-indicators-with-matplotlib">#</doc-anchor-trigger>
-        <span>Activity 1: Plotting and Comparing Socio-Economic Indicators with Matplotlib</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-plotting-and-comparing-socio-economic-indicators-with-matplotlib">#</doc-anchor-trigger>
+        <span>1: Plotting and Comparing Socio-Economic Indicators with Matplotlib</span>
     </h5>
 </doc-anchor-target>
 <p>Create a visualization featuring two point plots on the same graph:</p>
@@ -228,8 +217,6 @@ like:</p>
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Creating a figure and an axis
 fig, ax = plt.subplots(figsize=(14, 7))
@@ -246,16 +233,12 @@ ax.set_title('Comparison of High School Graduation and Poverty Rates by State')
 # Rotating x-axis labels by 90 degrees
 ax.set_xticklabels(df['State'], fontsize=8,rotation=90)
 # Adding a legend
-ax.legend()
-
-# Display the plot
-plt.show()</code></pre>
+ax.legend()</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Creating a figure and an axis
 fig, ax = plt.subplots(figsize=(14, 7))
@@ -272,30 +255,29 @@ ax.set_title('Comparison of High School Graduation and Poverty Rates by State')
 # Rotating x-axis labels by 90 degrees
 ax.set_xticklabels(df['State'], fontsize=8,rotation=90)
 # Adding a legend
-ax.legend()
-
-# Display the plot
-plt.show()</code></pre>
+ax.legend()</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As we have to assert student variable with expected png image, we will use <code v-pre>assert_plt_student_fig_matches_png_fname()</code> function.</p>
+<p>This is how you can save the figure and assert it with the expected image.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">fig.savefig('activity_solutions_files/expected_plot_1.png')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">assert_plt_student_fig_matches_png_fname(&quot;fig&quot;, 'expected_plot_1.png')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-2-scatter-plotting-socio-economic-indicators">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-scatter-plotting-socio-economic-indicators">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-2-scatter-plotting-socio-economic-indicators">#</doc-anchor-trigger>
-        <span>Activity 2: Scatter Plotting Socio-Economic Indicators</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-scatter-plotting-socio-economic-indicators">#</doc-anchor-trigger>
+        <span>2: Scatter Plotting Socio-Economic Indicators</span>
     </h5>
 </doc-anchor-target>
 <p>Create a scatter plot to visualize and analyze the relationship between
@@ -309,8 +291,6 @@ the Y axis. Your plot should look something like:</p>
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Plotting the scatter plot
 fig, ax = plt.subplots(figsize=(14, 7))
@@ -319,16 +299,12 @@ ax....(..., ...)
 # Adding labels and title
 ax.set_xlabel('Normalized High School Graduation Rate')
 ax.set_ylabel('Normalized Poverty Rate')
-ax.set_title('Statewise Comparison of High School Graduation and Poverty Rates')
-
-# Display the plot
-plt.show()</code></pre>
+ax.set_title('Statewise Comparison of High School Graduation and Poverty Rates')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Plotting the scatter plot
 fig, ax = plt.subplots(figsize=(14, 7))
@@ -337,33 +313,20 @@ ax.scatter(df['normalized_hs_rate'], df['normalized_poverty_rate'])
 # Adding labels and title
 ax.set_xlabel('Normalized High School Graduation Rate')
 ax.set_ylabel('Normalized Poverty Rate')
-ax.set_title('Statewise Comparison of High School Graduation and Poverty Rates')
-
-# Display the plot
-plt.show()</code></pre>
+ax.set_title('Statewise Comparison of High School Graduation and Poverty Rates')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">fig.savefig('activity_solutions_files/expected_plot_2.png')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">assert_plt_student_fig_matches_png_fname(&quot;fig&quot;, 'expected_plot_2.png')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="the-end">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
-        <span>The End!</span>
-    </h3>
-</doc-anchor-target>
-</div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->

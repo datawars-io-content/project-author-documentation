@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767877091866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Pandas DataFrame Assertions by Examples</title>
     <meta name="title" content="Pandas DataFrame Assertions by Examples">
-    <meta name="description" content="In this notebook, I've covered most used Pandas Dataframe assertion functions. Below are these functions:">
+    <meta name="description" content="In this notebook, you'll learn how to use most used Pandas Dataframe assertion functions. Below are these functions:">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assertions-framework/pandas_dataframe_assertions_by_examples/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assertions-framework/pandas_dataframe_assertions_by_examples/">
     <meta property="og:title" content="Pandas DataFrame Assertions by Examples">
-    <meta property="og:description" content="In this notebook, I've covered most used Pandas Dataframe assertion functions. Below are these functions:">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used Pandas Dataframe assertion functions. Below are these functions:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assertions-framework/pandas_dataframe_assertions_by_examples/">
     <meta property="twitter:title" content="Pandas DataFrame Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, I've covered most used Pandas Dataframe assertion functions. Below are these functions:">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Pandas Dataframe assertion functions. Below are these functions:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767877091866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767877091866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767949141087" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,335 +170,147 @@
         <span>Pandas DataFrame Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<div class="cell markdown">
-<p>In this notebook, I&#x27;ve covered most used Pandas Dataframe assertion
+<p>In this notebook, you&#x27;ll learn how to use most used Pandas Dataframe assertion
 functions. Below are these functions:</p>
 <ol>
-<li><code v-pre>assert_pd_dataframe_variable_column_equals_csv()</code></li>
-<li><code v-pre>assert_pd_dataframe_variable_equals_csv()</code></li>
-<li><code v-pre>assert_pd_dataframe_variable_equals_variable()</code></li>
-<li><code v-pre>assert_pd_dataframe_csv_equals_csv()</code></li>
+<li><code v-pre>assert_pd_dataframe_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks if student dataframe variable is equals to expected dataframe variable.</li>
+<li><code v-pre>assert_pd_dataframe_variable_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)</code>: Checks if student dataframe variable is equals to expected csv file.</li>
+<li><code v-pre>assert_pd_dataframe_variable_column_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)</code>: Checks if student dataframe variable column is equals to expected csv file.</li>
+<li><code v-pre>assert_pd_dataframe_csv_equals_csv(student_csv_name, expected_csv_name, student_base_dir=&quot;.&quot;, read_csv_kwargs=None, dataframe_testing_kwargs=None)</code>: Checks if student csv file is equals to expected csv file.</li>
 </ol>
-</div>
-<div class="cell code" tags="[]">
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="import-the-libraries-and-load-the-dataset">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#import-the-libraries-and-load-the-dataset">#</doc-anchor-trigger>
-        <span>Import the libraries and load the dataset</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<div class="cell code" tags="[]">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">import pandas as pd
 
 df = pd.read_csv('Best_Books_Ever.csv')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <doc-anchor-target id="activities">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
         <span>Activities</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-1-calculating-the-price-to-rating-ratio">
+<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions. We&#x27;ll use the <code v-pre>df</code> dataframe that contains the data of best books ever.</p>
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-create-a-dataframe-student_df-with-the-following-data">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-1-calculating-the-price-to-rating-ratio">#</doc-anchor-trigger>
-        <span>Activity 1. Calculating the Price-to-Rating Ratio</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-dataframe-student_df-with-the-following-data">#</doc-anchor-trigger>
+        <span>1. Create a dataframe <code v-pre>student_df</code> with the following data:</span>
+    </h5>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_dict = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Age': [18, 17, 19, 18, 17],
+    'Grade': ['A', 'B', 'A', 'B', 'A']
+}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_dict = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Age': [18, 17, 19, 18, 17],
+    'Grade': ['A', 'B', 'A', 'B', 'A']
+}
+
+student_df = pd.DataFrame(student_dict)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected dataframe is small and we can easily compare it with the student dataframe, we can use <code v-pre>assert_pd_dataframe_variable_equals_variable()</code> function to assert the solution with the student dataframe.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">expected_student_dict = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Age': [18, 17, 19, 18, 17],
+    'Grade': ['A', 'B', 'A', 'B', 'A']
+}
+expected_student_df = pd.DataFrame(expected_student_dict)
+assert_pd_dataframe_variable_equals_variable('student_df', 'expected_student_df', delete_afterwards=True)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-calculating-the-price-to-rating-ratio">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-calculating-the-price-to-rating-ratio">#</doc-anchor-trigger>
+        <span>2. Calculating the Price-to-Rating Ratio</span>
     </h5>
 </doc-anchor-target>
 <p>Create a new column <code v-pre>Price-to-Rating Ratio</code> in the DataFrame that
 calculates the price-to-rating ratio for each book. This ratio will help
 us understand how the price of a book relates to its average rating.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code" tags="[]">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">df['price_to_rating'] = df['price'] / df['rating']</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>In this activity, we asked student to create a new column in the dataframe. So, we can use <code v-pre>assert_pd_dataframe_variable_column_equals_csv()</code> function to assert the solution with the student dataframe. We used this function to check the column <code v-pre>price_to_rating</code> with the expected column in the csv file.</p>
+<p>This is how you can save the dataframe to a new csv file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
 df.to_csv('activity_solutions_files/sol_01.csv', index=True)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code" tags="[]">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">assert_pd_dataframe_variable_column_equals_csv('df', 'price_to_rating', 'sol_01.csv')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-2-remove-the-isbn-column">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="activity-3-remove-the-isbn-column">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-2-remove-the-isbn-column">#</doc-anchor-trigger>
-        <span>Activity 2. Remove the &quot;isbn&quot; Column</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-3-remove-the-isbn-column">#</doc-anchor-trigger>
+        <span>Activity 3. Remove the &quot;isbn&quot; Column</span>
     </h5>
 </doc-anchor-target>
 <p>The &quot;isbn&quot; column is not needed for our analysis. Write a script to
 remove this column from the dataframe.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code" tags="[]">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">df.drop(columns='isbn', inplace=True)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code" tags="[]">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>In this activity, we asked student to remove the column from the dataframe. So, we can use <code v-pre>assert_pd_dataframe_variable_equals_csv()</code> function to assert the solution with the student dataframe.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
 df.to_csv('activity_solutions_files/sol_02.csv', index=True)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code" tags="[]">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">assert_pd_dataframe_variable_equals_csv('df', 'sol_02.csv')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-3-remove-the-rows-with-missing-values">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="activity-4-save-the-updated-dataframe-in-new-csv-file">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-3-remove-the-rows-with-missing-values">#</doc-anchor-trigger>
-        <span>Activity 3. Remove the Rows with Missing Values</span>
-    </h5>
-</doc-anchor-target>
-<p>Write a script to extract the publication year from the <code v-pre>publishDate</code>
-column and create a new column named <code v-pre>YearPublished</code> in the dataframe.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">df['YearPublished'] = df['publishDate'].str.extract(r'(\d{4})')</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
-df.to_csv('activity_solutions_files/sol_03.csv', index=True)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0, 'dtype': {'YearPublished': 'int32'}}
-assert_pd_dataframe_variable_column_equals_csv('df', 'YearPublished', 'sol_03.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-4-filter-books-with-ratings-above-45">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-4-filter-books-with-ratings-above-45">#</doc-anchor-trigger>
-        <span>Activity 4. Filter Books with Ratings Above 4.5</span>
-    </h5>
-</doc-anchor-target>
-<p>Create a new dataframe that only include books with ratings above 4.5.
-Name this new dataframe <code v-pre>best_books</code>.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">best_books = df[df['rating'] &gt;= 4.5]</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
-best_books.to_csv('activity_solutions_files/sol_04.csv', index=True)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0, 'dtype': {'YearPublished': 'int32'}}
-assert_pd_dataframe_variable_equals_csv('best_books', 'sol_04.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-5-drop-books-with-fewer-than-100-pages">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-5-drop-books-with-fewer-than-100-pages">#</doc-anchor-trigger>
-        <span>Activity 5. Drop Books with Fewer than 100 Pages</span>
-    </h5>
-</doc-anchor-target>
-<p>Some entries in the dataset might represent short stories or other short
-works. For this activity, remove all rows from the dataframe where the
-number of pages is less than 100.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">df = df[df['pages'] &gt;= 100]</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>This line of code removes all rows from the dataframe where the number
-of pages is less than 100.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
-df.to_csv('activity_solutions_files/sol_05.csv', index=True)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0, 'dtype': {'YearPublished': 'int32'}}
-assert_pd_dataframe_variable_equals_csv('df', 'sol_05.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-6-flag-books-with-multiple-awards">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-6-flag-books-with-multiple-awards">#</doc-anchor-trigger>
-        <span>Activity 6. Flag Books with multiple Awards</span>
-    </h5>
-</doc-anchor-target>
-<p>Create a new column <code v-pre>MultipleAwards</code> that flags books that have won
-multiple awards. If a book has won more than one award, set the value of
-<code v-pre>MultipleAwards</code> to <code v-pre>True</code>; otherwise, set it to <code v-pre>False</code>.</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">df['MultipleAwards'] = df['awards'].apply(lambda x: len(eval(x)) &gt; 1)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
-df.to_csv('activity_solutions_files/sol_06.csv', index=True)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0}
-assert_pd_dataframe_variable_column_equals_csv('df', 'MultipleAwards', 'sol_06.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-7-adding-a-new-book-entry">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-7-adding-a-new-book-entry">#</doc-anchor-trigger>
-        <span>Activity 7. Adding a New Book Entry</span>
-    </h5>
-</doc-anchor-target>
-<p>Add a new book entry to the dataframe with the following details:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">new_boos = {
-    &quot;bookID&quot;: 10000,
-    &quot;title&quot;: &quot;The Great Gatsby&quot;,
-    &quot;author&quot;: &quot;F. Scott Fitzgerald&quot;,
-}</code></pre>
-</doc-codeblock></div>
-<blockquote>
-<p>Add this new entry to the index <code v-pre>len(df)</code>.</p>
-</blockquote>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">new_book = {
-    &quot;bookID&quot;: 10000,
-    &quot;title&quot;: &quot;The Great Gatsby&quot;,
-    &quot;author&quot;: &quot;F. Scott Fitzgerald&quot;
-    }
-new_df = pd.DataFrame(new_book, index=[len(df)])
-df = pd.concat([df, new_df])    </code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
-df.to_csv('activity_solutions_files/sol_07.csv', index=True)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0}
-assert_pd_dataframe_variable_equals_csv('df', 'sol_07.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-8-save-the-updated-dataframe-in-new-csv-file">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-8-save-the-updated-dataframe-in-new-csv-file">#</doc-anchor-trigger>
-        <span>Activity 8. Save the updated dataframe in new CSV file</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-4-save-the-updated-dataframe-in-new-csv-file">#</doc-anchor-trigger>
+        <span>Activity 4. Save the updated dataframe in new CSV file</span>
     </h5>
 </doc-anchor-target>
 <p>Save the updated dataframe <code v-pre>df</code> in a new CSV file named
@@ -506,110 +318,30 @@ assert_pd_dataframe_variable_equals_csv('df', 'sol_07.csv', read_csv_kwargs=read
 <blockquote>
 <p>Make sure not to reset the index</p>
 </blockquote>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code" tags="[]">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
 df.to_csv('updated_best_book.csv', index=False)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code" tags="[]">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>In this activity, we asked student to save the dataframe in a new csv file. So, we can use <code v-pre>assert_pd_dataframe_csv_equals_csv()</code> function to assert the solution with the student dataframe.</p>
+<p>This is how you can save the dataframe to a new csv file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
 df.to_csv('activity_solutions_files/sol_08.csv', index=False)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code" tags="[]">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0}
 assert_pd_dataframe_csv_equals_csv('updated_best_book.csv', 'sol_08.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-9-save-the-dataframe-in-csv-file">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-9-save-the-dataframe-in-csv-file">#</doc-anchor-trigger>
-        <span>Activity 9. Save the dataframe in CSV file.</span>
-    </h5>
-</doc-anchor-target>
-<p>Use the below dictionary and first convert this dictionary into
-dataframe and store it in a dataframe <code v-pre>student_df</code> and then save this
-dataframe in a CSV file called <code v-pre>student_data.csv</code>.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_dict = {
-    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
-    'Age': [18, 17, 19, 18, 17],
-    'Grade': ['A', 'B', 'A', 'B', 'A']
-}</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"></code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code" tags="[]">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import pandas as pd
-
-# Step 1: Given dictionary
-student_dict = {
-    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
-    'Age': [18, 17, 19, 18, 17],
-    'Grade': ['A', 'B', 'A', 'B', 'A']
-}
-
-# Step 2: Convert the dictionary into a DataFrame
-student_df = pd.DataFrame(student_dict)
-
-# Step 3: Save the DataFrame to a CSV file
-student_df.to_csv('student_data.csv', index=False)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code" tags="[]">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_df.to_csv('activity_solutions_files/sol_09.csv', index=False)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code" tags="[]">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_dict = {
-    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
-    'Age': [18, 17, 19, 18, 17],
-    'Grade': ['A', 'B', 'A', 'B', 'A']
-}
-
-expected_student_df = pd.DataFrame(student_dict)
-assert_pd_dataframe_variable_equals_variable('student_df', 'expected_student_df', delete_afterwards=True)
-
-assert_pd_dataframe_csv_equals_csv('student_data.csv', 'sol_09.csv')</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="the-end">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
-        <span>The End!</span>
-    </h3>
-</doc-anchor-target>
-</div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->

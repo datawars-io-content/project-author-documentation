@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767877091866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Tuple Assertions by Examples</title>
     <meta name="title" content="Tuple Assertions by Examples">
-    <meta name="description" content="In this notebook, I've covered most used Tuple assertion functions. Below are these functions:">
+    <meta name="description" content="In this notebook, you'll learn how to use most used Tuple assertion functions. Below are these functions:">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assertions-framework/tuple_assertions_by_examples/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assertions-framework/tuple_assertions_by_examples/">
     <meta property="og:title" content="Tuple Assertions by Examples">
-    <meta property="og:description" content="In this notebook, I've covered most used Tuple assertion functions. Below are these functions:">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used Tuple assertion functions. Below are these functions:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assertions-framework/tuple_assertions_by_examples/">
     <meta property="twitter:title" content="Tuple Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, I've covered most used Tuple assertion functions. Below are these functions:">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Tuple assertion functions. Below are these functions:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767877091866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767877091866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767877091866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767949141087" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,92 +170,25 @@
         <span>Tuple Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<div class="cell markdown">
-<p>In this notebook, I&#x27;ve covered most used Tuple assertion functions.
+<p>In this notebook, you&#x27;ll learn how to use most used Tuple assertion functions.
 Below are these functions:</p>
 <ol>
-<li><code v-pre>assert_tuple_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code></li>
-<li><code v-pre>assert_tuple_variable_equals_pickle(student_variable_name, pickle_file_name)</code></li>
+<li><code v-pre>assert_tuple_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks if student tuple variable is equals to expected tuple variable.</li>
+<li><code v-pre>assert_tuple_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks if student tuple variable is equals to expected pickle file.</li>
 </ol>
-</div>
-<div class="cell code">
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="read-the-dataset">
+<doc-anchor-target id="activities">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#read-the-dataset">#</doc-anchor-trigger>
-        <span>Read the dataset</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
+        <span>Activities</span>
     </h3>
 </doc-anchor-target>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># lets get our dataset of Fibonacci Sequence
-import pandas as pd
-fibo_seq = tuple(pd.read_csv('./fibonacci_sequence.txt').squeeze('columns').values)
-
-# checking first 10 fruits
-fibo_seq[:10]</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-1-slice-the-tuple-fibo_seq-from-4th-index-to-34th-index">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-1-slice-the-tuple-fibo_seq-from-4th-index-to-34th-index">#</doc-anchor-trigger>
-        <span>Activity 1. Slice the tuple <code v-pre>fibo_seq</code> from 4th index to 34th index</span>
-    </h5>
-</doc-anchor-target>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your code here
-thirty_step = ...</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">thirty_step = fibo_seq[4:34]
-thirty_step
-# len(thirty_step)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save pickle file
-import pickle
-with open('activity_solutions_files/solution_01.pkl', 'wb') as f:
-    pickle.dump(thirty_step, f)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_tuple_variable_equals_pickle('thirty_step', 'solution_01.pkl')</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="students-records-data">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#students-records-data">#</doc-anchor-trigger>
-        <span>Students Records Data</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<div class="cell markdown">
 <p><strong>Below are two tuples having students records of two cohorts for
 Computer Science course this semester, each cohort has 30 students</strong></p>
 <p>Each tuple is as <code v-pre>(student_name, overall_grade)</code>.</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">student_data_a = (
     (&quot;John&quot;, 85), (&quot;Emily&quot;, 92), (&quot;Michael&quot;, 78), (&quot;Sophia&quot;, 95),
@@ -268,8 +201,6 @@ Computer Science course this semester, each cohort has 30 students</strong></p>
     (&quot;Victoria&quot;, 87), (&quot;Joseph&quot;, 91)
 )</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">student_data_b = (
     (&quot;Lily&quot;, 88), (&quot;Christopher&quot;, 94), (&quot;Grace&quot;, 79), (&quot;Andrew&quot;, 91),
@@ -282,132 +213,76 @@ Computer Science course this semester, each cohort has 30 students</strong></p>
     (&quot;Scarlett&quot;, 86), (&quot;David&quot;, 90)
 )</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-2-concatenate-the-records-of-both-collections-into-one-tuple">
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-concatenate-the-records-of-both-collections-into-one-tuple">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-2-concatenate-the-records-of-both-collections-into-one-tuple">#</doc-anchor-trigger>
-        <span>Activity 2. Concatenate the records of both collections into one tuple</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-concatenate-the-records-of-both-collections-into-one-tuple">#</doc-anchor-trigger>
+        <span>1. Concatenate the records of both collections into one tuple</span>
     </h5>
 </doc-anchor-target>
-</div>
-<div class="cell code">
+<p>Combine the records of both cohorts into one tuple named <code v-pre>combined</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Try your code here
 combined = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">combined = student_data_a + student_data_b
-combined[0:5]</code></pre>
+<pre class="language-python"><code v-pre class="language-python">combined = student_data_a + student_data_b</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected tuple is quite large, we can save it in a pickle file and then use <code v-pre>assert_tuple_variable_equals_pickle()</code> function to assert the solution with the student tuple.</p>
+<p>This is how you can save the tuple in a pickle file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># save pickle file
 with open('activity_solutions_files/solution_02.pkl', 'wb') as f:
     pickle.dump(combined, f)</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_tuple_variable_equals_pickle('combined', 'solution_02.pkl')</code></pre>
+<pre class="language-python"><code v-pre class="language-python">assert_tuple_variable_equals_pickle('combined', 'solution_02.pkl')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-3-sort-the-combined-tuple-so-that-we-will-have-names-in-alphabetic-order">
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-find-the-student-with-the-highest-grade">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-3-sort-the-combined-tuple-so-that-we-will-have-names-in-alphabetic-order">#</doc-anchor-trigger>
-        <span>Activity 3. Sort the <code v-pre>combined</code> tuple so that we will have names in alphabetic order**</span>
-    </h5>
-</doc-anchor-target>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your code here
-sorted_combine = ...</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Solution:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">sorted_combine = tuple(sorted(combined))
-sorted_combine</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save pickle file
-with open('activity_solutions_files/solution_3.pkl', 'wb') as f:
-    pickle.dump(sorted_combine, f)</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<p>Assertions:</p>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_tuple_variable_equals_pickle('sorted_combine', 'solution_3.pkl')</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="activity-4-find-the-student-with-the-highest-grade">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-4-find-the-student-with-the-highest-grade">#</doc-anchor-trigger>
-        <span>Activity 4. Find the student with the highest grade</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-find-the-student-with-the-highest-grade">#</doc-anchor-trigger>
+        <span>2. Find the student with the highest grade</span>
     </h5>
 </doc-anchor-target>
 <p>First, find the highest grade and then find the student with that grade
 then store the details in a tuple named <code v-pre>top_student</code>.</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python"># Try your code here
 top_student = ...</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
 <p>Solution:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">top_student = sorted_combine[-1]</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell code">
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">top_student</code></pre>
-</doc-codeblock></div>
-</div>
-<div class="cell markdown">
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected tuple only contains one student, we can easily compare it with the student tuple, we can use <code v-pre>assert_tuple_variable_equals_variable()</code> function to assert the solution with the student tuple.</p>
 <p>Assertions:</p>
-</div>
-<div class="cell code">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-expected_top_student = ('Zoa', 95)
+<pre class="language-python"><code v-pre class="language-python">expected_top_student = ('Zoa', 95)
 assert_tuple_variable_equals_variable('top_student', 'expected_top_student')</code></pre>
 </doc-codeblock></div>
-</div>
-<div class="cell markdown">
-<doc-anchor-target id="the-end">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-end">#</doc-anchor-trigger>
-        <span>The End!</span>
-    </h3>
-</doc-anchor-target>
-</div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->
