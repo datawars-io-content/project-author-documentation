@@ -1,69 +1,28 @@
----
-jupyter:
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
-  language_info:
-    codemirror_mode:
-      name: ipython
-      version: 3
-    file_extension: .py
-    mimetype: text/x-python
-    name: python
-    nbconvert_exporter: python
-    pygments_lexer: ipython3
-    version: 3.11.4
-  nbformat: 4
-  nbformat_minor: 4
----
-
-<div class="cell markdown">
-
-In this notebook, I've covered most used matplotlib assertion functions.
+In this notebook, you'll learn how to use most used matplotlib assertion functions.
 There is only one assertion function for checking the expected figure
 with the actual figure.
 
-1.  `assert_plt_student_fig_matches_png_fname()`
+1. `assert_plt_student_fig_matches_png_fname(student_figure_variable_name, expected_png_fname)`: Checks if student figure object is equals to expected png image.
 
-</div>
-
-<div class="cell code">
+Load the `utils.py` file to use the assertion functions.
 
 ``` python
 exec(open("utils.py").read())
 ```
-
-</div>
-
-<div class="cell code">
-
-``` python
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-```
-
-</div>
-
-<div class="cell code">
 
 ``` python
 df = pd.read_csv('hs_rate_poverty.csv')
 df.head()
 ```
 
-</div>
 
-<div class="cell markdown">
 
 ### Activities
 
-</div>
+Now, with activities examples, you'll learn how to use the assertion functions. We have `df` dataframe that contains the data of high school graduation rates and poverty rates across different U.S. states.
 
-<div class="cell markdown">
-
-##### Activity 1: Plotting and Comparing Socio-Economic Indicators with Matplotlib
++++Activity 1
+##### 1: Plotting and Comparing Socio-Economic Indicators with Matplotlib
 
 Create a visualization featuring two point plots on the same graph:
 
@@ -84,9 +43,6 @@ like:
 
 ![](images/plot-1.png)
 
-</div>
-
-<div class="cell code">
 
 ``` python
 # Creating a figure and an axis
@@ -105,20 +61,10 @@ ax.set_title('Comparison of High School Graduation and Poverty Rates by State')
 ax.set_xticklabels(df['State'], fontsize=8,rotation=90)
 # Adding a legend
 ax.legend()
-
-# Display the plot
-plt.show()
 ```
 
-</div>
-
-<div class="cell markdown">
-
++++Solution
 Solution:
-
-</div>
-
-<div class="cell code">
 
 ``` python
 # Creating a figure and an axis
@@ -137,38 +83,28 @@ ax.set_title('Comparison of High School Graduation and Poverty Rates by State')
 ax.set_xticklabels(df['State'], fontsize=8,rotation=90)
 # Adding a legend
 ax.legend()
-
-# Display the plot
-plt.show()
 ```
 
-</div>
++++Assertions
 
-<div class="cell code">
+As we have to assert student variable with expected png image, we will use `assert_plt_student_fig_matches_png_fname()` function.
+
+This is how you can save the figure and assert it with the expected image.
 
 ``` python
 fig.savefig('activity_solutions_files/expected_plot_1.png')
 ```
 
-</div>
-
-<div class="cell markdown">
-
 Assertions:
-
-</div>
-
-<div class="cell code">
 
 ``` python
 assert_plt_student_fig_matches_png_fname("fig", 'expected_plot_1.png')
 ```
++++
 
-</div>
 
-<div class="cell markdown">
-
-##### Activity 2: Scatter Plotting Socio-Economic Indicators
++++Activity 2
+##### 2: Scatter Plotting Socio-Economic Indicators
 
 Create a scatter plot to visualize and analyze the relationship between
 the two key socio-economic indicators: the normalized high school
@@ -180,9 +116,6 @@ the Y axis. Your plot should look something like:
 
 ![](images/plot-2.png)
 
-</div>
-
-<div class="cell code">
 
 ``` python
 # Plotting the scatter plot
@@ -193,20 +126,10 @@ ax....(..., ...)
 ax.set_xlabel('Normalized High School Graduation Rate')
 ax.set_ylabel('Normalized Poverty Rate')
 ax.set_title('Statewise Comparison of High School Graduation and Poverty Rates')
-
-# Display the plot
-plt.show()
 ```
 
-</div>
-
-<div class="cell markdown">
-
++++Solution
 Solution:
-
-</div>
-
-<div class="cell code">
 
 ``` python
 # Plotting the scatter plot
@@ -217,37 +140,17 @@ ax.scatter(df['normalized_hs_rate'], df['normalized_poverty_rate'])
 ax.set_xlabel('Normalized High School Graduation Rate')
 ax.set_ylabel('Normalized Poverty Rate')
 ax.set_title('Statewise Comparison of High School Graduation and Poverty Rates')
-
-# Display the plot
-plt.show()
 ```
 
-</div>
 
-<div class="cell code">
-
++++Assertions
 ``` python
 fig.savefig('activity_solutions_files/expected_plot_2.png')
 ```
 
-</div>
-
-<div class="cell markdown">
-
 Assertions:
-
-</div>
-
-<div class="cell code">
 
 ``` python
 assert_plt_student_fig_matches_png_fname("fig", 'expected_plot_2.png')
 ```
-
-</div>
-
-<div class="cell markdown">
-
-### The End!
-
-</div>
++++
