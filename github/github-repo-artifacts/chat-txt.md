@@ -34,3 +34,13 @@ The description of the data should be the characteristics of the data the studen
 If your data is a tabular file (a CSV, dataframe), you can use the `df.info()` methods and just print the `df.head().to_markdown()`.
 
 If your data is a database, you can just tell the agent that "the student is working with the MySQL Sakila sample database".
+
+Below is the example of a `chat.txt` file:
+
+![chat-txt](../../static/github/chat-txt.png)
+
+This example has 3 parts:
+
+1. The objectives of the project.
+2. The data the student has. (2-3 liner intro + first 10 rows of the data)
+3. The info of the dataset.(`df.info()`)
