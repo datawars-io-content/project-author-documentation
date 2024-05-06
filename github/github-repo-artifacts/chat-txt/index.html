@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767949141087">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768298362314">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,20 +21,22 @@
     <meta property="og:url" content="/github/github-repo-artifacts/chat-txt/">
     <meta property="og:title" content="chat.txt">
     <meta property="og:description" content="The chat.txt file contains the context that will be passed to the AI assistant whenever the student asks a question.">
+    <meta property="og:image" content="/static/github/chat-txt.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/github/github-repo-artifacts/chat-txt/">
     <meta property="twitter:title" content="chat.txt">
     <meta property="twitter:description" content="The chat.txt file contains the context that will be passed to the AI assistant whenever the student asks a question.">
+    <meta property="twitter:image" content="/static/github/chat-txt.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.767949141087" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768298362314" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768298362314" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767949141087" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768298362314" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -190,6 +192,18 @@ The data the student has...
 <p>The description of the data should be the characteristics of the data the student is dealing with. <strong>Be AS BRIEF as possible, as this counts towards the total TOKEN Count and is MORE EXPENSIVE</strong>. For example:</p>
 <p>If your data is a tabular file (a CSV, dataframe), you can use the <code v-pre>df.info()</code> methods and just print the <code v-pre>df.head().to_markdown()</code>.</p>
 <p>If your data is a database, you can just tell the agent that &quot;the student is working with the MySQL Sakila sample database&quot;.</p>
+<p>Below is the example of a <code v-pre>chat.txt</code> file:</p>
+<p><figure class="content-center">
+    <img src="../../../static/github/chat-txt.png" alt="chat-txt">
+    <figcaption class="caption">chat-txt</figcaption>
+</figure>
+</p>
+<p>This example has 3 parts:</p>
+<ol>
+<li>The objectives of the project.</li>
+<li>The data the student has. (2-3 liner intro + first 10 rows of the data)</li>
+<li>The info of the dataset.(<code v-pre>df.info()</code>)</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
