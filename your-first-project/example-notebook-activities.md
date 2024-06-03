@@ -9,3 +9,4 @@ Creating your first project is extremely simple. It all starts with a single Jup
 
 ![](/static/first-project/sample-notebook-project.png){width=600}
 
+And here's the link to the notebook: [Sample Project.ipynb](https://github.com/datawars-io-content/content-creator-handbook/blob/main/Sample%20Project.ipynb)
