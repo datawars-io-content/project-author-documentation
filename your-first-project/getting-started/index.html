@@ -9,24 +9,26 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>SQL Assertions by Examples</title>
-    <meta name="title" content="SQL Assertions by Examples">
-    <meta name="description" content="In this notebook, you'll learn how to use most used SQL assertion functions. Below are the functions that I've covered in this notebook.">
+    <title>Getting started</title>
+    <meta name="title" content="Getting started">
+    <meta name="description" content="It's important to understand the structure of a project first. The project is divided into two main sections:">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/assertions-framework/sql_assertions_by_examples/">
+    <link rel="canonical" href="/your-first-project/getting-started/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/assertions-framework/sql_assertions_by_examples/">
-    <meta property="og:title" content="SQL Assertions by Examples">
-    <meta property="og:description" content="In this notebook, you'll learn how to use most used SQL assertion functions. Below are the functions that I've covered in this notebook.">
+    <meta property="og:url" content="/your-first-project/getting-started/">
+    <meta property="og:title" content="Getting started">
+    <meta property="og:description" content="It's important to understand the structure of a project first. The project is divided into two main sections:">
+    <meta property="og:image" content="/static/first-project/project-layout.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/assertions-framework/sql_assertions_by_examples/">
-    <meta property="twitter:title" content="SQL Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used SQL assertion functions. Below are the functions that I've covered in this notebook.">
+    <meta property="twitter:url" content="/your-first-project/getting-started/">
+    <meta property="twitter:title" content="Getting started">
+    <meta property="twitter:description" content="It's important to understand the structure of a project first. The project is divided into two main sections:">
+    <meta property="twitter:image" content="/static/first-project/project-layout.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -35,7 +37,6 @@
     <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770741337729" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770741337729" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770741337729" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -164,52 +165,40 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="sql-assertions-by-examples" class="break-words">
+<doc-anchor-target id="getting-started" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sql-assertions-by-examples">#</doc-anchor-trigger>
-        <span>SQL Assertions by Examples</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
+        <span>Getting started</span>
     </h1>
 </doc-anchor-target>
-<p>In this notebook, you&#x27;ll learn how to use most used SQL assertion functions. Below
-are the functions that I&#x27;ve covered in this notebook.</p>
-<ol>
-<li><code v-pre>assert_sqlite_student_query_equals_expected_query(SQLITE_TRAVEL, SOLUTION_QUERY)</code>: Checks if student SQLite query is equals to expected query.</li>
-<li><code v-pre>assert_mysql_student_query_equals_expected_query('sakila', SOLUTION_QUERY)</code>: Checks if student MySQL query is equals to expected query.</li>
-<li><code v-pre>assert_postgresql_student_query_equals_expected_query('dvdrental', SOLUTION_QUERY)</code>: Checks if student PostgreSQL query is equals to expected query.</li>
-</ol>
-<doc-anchor-target id="activities">
+<p><figure class="content-center">
+    <img src="../../static/first-project/project-layout.png" alt="" width="900">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>It&#x27;s important to understand the structure of a project first. The project is divided into two main sections:</p>
+<doc-anchor-target id="left-pane">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
-        <span>Activities</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#left-pane">#</doc-anchor-trigger>
+        <span>Left pane</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="1-find-the-first-country">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-find-the-first-country">#</doc-anchor-trigger>
-        <span>1. Find the First Country</span>
-    </h5>
+<p>Contains the &quot;content&quot; of the project, including whatever the student has to read + the activities.</p>
+<p>In the left pane, you can include activities, that are automatically graded. There are different activity types. Check <a href="../what-is-an-activity/">What is an activity?</a> and <a href="../activity-types/">Activity Types</a> for more.</p>
+<doc-anchor-target id="right-pane">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#right-pane">#</doc-anchor-trigger>
+        <span>Right pane</span>
+    </h3>
 </doc-anchor-target>
-<p>Write a query to retrieve the first country from the <code v-pre>country</code> table.
-Rename the column to <code v-pre>First Country</code>. Use <code v-pre>IndepYear</code> to determine the
-first country.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">STUDENT_QUERY = '''
-{{ ERROR }}
-'''
-SOLUTION_QUERY = '''
-# paste the solution from the project author here
-'''
-
-# SQLite:
-assert_sqlite_student_query_equals_expected_query(SQLITE_TRAVEL, SOLUTION_QUERY)
-# MySQL
-assert_mysql_student_query_equals_expected_query('sakila', SOLUTION_QUERY)
-# PostgreSQL
-assert_postgresql_student_query_equals_expected_query('dvdrental', SOLUTION_QUERY)</code></pre>
-</doc-codeblock></div>
-<p>There are 3 SQL engine available, use the appropriate assertion function
-to check your query result with the expected result of the
-<code v-pre>SOLUTION_QUERY</code>.</p>
+<p>Includes the &quot;interactive lab&quot;, which is whatever is &quot;executable&quot; by the student. This should have almost NO content.</p>
+<doc-anchor-target id="next-on">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#next-on">#</doc-anchor-trigger>
+        <span>Next on</span>
+    </h3>
+</doc-anchor-target>
+<p>Check the different <a href="../what-is-an-activity/">What is an activity?</a> and <a href="../activity-types/">Activity Types</a> available or how to create your first project from a Notebook.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -219,20 +208,20 @@ to check your query result with the expected result of the
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/sets_assertions_by_examples/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../your-first-project/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Sets Assertions by Examples</span>
+                                                <span class="block mt-1">Your first project</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/tuple_assertions_by_examples/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../your-first-project/what-is-an-activity/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Tuple Assertions by Examples</span>
+                                                <span class="block mt-1">What is an activity</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -276,6 +265,6 @@ to check your query result with the expected result of the
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "SQL Assertions by Examples", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting started", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
