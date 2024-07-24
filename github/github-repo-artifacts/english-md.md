@@ -72,10 +72,12 @@ Try the `isna()` method.
 </hint>
 <solution>
 The simplest solution is just to use the `.isna()` which returns a boolean array. The `.sum()` method of the boolean array will give you the final answer:
-```python
->>> df['FoodCourt'].isna().sum()
-183
-```
+
+    ```python
+    >>> df['FoodCourt'].isna().sum()
+    183
+    ```
+
 </solution>
 </activity>
 ```
@@ -150,3 +152,9 @@ assert_pd_dataframe_variable_equals_csv('df', 'solution_04.csv')
 You can ignore for now the attributes `type`, `template` and `device` as well as the `<metadata>` tag at the end. The only important tag for you to know is the `<validation-code>` one, which includes your assertions.
 
 ![](/static/github/code-activity-mapping-code.png)
+
+!!!
+Never use the angle brackets `<` and `>` in the markdown content. They are used here to indicate the tags.
+
+![](/static/github/github-repo-artifacts/never-use-angle-brackets.png)
+!!!
