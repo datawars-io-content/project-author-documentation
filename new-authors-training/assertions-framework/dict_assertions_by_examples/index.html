@@ -9,32 +9,33 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>DataWars Leave Policy</title>
-    <meta name="title" content="DataWars Leave Policy">
-    <meta name="description" content="This Paid Time Off (PTO) Policy outlines the guidelines for taking time off for various personal, health, and study reasons.">
+    <title>Dict Assertions by Examples</title>
+    <meta name="title" content="Dict Assertions by Examples">
+    <meta name="description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/datawars/datawars-leave-policy/">
+    <link rel="canonical" href="/new-authors-training/assertions-framework/dict_assertions_by_examples/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/datawars/datawars-leave-policy/">
-    <meta property="og:title" content="DataWars Leave Policy">
-    <meta property="og:description" content="This Paid Time Off (PTO) Policy outlines the guidelines for taking time off for various personal, health, and study reasons.">
+    <meta property="og:url" content="/new-authors-training/assertions-framework/dict_assertions_by_examples/">
+    <meta property="og:title" content="Dict Assertions by Examples">
+    <meta property="og:description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/datawars/datawars-leave-policy/">
-    <meta property="twitter:title" content="DataWars Leave Policy">
-    <meta property="twitter:description" content="This Paid Time Off (PTO) Policy outlines the guidelines for taking time off for various personal, health, and study reasons.">
+    <meta property="twitter:url" content="/new-authors-training/assertions-framework/dict_assertions_by_examples/">
+    <meta property="twitter:title" content="Dict Assertions by Examples">
+    <meta property="twitter:description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778324180139" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.778324180139" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778324180139" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778324180139" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.778324180139" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.778324180139" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.778324180139" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">DataWars Project Author documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -163,43 +164,238 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="datawars-leave-policy" class="break-words">
+<doc-anchor-target id="dict-assertions-by-examples" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#datawars-leave-policy">#</doc-anchor-trigger>
-        <span>DataWars Leave Policy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dict-assertions-by-examples">#</doc-anchor-trigger>
+        <span>Dict Assertions by Examples</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="purpose">
+<p>In this you&#x27;ll learn how to use most used Dictionary assertion
+functions. Below are the functions that are covered.</p>
+<ol>
+<li><code v-pre>assert_dict_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary in <code v-pre>expected_variable_name</code>.</li>
+<li><code v-pre>assert_dict_variable_equals_json(student_variable_name, json_file_name)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary contained in the solution JSON file named <code v-pre>json_file_name</code>.</li>
+<li><code v-pre>assert_dict_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary contained in the solution pickle file named <code v-pre>pickle_file_name</code>.</li>
+</ol>
+<p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="activities">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#purpose">#</doc-anchor-trigger>
-        <span>Purpose</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
+        <span>Activities</span>
     </h3>
 </doc-anchor-target>
-<p>This Paid Time Off (PTO) Policy outlines the guidelines for taking time off for various personal, health, and study reasons. The policy aims to provide employees with flexibility and ensure they maintain a healthy work-life balance.</p>
-<doc-anchor-target id="scope">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scope">#</doc-anchor-trigger>
-        <span>Scope</span>
-    </h3>
+<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions.</p>
+<p>We&#x27;ll use the below fruits data for the activities.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">fruits_data = [('apple', 'red', 0.99), ('banana', 'yellow', 0.59), ('orange', 'orange', 0.79), ('grape', 'purple', 1.29), ('kiwi', 'green', 1.09), ('pineapple', 'yellow', 1.99), ('strawberry', 'red', 0.69), ('watermelon', 'green', 2.49), ('mango', 'orange', 1.49), ('peach', 'orange', 1.79), ('pear', 'green', 0.89), ('plum', 'purple', 0.79), ('raspberry', 'red', 2.99), ('blueberry', 'blue', 3.99), ('blackberry', 'black', 4.99)]
+fruits_data</code></pre>
+</doc-codeblock></div>
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-create-a-student-dictionary">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-student-dictionary">#</doc-anchor-trigger>
+        <span>1. Create a student dictionary</span>
+    </h5>
 </doc-anchor-target>
-<p>This policy applies to every full time, part time and contractual employee regardless of their position and department in the company</p>
-<doc-anchor-target id="guidelines">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#guidelines">#</doc-anchor-trigger>
-        <span>Guidelines</span>
-    </h3>
+<p>Use below data to create a dictionary named <code v-pre>student_dict</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_name = ['Albert', 'John', 'Peter', 'James', 'Robert']
+student_age = [23, 24, 22, 25, 23]
+student_city = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']</code></pre>
+</doc-codeblock></div>
+<p>Expected Output:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">{'Albert': {'age': 23, 'city': 'New York'},
+ 'John': {'age': 24, 'city': 'Los Angeles'},
+ 'Peter': {'age': 22, 'city': 'Chicago'},
+ 'James': {'age': 25, 'city': 'Houston'},
+ 'Robert': {'age': 23, 'city': 'Phoenix'}}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_name = ['Albert', 'John', 'Peter', 'James', 'Robert']
+student_age = [23, 24, 22, 25, 23]
+student_city = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']
+
+student_dict = {}
+
+for i in range(len(student_name)):
+    student_dict[student_name[i]] = {'age': student_age[i], 'city': student_city[i]}
+
+student_dict</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As the expected output is small dictionary, so we use <code v-pre>assert_dict_variable_equals_variable()</code> function to assert the solution with the student dictionary.</p>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">expected_output = {'Albert': {'age': 23, 'city': 'New York'},
+ 'John': {'age': 24, 'city': 'Los Angeles'},
+ 'Peter': {'age': 22, 'city': 'Chicago'},
+ 'James': {'age': 25, 'city': 'Houston'},
+ 'Robert': {'age': 23, 'city': 'Phoenix'}}
+assert_dict_variable_equals_variable('student_dict', 'expected_output')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-create-a-fruits-dictionary">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-create-a-fruits-dictionary">#</doc-anchor-trigger>
+        <span>2. Create a fruits dictionary</span>
+    </h5>
 </doc-anchor-target>
-<ul>
-<li>Employees are eligible for unlimited paid time off for health issues, including physical and mental health, and study purposes.</li>
-<li>For health-related PTO, employees must notify their manager longer than 3 consecutive days. This will help to manage workload effectively. And, for unexpected illnesses, please keep your manager informed as soon as possible.</li>
-<li>For study-related PTO, employees should submit their request at least 8 weeks in advance.</li>
-<li>It is important to make sure that the team has enough resources to complete any pending tasks and keep the work going before implementing an unlimited PTO policy.</li>
-<li>Misuse of the PTO policy will be addressed with appropriate disciplinary action, up to and including termination of employment</li>
-<li>The Employee will have 12 Annual Leave, 5 Casual Leave in a year and can carry 5 numbers of leaves next year. The carried leaves can be encashed during their full and final settlement period.</li>
-<li>Public Holidays are officially observed in India and Argentina. Any other country will be treated individually.</li>
-<li>Employees shall submit the leave request <a href="https://docs.google.com/forms/d/e/1FAIpQLScZirhPu2Xy3ftLOj5p4WT5nILj5QjwIDGH0yPUH8hrkxrhUw/viewform">here</a></li>
-<li>Here are the Public Holiday List for 2024 - <a href="https://docs.google.com/spreadsheets/d/117lniXmfqeo4dBL6c12ZOBDvfEXPZFOsnS2dlq_0AH4/edit#gid=0">India</a> &amp; <a href="https://docs.google.com/spreadsheets/d/1r2kI4R0WFKxQYY8FcNqGF7SIJsdjhv5Tv05O_C2jzi4/edit#gid=0">Argentina</a></li>
-</ul>
+<p>Use the <code v-pre>fruits_data</code> list to create a dictionary named <code v-pre>fruits</code> where the key is the fruit name and the value is a dictionary containing the color and price of the fruit.</p>
+<p>Expected Output:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">{'apple': {'color': 'red', 'price': 0.99},
+ 'banana': {'color': 'yellow', 'price': 0.59},
+ 'orange': {'color': 'orange', 'price': 0.79},
+ 'grape': {'color': 'purple', 'price': 1.29},
+ ...
+}</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Try your solution here
+fruits = ...</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">fruits = {}
+for fruit in fruits_data:
+    name = fruit[0]
+    color = fruit[1]
+    price = fruit[2]
+    fruits[name] = {'color': color, 'price': price}
+
+fruits</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>In the previous activity, we used <code v-pre>assert_dict_variable_equals_variable()</code> function to assert the solution with the student dictionary. But here the expected output is large, so we use <code v-pre>assert_dict_variable_equals_json()</code> function to assert the solution with the student dictionary.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># save json file
+import json
+with open('activity_solutions_files/solution_01.json', 'w') as f:
+    json.dump(fruits, f)</code></pre>
+</doc-codeblock></div>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># new assertions
+assert_dict_variable_equals_json('fruits', 'solution_01.json')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="3-create-a-dictionary-of-only-red-color-fruits">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-create-a-dictionary-of-only-red-color-fruits">#</doc-anchor-trigger>
+        <span>3. Create a Dictionary of only red color fruits</span>
+    </h5>
+</doc-anchor-target>
+<p>Store the result in a variable <code v-pre>red_fruits</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Try your solution here
+red_fruits = ...</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">red_fruits = {}
+
+for fruit in fruits:
+    name = fruit
+    if fruits[name]['color'] == 'red':
+        red_fruits[name] = fruits[name]
+        
+red_fruits</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">expected_red_fruits = {'apple': {'color': 'red', 'price': 0.99},
+ 'strawberry': {'color': 'red', 'price': 0.69},
+ 'raspberry': {'color': 'red', 'price': 2.99}}
+assert_dict_variable_equals_variable('red_fruits', 'expected_red_fruits')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="4-create-a-dictionary-of-only-red-and-blue-color-fruits">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-create-a-dictionary-of-only-red-and-blue-color-fruits">#</doc-anchor-trigger>
+        <span>4. Create a Dictionary of only red and blue color fruits</span>
+    </h5>
+</doc-anchor-target>
+<p>Store the result in a variable <code v-pre>red_blue_fruits</code>, here the key is the
+color and value is the tuple containing two values - color and its
+price.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Write your solution here
+red_blue_fruits = ...</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">red_blue_fruits = {}
+
+for fruit in fruits:
+    name = fruit
+    if fruits[name]['color'] == 'red' or fruits[name]['color'] == 'blue':
+        red_blue_fruits[name] = tuple(fruits[name].values())
+        
+red_blue_fruits</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{
+  'apple': ('red', 0.99),
+  'strawberry': ('red', 0.69),
+  'raspberry': ('red', 2.99),
+  'blueberry': ('blue', 3.99)
+}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>As we know that when we save tuple in json file, it will be saved as list. So, we use pickle file to save the expected output and then use <code v-pre>assert_dict_variable_equals_pickle()</code> function to assert the solution with the student dictionary.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># save in pickle file
+import pickle
+with open('activity_solutions_files/solution_04.pkl', 'wb') as f:
+    pickle.dump(red_blue_fruits, f)</code></pre>
+</doc-codeblock></div>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># new assertions
+assert_dict_variable_equals_pickle('red_blue_fruits', 'solution_04.pkl')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->
@@ -209,20 +405,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../datawars/datawars-work-policy-author/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Data​Wars Work Policy</span>
+                                                <span class="block mt-1">Assertions framework</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../datawars/the-datawars-model/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/function_assertions_by_examples/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">The datawars model</span>
+                                                <span class="block mt-1">Function Assertions by Examples</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -266,6 +462,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "DataWars Leave Policy", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Dict Assertions by Examples", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
