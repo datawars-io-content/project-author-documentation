@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780052214691">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780062821550">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.780052214691" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780062821550" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780052214691" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780062821550" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780052214691" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.780052214691" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780062821550" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.780062821550" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -177,6 +177,7 @@ functions. Below are these functions:</p>
 <li><code v-pre>assert_pd_dataframe_variable_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)</code>: Checks if student dataframe variable is equals to expected csv file.</li>
 <li><code v-pre>assert_pd_dataframe_variable_column_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)</code>: Checks if student dataframe variable column is equals to expected csv file.</li>
 <li><code v-pre>assert_pd_dataframe_csv_equals_csv(student_csv_name, expected_csv_name, student_base_dir=&quot;.&quot;, read_csv_kwargs=None, dataframe_testing_kwargs=None)</code>: Checks if student csv file is equals to expected csv file.</li>
+<li><code v-pre>assert_pd_dataframe_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, dataframe_testing_kwargs=None)</code>: Checks if student dataframe variable is equals to expected pickle file. This is used when we have pivoted data or multi-column data in the dataframe.</li>
 </ol>
 <p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -339,6 +340,38 @@ df.to_csv('activity_solutions_files/sol_08.csv', index=False)</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0}
 assert_pd_dataframe_csv_equals_csv('updated_best_book.csv', 'sol_08.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-5">
+<template #title>Activity 5</template>
+<doc-anchor-target id="activity-5-save-the-updated-dataframe-in-a-pickle-file">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-5-save-the-updated-dataframe-in-a-pickle-file">#</doc-anchor-trigger>
+        <span>Activity 5. Save the updated dataframe in a pickle file</span>
+    </h5>
+</doc-anchor-target>
+<p>Create a pivoted dataframe <code v-pre>pivot_df</code> from the <code v-pre>df</code> dataframe.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">pivot_df = df.pivot(index='title', columns='author', values='rating')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>In this activity, we asked student to create a pivoted dataframe from the original dataframe. So, we can use <code v-pre>assert_pd_dataframe_variable_equals_pickle()</code> function to assert the solution with the student dataframe because CSV file can&#x27;t store the pivoted data.</p>
+<p>This is how you can save the dataframe to a new pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new pickle file
+pivot_df.to_pickle('activity_solutions_files/sol_05.pkl')</code></pre>
+</doc-codeblock></div>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_dataframe_variable_equals_pickle('pivot_df', 'sol_05.pkl')</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>

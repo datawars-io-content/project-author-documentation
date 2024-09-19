@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780052214691">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780062821550">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.780052214691" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780062821550" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780052214691" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780062821550" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780052214691" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.780052214691" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780062821550" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.780062821550" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -175,6 +175,7 @@ functions. Below are the functions that are covered.</p>
 <ol>
 <li><code v-pre>assert_pd_series_variable_equals_variable(student_variable_name, expected_outcome_variable_name)</code>: Checks that the student&#x27;s Series in <code v-pre>student_variable_name</code> matches the variable in <code v-pre>expected_outcome_variable_name</code>.</li>
 <li><code v-pre>assert_pd_series_variable_equals_csv(student_variable_name, solution_csv_name, read_csv_kwargs=None)</code>: Checks that the student&#x27;s Series in <code v-pre>student_variable_name</code> matches the Series contained in the solution CSV file named <code v-pre>solution_csv_name</code>.</li>
+<li><code v-pre>assert_pd_series_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, series_testing_kwargs=None)</code>: Checks that the student&#x27;s Series in <code v-pre>student_variable_name</code> matches the Series contained in the solution pickle file named <code v-pre>pickle_name</code>. This used when we have pivoted data or multi-column data.</li>
 </ol>
 <p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -269,6 +270,49 @@ prime_numbers_series = pd.Series(prime_numbers)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="3-create-a-student-series-with-index-and-multi-column-data">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-create-a-student-series-with-index-and-multi-column-data">#</doc-anchor-trigger>
+        <span>3. Create a student series with index and multi-column data</span>
+    </h5>
+</doc-anchor-target>
+<p>Create a series named <code v-pre>student_data</code> with below data and index.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">data = {'Name': ['Albert', 'John', 'Peter', 'James', 'Robert'],
+        'Age': [25, 30, 35, 40, 45],
+        'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']}
+index = ['A', 'B', 'C', 'D', 'E']</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_data = ...</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">data = {'Name': ['Albert', 'John', 'Peter', 'James', 'Robert'],
+        'Age': [25, 30, 35, 40, 45],
+        'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']}
+index = ['A', 'B', 'C', 'D', 'E']
+
+student_data = pd.Series(data, index=index)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Here, we&#x27;ll use pickle file to save the expected series and then use <code v-pre>assert_pd_series_variable_equals_pickle()</code> function to assert the solution with the pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_data.to_pickle('activity_solutions_files/activity_3.pkl')</code></pre>
+</doc-codeblock></div>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_series_variable_equals_pickle('student_data', 'activity_3.pkl')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
 
                                 
                                 <!-- Required only on API pages -->
