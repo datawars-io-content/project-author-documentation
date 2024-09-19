@@ -5,6 +5,7 @@ functions. Below are these functions:
 2.  `assert_pd_dataframe_variable_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)`: Checks if student dataframe variable is equals to expected csv file.
 3.  `assert_pd_dataframe_variable_column_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)`: Checks if student dataframe variable column is equals to expected csv file.
 4.  `assert_pd_dataframe_csv_equals_csv(student_csv_name, expected_csv_name, student_base_dir=".", read_csv_kwargs=None, dataframe_testing_kwargs=None)`: Checks if student csv file is equals to expected csv file.
+5. `assert_pd_dataframe_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, dataframe_testing_kwargs=None)`: Checks if student dataframe variable is equals to expected pickle file. This is used when we have pivoted data or multi-column data in the dataframe.
 
 
 Load the `utils.py` file to use the assertion functions.
@@ -18,8 +19,6 @@ import pandas as pd
 
 df = pd.read_csv('Best_Books_Ever.csv')
 ```
-
-
 
 ### Activities
 
@@ -163,5 +162,37 @@ Assertions:
 ``` python
 read_csv_kwargs = {'index_col': 0}
 assert_pd_dataframe_csv_equals_csv('updated_best_book.csv', 'sol_08.csv', read_csv_kwargs=read_csv_kwargs)
+```
++++
+
+
++++Activity 5
+
+##### Activity 5. Save the updated dataframe in a pickle file
+
+Create a pivoted dataframe `pivot_df` from the `df` dataframe.
+
++++Solution
+Solution:
+
+``` python
+pivot_df = df.pivot(index='title', columns='author', values='rating')
+```
+
++++Assertions
+
+In this activity, we asked student to create a pivoted dataframe from the original dataframe. So, we can use `assert_pd_dataframe_variable_equals_pickle()` function to assert the solution with the student dataframe because CSV file can't store the pivoted data.
+
+This is how you can save the dataframe to a new pickle file.
+
+``` python
+# save the dataframe to a new pickle file
+pivot_df.to_pickle('activity_solutions_files/sol_05.pkl')
+```
+
+Assertions:
+
+``` python
+assert_pd_dataframe_variable_equals_pickle('pivot_df', 'sol_05.pkl')
 ```
 +++

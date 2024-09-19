@@ -3,6 +3,7 @@ functions. Below are the functions that are covered.
 
   1.  `assert_pd_series_variable_equals_variable(student_variable_name, expected_outcome_variable_name)`: Checks that the student's Series in `student_variable_name` matches the variable in `expected_outcome_variable_name`.
   2.  `assert_pd_series_variable_equals_csv(student_variable_name, solution_csv_name, read_csv_kwargs=None)`: Checks that the student's Series in `student_variable_name` matches the Series contained in the solution CSV file named `solution_csv_name`.
+  3. `assert_pd_series_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, series_testing_kwargs=None)`: Checks that the student's Series in `student_variable_name` matches the Series contained in the solution pickle file named `pickle_name`. This used when we have pivoted data or multi-column data.
 
 
 Load the `utils.py` file to use the assertion functions. 
@@ -97,3 +98,45 @@ assert_pd_series_variable_equals_csv('field_goal_perc', 'activity_1.csv')
 ```
 +++
 
+
++++Activity 3
+##### 3. Create a student series with index and multi-column data
+
+Create a series named `student_data` with below data and index.
+
+``` python
+data = {'Name': ['Albert', 'John', 'Peter', 'James', 'Robert'],
+        'Age': [25, 30, 35, 40, 45],
+        'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']}
+index = ['A', 'B', 'C', 'D', 'E']
+```
+
+``` python
+student_data = ...
+```
+
++++Solution
+Solution:
+
+``` python
+data = {'Name': ['Albert', 'John', 'Peter', 'James', 'Robert'],
+        'Age': [25, 30, 35, 40, 45],
+        'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']}
+index = ['A', 'B', 'C', 'D', 'E']
+
+student_data = pd.Series(data, index=index)
+```
+
++++Assertions
+
+Here, we'll use pickle file to save the expected series and then use `assert_pd_series_variable_equals_pickle()` function to assert the solution with the pickle file.
+
+``` python
+student_data.to_pickle('activity_solutions_files/activity_3.pkl')
+```
+
+Assertions:
+
+``` python
+assert_pd_series_variable_equals_pickle('student_data', 'activity_3.pkl')
+```
