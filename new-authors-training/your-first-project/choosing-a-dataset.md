@@ -1,3 +1,7 @@
+---
+icon: database
+---
+
 Projects can be configured to use a DataWars Playgrounds data source automatically. Here's a step by step guide to do so:
 
 ### 1. Find the data source to use
