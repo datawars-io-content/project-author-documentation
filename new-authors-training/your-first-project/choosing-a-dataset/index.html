@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780388057912">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780390218683">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Choosing a dataset</title>
     <meta name="title" content="Choosing a dataset">
-    <meta name="description" content="Projects can be configured to use a DataWars Playgrounds data source automatically. Here's a step by step guide to do so:">
+    <meta name="description" content="Projects can be configured to use a DataWars Playgrounds data source automatically. Here's a step by step guide to do so.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/new-authors-training/your-first-project/choosing-a-dataset/">
@@ -20,24 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/new-authors-training/your-first-project/choosing-a-dataset/">
     <meta property="og:title" content="Choosing a dataset">
-    <meta property="og:description" content="Projects can be configured to use a DataWars Playgrounds data source automatically. Here's a step by step guide to do so:">
+    <meta property="og:description" content="Projects can be configured to use a DataWars Playgrounds data source automatically. Here's a step by step guide to do so.">
     <meta property="og:image" content="/static/first-project/datasource-copy-id.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/new-authors-training/your-first-project/choosing-a-dataset/">
     <meta property="twitter:title" content="Choosing a dataset">
-    <meta property="twitter:description" content="Projects can be configured to use a DataWars Playgrounds data source automatically. Here's a step by step guide to do so:">
+    <meta property="twitter:description" content="Projects can be configured to use a DataWars Playgrounds data source automatically. Here's a step by step guide to do so.">
     <meta property="twitter:image" content="/static/first-project/datasource-copy-id.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.780388057912" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780390218683" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780388057912" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780390218683" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780388057912" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.780388057912" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780390218683" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.780390218683" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -172,7 +172,18 @@
         <span>Choosing a dataset</span>
     </h1>
 </doc-anchor-target>
-<p>Projects can be configured to use a DataWars Playgrounds data source automatically. Here&#x27;s a step by step guide to do so:</p>
+<p>Projects can be configured to use a DataWars Playgrounds data source automatically. Here&#x27;s a step by step guide to do so.</p>
+<p>In this document</p>
+<ul>
+<li><doc-anchor-trigger to="#how-to-use-playground-datasets-in-your-projects">How to use Playground Datasets in your projects</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#examples-of-working-projects">Examples of projects using datasources</doc-anchor-trigger></li>
+</ul>
+<doc-anchor-target id="how-to-use-playground-datasets-in-your-projects">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use-playground-datasets-in-your-projects">#</doc-anchor-trigger>
+        <span>How to use Playground Datasets in your projects</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="1-find-the-data-source-to-use">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#1-find-the-data-source-to-use">#</doc-anchor-trigger>
@@ -249,6 +260,39 @@ x-datasources:
 </doc-anchor-target>
 <p>If the data source is a &quot;device type&quot;, it&#x27;ll be in the final lab once you import it, easy.</p>
 <p>If the data source is of file type, it&#x27;ll be mounted in the <code v-pre>/data</code> directory.</p>
+<doc-anchor-target id="examples-of-working-projects">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples-of-working-projects">#</doc-anchor-trigger>
+        <span>Examples of working projects</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="python--pagila-postgres">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#python--pagila-postgres">#</doc-anchor-trigger>
+        <span>Python + Pagila (postgres)</span>
+    </h3>
+</doc-anchor-target>
+<p>This project (<a href="https://app.datawars.io/project/f54d17f2-19db-4221-9bee-7672ac101a11?page=1">Practice accessing Postres from Python using Pagila</a>) has two devices:</p>
+<p><figure class="content-center">
+    <img src="../../../static/first-project/example-datasource-pagila.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Here&#x27;s its <code v-pre>docker-compose.yml</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">version: &quot;3.9&quot;
+services:
+  jupyter:
+    build:
+      args:
+        NB_BASE_IMAGE: datawars/data-analysis-nb7-3.11:v1
+      context: notebooks
+    image: datawars/lab-0d9f2dd-basic-selects-pagila-python:v1
+    x-config: python-jupyter
+x-datasources:
+  pagila:
+    id: 7742f868-902a-4262-bfbe-00497ac27468 # list datasource</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
