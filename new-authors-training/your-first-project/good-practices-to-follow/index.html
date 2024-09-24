@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780390218683">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780487909013">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Good practices to follow</title>
-    <meta name="title" content="Good practices to follow">
-    <meta name="description" content="Work in progress...">
+    <title>Good Practices for Project Authoring</title>
+    <meta name="title" content="Good Practices for Project Authoring">
+    <meta name="description" content="Guidelines to create engaging and effective projects.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/new-authors-training/your-first-project/good-practices-to-follow/">
@@ -19,22 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/new-authors-training/your-first-project/good-practices-to-follow/">
-    <meta property="og:title" content="Good practices to follow">
-    <meta property="og:description" content="Work in progress...">
+    <meta property="og:title" content="Good Practices for Project Authoring">
+    <meta property="og:description" content="Guidelines to create engaging and effective projects.">
+    <meta property="og:image" content="/static/good_practices_images/best_practices_prompt_1.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/new-authors-training/your-first-project/good-practices-to-follow/">
-    <meta property="twitter:title" content="Good practices to follow">
-    <meta property="twitter:description" content="Work in progress...">
+    <meta property="twitter:title" content="Good Practices for Project Authoring">
+    <meta property="twitter:description" content="Guidelines to create engaging and effective projects.">
+    <meta property="twitter:image" content="/static/good_practices_images/best_practices_prompt_1.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.780390218683" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780487909013" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780390218683" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780487909013" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780390218683" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780487909013" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -163,13 +165,147 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="good-practices-to-follow" class="break-words">
+<doc-anchor-target id="good-practices-for-project-authoring" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#good-practices-to-follow">#</doc-anchor-trigger>
-        <span>Good practices to follow</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#good-practices-for-project-authoring">#</doc-anchor-trigger>
+        <span>Good Practices for Project Authoring</span>
     </h1>
 </doc-anchor-target>
-<p>Work in progress...</p>
+<p>When designing a project, it’s crucial to keep two primary goals in mind:</p>
+<ol>
+<li><strong>Avoiding Boredom</strong></li>
+<li><strong>Preventing Exhaustion</strong></li>
+</ol>
+<p>The following guidelines will help you meet these goals effectively.</p>
+<doc-anchor-target id="1-define-and-manage-project-scope">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-define-and-manage-project-scope">#</doc-anchor-trigger>
+        <span>1. Define and Manage Project Scope</span>
+    </h2>
+</doc-anchor-target>
+<p>A well-defined <strong>scope</strong> is essential to ensure users face challenges that match their skill level and progress gradually. Understanding what the users already know and what they’re expected to learn is key.</p>
+<p>For example, if you&#x27;re creating a project within the <strong>Data Cleaning with Pandas</strong> skill track, asking users to perform a simple task like creating a <code v-pre>Series</code> from a column in a <code v-pre>DataFrame</code> may lead to boredom as it lacks sufficient challenge. Conversely, asking them to perform complex operations like merging datasets before covering the necessary concepts may overwhelm them. Ensure each project aligns with the skills already covered to keep users engaged without frustration.</p>
+<doc-anchor-target id="2-format-titles-and-descriptions-thoughtfully">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-format-titles-and-descriptions-thoughtfully">#</doc-anchor-trigger>
+        <span>2. Format Titles and Descriptions Thoughtfully</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Activity Titles</strong>: Always frame titles as questions to engage the user. For example, instead of “Capital of Argentina,” use “What is the Capital of Argentina?” This sparks curiosity and primes the user for problem-solving.</p>
+</li>
+<li><p><strong>Activity Descriptions</strong>: Ensure that descriptions are clear, concise, and well-structured. Avoid long blocks of text, as they can overwhelm users, especially those juggling full-time work or study alongside their learning. Most users are looking to learn Data Science through hands-on coding exercises, so lengthy descriptions can exhaust them and make the project less enjoyable.</p>
+<ul>
+<li>Use <strong>bold</strong> or <em>italics</em> to emphasize key points.</li>
+<li>Enclose code elements (e.g., variable or column names) in backticks (&#x60;) to distinguish them from text.</li>
+<li>Use triple backticks (&#x60;&#x60;&#x60;) for code blocks to improve readability.</li>
+</ul>
+</li>
+</ul>
+<p>If you can’t avoid lengthy descriptions, such as in <strong>capstone projects</strong>, try breaking the task into smaller activities. If that’s not feasible, use tools like ChatGPT to improve clarity and structure.</p>
+<p><strong>Example Prompt</strong>:<br />
+<em>You are a data science professor. I need your help improving the formatting and clarity of my activity descriptions. I&#x27;ll provide the title and description, and you will revise them.</em></p>
+<p>Example: Notice how ChatGPT transformed the activity title and description.</p>
+<p>Before:<br />
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_prompt_1.png" alt="Example before formatting">
+    <figcaption class="caption">Example before formatting</figcaption>
+</figure>
+</p>
+<p>After:<br />
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_prompt_2.png" alt="Example after formatting">
+    <figcaption class="caption">Example after formatting</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="3-use-placeholders-in-jupyter-notebook">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-use-placeholders-in-jupyter-notebook">#</doc-anchor-trigger>
+        <span>3. Use Placeholders in Jupyter Notebook</span>
+    </h2>
+</doc-anchor-target>
+<p>Provide placeholders whenever users are asked to complete an activity. For example, if they need to store results in a variable or create a new column in a <code v-pre>DataFrame</code>, placeholders help guide them. This minimizes confusion and helps keep the task focused.</p>
+<p>Examples of placeholders:<br />
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_placeholder_var.png" alt="Variable placeholder">
+    <figcaption class="caption">Variable placeholder</figcaption>
+</figure>
+<br />
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_placeholder_col.png" alt="Column placeholder">
+    <figcaption class="caption">Column placeholder</figcaption>
+</figure>
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_placeholder_func.png" alt="Function placeholder">
+    <figcaption class="caption">Function placeholder</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="4-provide-a-preview-of-expected-outcomes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-provide-a-preview-of-expected-outcomes">#</doc-anchor-trigger>
+        <span>4. Provide a Preview of Expected Outcomes</span>
+    </h2>
+</doc-anchor-target>
+<p>Where possible, include a preview of the expected result. For example, in a visualization project, show the desired plot, or when manipulating a <code v-pre>DataFrame</code>, provide a snapshot of the expected output. These visual or textual cues help users understand what the end goal looks like, reducing frustration and ensuring they are on the right path.</p>
+<p>Examples:<br />
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_exp_1.png" alt="Example outcome dataframe">
+    <figcaption class="caption">Example outcome dataframe</figcaption>
+</figure>
+<br />
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_exp_2.png" alt="Example outcome visualization">
+    <figcaption class="caption">Example outcome visualization</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="5-practice-empathy">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-practice-empathy">#</doc-anchor-trigger>
+        <span>5. Practice Empathy</span>
+    </h2>
+</doc-anchor-target>
+<p>Think from the user’s perspective and ask:</p>
+<ul>
+<li>What might confuse or challenge the user at this stage?</li>
+<li>Are the instructions clear for someone with the expected level of knowledge?</li>
+<li>Would I feel confident completing this task, given what I’ve learned so far?</li>
+</ul>
+<p>Empathy-driven design leads to a smoother learning experience by anticipating user needs.</p>
+<p>Example:<br />
+<figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_empathy_1.png" alt="Example empathy">
+    <figcaption class="caption">Example empathy</figcaption>
+</figure>
+</p>
+<p>Consider the activity in the screenshot above where users are asked to input answers. If they can&#x27;t solve it and request a solution, they receive the correct value to pass. But pause and think—what was on their minds?</p>
+<p>The users requested help because:</p>
+<ul>
+<li>They wrote code but got the wrong result, or</li>
+<li>They didn’t know how to approach the problem.</li>
+</ul>
+<p>In both cases, just giving the answers isn’t enough. They expect to learn how to solve the problem. The solution should include code or explanations demonstrating the correct process, reinforcing their learning for future tasks.</p>
+<doc-anchor-target id="6-anticipate-and-address-edge-cases">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-anticipate-and-address-edge-cases">#</doc-anchor-trigger>
+        <span>6. Anticipate and Address Edge Cases</span>
+    </h2>
+</doc-anchor-target>
+<p>Be mindful of edge cases and provide detailed instructions to address them. Whenever an edge case arises, clearly outline the steps users should follow to handle it. This prevents users from feeling stuck or confused when encountering unexpected situations.</p>
+<p>For example: Look how different ways of calculating frequency counts result in different order of index when their values are equal. In this case, we should mention in the activity description that the user should use <code v-pre>value_counts()</code>.</p>
+<p><figure class="content-center">
+    <img src="../../../static/good_practices_images/best_practices_edge.png" alt="Edge case example">
+    <figcaption class="caption">Edge case example</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="7-manage-time-expectations-and-feedback">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-manage-time-expectations-and-feedback">#</doc-anchor-trigger>
+        <span>7. Manage Time Expectations and Feedback</span>
+    </h2>
+</doc-anchor-target>
+<p>Consider the time required to complete the project. For <strong>Learn</strong> and <strong>Practice</strong> projects, aim for 25–30 minutes, while for <strong>Assignments</strong> and <strong>Capstone Projects</strong>, a duration of 45–60 minutes is ideal. Managing time expectations ensures the project remains engaging and manageable without overwhelming users.</p>
+<hr>
+<p>By following these best practices, you’ll create projects that are engaging, appropriately challenging, and enjoyable for learners. This balance will help keep users motivated and make their learning experience both rewarding and frustration-free.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -236,6 +372,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Good practices to follow", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Good Practices for Project Authoring", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
