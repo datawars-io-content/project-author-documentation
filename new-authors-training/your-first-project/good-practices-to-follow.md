@@ -1,4 +1,5 @@
 ---
+icon: mortar-board
 title: Good Practices for Project Authoring
 description: Guidelines to create engaging and effective projects.
 ---
