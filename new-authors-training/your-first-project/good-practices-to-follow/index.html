@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780573563627">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780853589531">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.780573563627" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780853589531" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780573563627" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780853589531" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780573563627" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780853589531" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -208,14 +208,22 @@
 <p>Example: Notice how ChatGPT transformed the activity title and description.</p>
 <p>Before:<br />
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_prompt_1.png" alt="Example before formatting">
-    <figcaption class="caption">Example before formatting</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_prompt_1.png" alt="Activity Before Formatting">
+    <figcaption class="caption">Activity Before Formatting</figcaption>
 </figure>
 </p>
 <p>After:<br />
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_prompt_2.png" alt="Example after formatting">
-    <figcaption class="caption">Example after formatting</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_prompt_2.png" alt="Activity After Formatting">
+    <figcaption class="caption">Activity After Formatting</figcaption>
+</figure>
+</p>
+<ul>
+<li><strong>The Activities Should Be Atomic</strong>: One major drawback of longer activity descriptions is that they often lead to multiple steps within a single task. This complexity makes it harder to test and pinpoint errors. If an activity fails, users may not know where they made a mistake. For example, consider the following activity that requires users to complete four steps: calculating <code v-pre>common_chatbots</code>, defining the <code v-pre>fill_chatbot</code> function, applying this function to the <code v-pre>chatbot_name</code> column to impute missing values, and filling any remaining missing values with the string <code v-pre>&quot;Unknown&quot;</code>. If the task fails, users might struggle to identify the specific step where they made an error.</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../../../static/good_practices_images/good_practices_atomic_activities.png" alt="Not an Atomic Activity">
+    <figcaption class="caption">Not an Atomic Activity</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="3-use-placeholders-in-jupyter-notebook">
@@ -227,17 +235,17 @@
 <p>Provide placeholders whenever users are asked to complete an activity. For example, if they need to store results in a variable or create a new column in a <code v-pre>DataFrame</code>, placeholders help guide them. This minimizes confusion and helps keep the task focused.</p>
 <p>Examples of placeholders:<br />
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_placeholder_var.png" alt="Variable placeholder">
-    <figcaption class="caption">Variable placeholder</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_placeholder_var.png" alt="Variable Placeholder">
+    <figcaption class="caption">Variable Placeholder</figcaption>
 </figure>
 <br />
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_placeholder_col.png" alt="Column placeholder">
-    <figcaption class="caption">Column placeholder</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_placeholder_col.png" alt="Column Placeholder">
+    <figcaption class="caption">Column Placeholder</figcaption>
 </figure>
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_placeholder_func.png" alt="Function placeholder">
-    <figcaption class="caption">Function placeholder</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_placeholder_func.png" alt="Function Placeholder">
+    <figcaption class="caption">Function Placeholder</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="4-provide-a-preview-of-expected-outcomes">
@@ -249,13 +257,13 @@
 <p>Where possible, include a preview of the expected result. For example, in a visualization project, show the desired plot, or when manipulating a <code v-pre>DataFrame</code>, provide a snapshot of the expected output. These visual or textual cues help users understand what the end goal looks like, reducing frustration and ensuring they are on the right path.</p>
 <p>Examples:<br />
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_exp_1.png" alt="Example outcome dataframe">
-    <figcaption class="caption">Example outcome dataframe</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_exp_1.png" alt="Expected Outcome DataFrame">
+    <figcaption class="caption">Expected Outcome DataFrame</figcaption>
 </figure>
 <br />
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_exp_2.png" alt="Example outcome visualization">
-    <figcaption class="caption">Example outcome visualization</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_exp_2.png" alt="Expected Outcome Visualization">
+    <figcaption class="caption">Expected Outcome Visualization</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="5-practice-empathy">
@@ -273,8 +281,8 @@
 <p>Empathy-driven design leads to a smoother learning experience by anticipating user needs.</p>
 <p>Example:<br />
 <figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_empathy_1.png" alt="Example empathy">
-    <figcaption class="caption">Example empathy</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_empathy_1.png" alt="Example Activity">
+    <figcaption class="caption">Example Activity</figcaption>
 </figure>
 </p>
 <p>Consider the activity in the screenshot above where users are asked to input answers. If they can&#x27;t solve it and request a solution, they receive the correct value to pass. But pause and think—what was on their minds?</p>
@@ -293,8 +301,8 @@
 <p>Be mindful of edge cases and provide detailed instructions to address them. Whenever an edge case arises, clearly outline the steps users should follow to handle it. This prevents users from feeling stuck or confused when encountering unexpected situations.</p>
 <p>For example: Look how different ways of calculating frequency counts result in different order of index when their values are equal. In this case, we should mention in the activity description that the user should use <code v-pre>value_counts()</code>.</p>
 <p><figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_edge.png" alt="Edge case example">
-    <figcaption class="caption">Edge case example</figcaption>
+    <img src="../../../static/good_practices_images/best_practices_edge.png" alt="Edge Case Example">
+    <figcaption class="caption">Edge Case Example</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="7-manage-time-expectations-and-feedback">
