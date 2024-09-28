@@ -37,28 +37,31 @@ If you can’t avoid lengthy descriptions, such as in **capstone projects**, try
 Example: Notice how ChatGPT transformed the activity title and description.
 
 Before:  
-![Example before formatting](/static/good_practices_images/best_practices_prompt_1.png)
+![Activity Before Formatting](/static/good_practices_images/best_practices_prompt_1.png)
 
 After:  
-![Example after formatting](/static/good_practices_images/best_practices_prompt_2.png)
+![Activity After Formatting](/static/good_practices_images/best_practices_prompt_2.png)
+
+- **The Activities Should Be Atomic**: One major drawback of longer activity descriptions is that they often lead to multiple steps within a single task. This complexity makes it harder to test and pinpoint errors. If an activity fails, users may not know where they made a mistake. For example, consider the following activity that requires users to complete four steps: calculating `common_chatbots`, defining the `fill_chatbot` function, applying this function to the `chatbot_name` column to impute missing values, and filling any remaining missing values with the string `"Unknown"`. If the task fails, users might struggle to identify the specific step where they made an error.
+
+![Not an Atomic Activity](/static/good_practices_images/good_practices_atomic_activities.png)
 
 ## 3. Use Placeholders in Jupyter Notebook
 
 Provide placeholders whenever users are asked to complete an activity. For example, if they need to store results in a variable or create a new column in a `DataFrame`, placeholders help guide them. This minimizes confusion and helps keep the task focused.
 
 Examples of placeholders:  
-![Variable placeholder](/static/good_practices_images/best_practices_placeholder_var.png)  
-![Column placeholder](/static/good_practices_images/best_practices_placeholder_col.png)
-![Function placeholder](/static/good_practices_images/best_practices_placeholder_func.png)
-
+![Variable Placeholder](/static/good_practices_images/best_practices_placeholder_var.png)  
+![Column Placeholder](/static/good_practices_images/best_practices_placeholder_col.png)
+![Function Placeholder](/static/good_practices_images/best_practices_placeholder_func.png)
 
 ## 4. Provide a Preview of Expected Outcomes
 
 Where possible, include a preview of the expected result. For example, in a visualization project, show the desired plot, or when manipulating a `DataFrame`, provide a snapshot of the expected output. These visual or textual cues help users understand what the end goal looks like, reducing frustration and ensuring they are on the right path.
 
 Examples:  
-![Example outcome dataframe](/static/good_practices_images/best_practices_exp_1.png)  
-![Example outcome visualization](/static/good_practices_images/best_practices_exp_2.png)
+![Expected Outcome DataFrame](/static/good_practices_images/best_practices_exp_1.png)  
+![Expected Outcome Visualization](/static/good_practices_images/best_practices_exp_2.png)
 
 ## 5. Practice Empathy
 
@@ -71,7 +74,7 @@ Think from the user’s perspective and ask:
 Empathy-driven design leads to a smoother learning experience by anticipating user needs.
 
 Example:  
-![Example empathy](/static/good_practices_images/best_practices_empathy_1.png)
+![Example Activity](/static/good_practices_images/best_practices_empathy_1.png)
 
 Consider the activity in the screenshot above where users are asked to input answers. If they can't solve it and request a solution, they receive the correct value to pass. But pause and think—what was on their minds?
 
@@ -88,7 +91,7 @@ Be mindful of edge cases and provide detailed instructions to address them. When
 
 For example: Look how different ways of calculating frequency counts result in different order of index when their values are equal. In this case, we should mention in the activity description that the user should use `value_counts()`.
 
-![Edge case example](/static/good_practices_images/best_practices_edge.png)
+![Edge Case Example](/static/good_practices_images/best_practices_edge.png)
 
 ## 7. Manage Time Expectations and Feedback
 
