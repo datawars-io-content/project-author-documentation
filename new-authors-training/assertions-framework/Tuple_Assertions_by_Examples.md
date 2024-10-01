@@ -1,3 +1,8 @@
+---
+expanded: true
+order: C
+---
+
 In this notebook, you'll learn how to use most used Tuple assertion functions.
 Below are these functions:
 

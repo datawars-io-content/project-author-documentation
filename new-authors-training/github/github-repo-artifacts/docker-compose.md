@@ -1,6 +1,6 @@
 ---
 icon: container
-order: 700
+order: E
 ---
 
 # docker-compose.yml

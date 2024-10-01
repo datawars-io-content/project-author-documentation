@@ -1,3 +1,9 @@
+---
+expanded: true
+order: D
+---
+
+
 In this you'll learn how to use most used Dictionary assertion
 functions. Below are the functions that are covered.
 

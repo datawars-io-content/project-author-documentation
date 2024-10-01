@@ -1,3 +1,9 @@
+---
+expanded: true
+order: F
+---
+
+
 In this notebook, you'll learn how to use most used Pandas Dataframe assertion
 functions. Below are these functions:
 

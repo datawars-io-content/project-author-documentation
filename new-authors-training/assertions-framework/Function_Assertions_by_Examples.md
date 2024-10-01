@@ -1,3 +1,8 @@
+---
+expanded: true
+order: A
+---
+
 In this notebook, you'll learn how to use most used Functions checking assertion
 functions. Below are the functions that I've covered in this notebook.
 

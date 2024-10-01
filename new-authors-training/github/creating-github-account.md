@@ -1,6 +1,6 @@
 ---
 visibility: hidden
-order: 1000
+order: A
 ---
 # Getting started with Github
 

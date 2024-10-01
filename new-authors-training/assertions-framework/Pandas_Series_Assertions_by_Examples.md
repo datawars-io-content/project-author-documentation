@@ -1,3 +1,9 @@
+---
+expanded: true
+order: F
+---
+
+
 In this you'll learn how to use most used Pandas Series assertion
 functions. Below are the functions that are covered.
 

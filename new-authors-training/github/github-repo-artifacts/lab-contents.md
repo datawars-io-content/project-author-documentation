@@ -1,6 +1,6 @@
 ---
 icon: terminal
-order: 950
+order: A
 ---
 
 ![](/static/github/module-lab-detail.png)

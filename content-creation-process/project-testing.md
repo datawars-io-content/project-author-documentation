@@ -4,7 +4,7 @@ icon: bug
 
 A step by step list of things to do and follow when testing a project.
 
-Must link to [Good Practices](/new-authors-training/your-first-project/good-practices-to-follow.md).
+- [Testing Projects](/content-creation-process/project-testing.md)
 
 Old video:
 

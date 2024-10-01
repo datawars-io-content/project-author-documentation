@@ -1,3 +1,8 @@
+---
+expanded: true
+order: E
+---
+
 In this notebook, you'll learn how to use most used Sets assertion functions. Below
 are these functions:
 

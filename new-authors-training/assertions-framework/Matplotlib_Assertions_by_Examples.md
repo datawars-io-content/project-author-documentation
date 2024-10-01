@@ -1,3 +1,8 @@
+---
+expanded: true
+order: H
+---
+
 In this notebook, you'll learn how to use most used matplotlib assertion functions.
 There is only one assertion function for checking the expected figure
 with the actual figure.

@@ -9,6 +9,8 @@ order: 500
 Projects at DataWars are configured with a Github repository. Here's the overview of how it works:
 
 - [Creating a github account](creating-github-account.md)
+- [Creating a new repository](create-new-repo.md)
 - [Project Structure](project-structure.md)
 - [Reference: All artifacts in a Github repo](github-repo-artifacts)
 - [Automatic build/import actions](github-actions.md)
+- [Transforming the project](transforming-project.md)
