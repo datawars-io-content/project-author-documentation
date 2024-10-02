@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781196258558">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781199502415">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.781196258558" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.781199502415" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.781196258558" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.781199502415" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.781196258558" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.781196258558" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.781199502415" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.781199502415" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -210,6 +210,16 @@ assert_postgresql_student_query_equals_expected_query('dvdrental', SOLUTION_QUER
 <p>There are 3 SQL engine available, use the appropriate assertion function
 to check your query result with the expected result of the
 <code v-pre>SOLUTION_QUERY</code>.</p>
+<p>For SQLite, use <code v-pre>assert_sqlite_student_query_equals_expected_query(SQLITE_TRAVEL, SOLUTION_QUERY)</code> function and the available database are:</p>
+<ul>
+<li><code v-pre>SQLITE_CHINOOK</code> (Chinook database)</li>
+<li><code v-pre>SQLITE_NORTHWIND</code> (Northwind database)</li>
+<li><code v-pre>SQLITE_TRAVEL</code> (Travel database)</li>
+<li><code v-pre>SQLITE_ADVENTURE_WORKS</code> (AdventureWorks database)</li>
+</ul>
+<blockquote>
+<p>Here, all the databases are available: <a href="https://docs.google.com/spreadsheets/d/12SLjpz3Xz34QzTs7hC1OfgdGqx6DVCFwLReaKC1L4YM/edit?usp=sharing">Spread Sheet Link</a></p>
+</blockquote>
 
                                 
                                 <!-- Required only on API pages -->
