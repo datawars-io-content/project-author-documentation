@@ -40,3 +40,12 @@ There are 3 SQL engine available, use the appropriate assertion function
 to check your query result with the expected result of the
 `SOLUTION_QUERY`.
 
+
+For SQLite, use `assert_sqlite_student_query_equals_expected_query(SQLITE_TRAVEL, SOLUTION_QUERY)` function and the available database are:
+
+* `SQLITE_CHINOOK` (Chinook database)
+* `SQLITE_NORTHWIND` (Northwind database)
+* `SQLITE_TRAVEL` (Travel database)
+* `SQLITE_ADVENTURE_WORKS` (AdventureWorks database)
+
+> Here, all the databases are available: [Spread Sheet Link](https://docs.google.com/spreadsheets/d/12SLjpz3Xz34QzTs7hC1OfgdGqx6DVCFwLReaKC1L4YM/edit?usp=sharing)
