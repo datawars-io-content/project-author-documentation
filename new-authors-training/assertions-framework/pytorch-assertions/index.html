@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781090726077">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781196258558">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.781090726077" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.781196258558" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.781090726077" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.781196258558" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.781090726077" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.781090726077" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.781196258558" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.781196258558" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,6 +174,8 @@
 <ol>
 <li><code v-pre>assert_pytorch_tensor_variable_name_equals_serialized(student_variable_name, location)</code>: Checks if student tensor object is equals to expected tensor. The expected tensor is stored in a pickle file.</li>
 <li><code v-pre>assert_pytorch_tensor_variable_name_is_in_expected_device(student_variable_name, expected_device)</code>: Checks if student tensor object is in expected device. The expected device is a string.</li>
+<li><code v-pre>assert_vision_transform_variable_name_equals_serialized(student_variable_name, location, **kwargs)</code>: Checks if student transformation pipeline object is equals to expected transformation pipeline. The expected transformation pipeline is stored in a pickle file.</li>
+<li><code v-pre>assert_dataset_vision_image_folder_variable_name_equals_serialized(student_variable_name, location)</code>: Checks if student dataset(image directory) image folder object is equals to expected dataset image folder. The expected dataset image folder is stored in a pickle file.</li>
 </ol>
 <p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -189,10 +191,10 @@
 <doc-tabs>
 <doc-tab v-cloak id="activity-1">
 <template #title>Activity 1</template>
-<doc-anchor-target id="1-create-a-2d-pttorch-tensor">
+<doc-anchor-target id="1-create-a-2d-pytorch-tensor">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-2d-pttorch-tensor">#</doc-anchor-trigger>
-        <span>1: Create a 2d PtTorch tensor.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-2d-pytorch-tensor">#</doc-anchor-trigger>
+        <span>1: Create a 2d PyTorch tensor.</span>
     </h5>
 </doc-anchor-target>
 <p>Use below list to create a 2d PyTorch tensor ans store it in a variable <code v-pre>student</code>.</p>
@@ -218,6 +220,11 @@ print(student)</code></pre>
 <pre class="language-python"><code v-pre class="language-python">import pickle
 with open('activity_solutions_files/expected_tensor_1.pt', 'wb') as f:
     pickle.dump(student, f)</code></pre>
+</doc-codeblock></div>
+<p>or, serialize the tensor using the below code.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">location = 'expected_tensor_1.pt' # Using this, we don't need to mention the activity_solutions_files path in the assertion.
+serialize_pickle(student, location)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
@@ -262,6 +269,90 @@ with open('activity_solutions_files/expected_tensor_2.pt', 'wb') as f:
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="3-test-the-transformation-pipeline">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-test-the-transformation-pipeline">#</doc-anchor-trigger>
+        <span>3: Test the transformation pipeline.</span>
+    </h5>
+</doc-anchor-target>
+<p>If student create a transformation pipeline with below parameters, then assert it with the expected transformation pipeline.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.transforms as transforms
+student = transforms.Compose([
+    transforms.RandomResizedCrop(224),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.transforms as transforms
+student = transforms.Compose([
+    transforms.RandomResizedCrop(224),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])</code></pre>
+</doc-codeblock></div>
+<p>As we have created a transformation pipeline, save the transformation pipeline in a file using below code in a pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">location = 'expected_transform_1.pt' # Using this, we don't need to mention the activity_solutions_files path in the assertion.
+serialize_pickle(student, location)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_vision_transform_variable_name_equals_serialized('student', 'expected_transform_1.pt')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="4-test-the-dataset-image-folder">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-test-the-dataset-image-folder">#</doc-anchor-trigger>
+        <span>4: Test the dataset image folder.</span>
+    </h5>
+</doc-anchor-target>
+<p>If student create a dataset image folder with below parameters, then assert it with the expected dataset image folder.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.datasets as datasets
+student = datasets.ImageFolder(root='path/to/data', transform=student)</code></pre>
+</doc-codeblock></div>
+<blockquote>
+<p>Here, the <code v-pre>path/to/data</code> is the path to the image folder and <code v-pre>student</code> is the transformation pipeline created in the previous activity example.</p>
+</blockquote>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.datasets as datasets
+student = datasets.ImageFolder(root='path/to/data', transform=student)</code></pre>
+</doc-codeblock></div>
+<p>As we have created a dataset image folder, save the dataset image folder in a file using below code in a pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">location = 'expected_dataset_image_folder_1.pt' # Using this, we don't need to mention the activity_solutions_files path in the assertion.
+serialize_pickle(student, location)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_dataset_vision_image_folder_variable_name_equals_serialized('student', 'expected_dataset_image_folder_1.pt')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
 
                                 
                                 <!-- Required only on API pages -->
