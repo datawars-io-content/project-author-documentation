@@ -107,4 +107,4 @@ Syntax:
 filename,S3_path/
 ```
 
-The dataset must be uploaded to the repository in the correct format and structure. This ensures that the dataset is easily accessible.
+The dataset must be uploaded to the repository in the correct format and structure. This ensures that the dataset is easily accessible on datawars platform.
