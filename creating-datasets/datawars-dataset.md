@@ -57,6 +57,8 @@ For Example:
 ```
 ![Data Source Path](/static/creating-datasets-img/image-9.png)
 
+Here is the explample file for the dataset description: [Querying Logical Operator with Airlines using Python](https://github.com/datawars-io-content/lab-87dg27-advance-sql-logical-operator-airlines/blob/master/english.md)
+
 * **Application of dataset:** Mention the possible application domains of the dataset. This helps in understanding the dataset better.
 ![Applications of dataset](/static/creating-datasets-img/image-3.png)
 
