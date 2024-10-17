@@ -1,5 +1,5 @@
 ---
-visibility: hidden
+icon: mark-github
 order: A
 ---
 # Getting started with Github

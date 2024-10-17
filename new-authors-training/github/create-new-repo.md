@@ -1,5 +1,5 @@
 ---
-visibility: hidden
+icon: code-square
 order: B
 ---
 
@@ -40,3 +40,39 @@ Format of the repository name: `lab-{random ID}-{project_name}`
 For your SQL projects, you have to setup the `docker-compose.yml` file. You can refer to the [Available Databases](https://github.com/datawars-io-content/reference-databases-available-sql-tracks) for the list of databases available. 
 
 Check the `.yml` file in the repository and change the `docker-compose.yml` file according to the database you want to use.
+
+> Check this document on how to find dataset from datasources playground: [Finding Datasets from Datasources Playground](http://localhost:5000/new-authors-training/your-first-project/choosing-a-dataset/)
+
+When you select the dataset from the datasources playground, you can get the name of the database and ip address of the database from the `docker-compose.yml` file and you can include the same in the `english.md` file.
+
+* **Data path**: Mention the path of the dataset. This is important as it helps in locating the dataset easily.
+
+- For data files with CSV file format, the path can be mentioned as follows: **{{datasource.filesystem_path}}/"filename"**
+- For databases, the ip address path can be written as follows: **{{devices_copy."Data Source".ip_address}}**
+![Dataset path](/static/creating-datasets-img/image-2.png)
+
+> Thing to consider while writing data sources path: 
+
+Here is the path to get `ip address` of devices rendered in description. 
+```markdown
+{{devices."{Device Name}".ip_address}}
+```
+
+For Example: 
+
+1. In case device name is `Postgres Airlines demo database`, the path will be: 
+```markdown
+{{devices."Postgres Airlines demo database".ip_address}}
+```
+![Data Source Path](/static/creating-datasets-img/image-10.png)
+
+2. In case device name is `Data Source`, the path will be: 
+```markdown
+{{devices."Data Source".ip_address}}
+```
+![Data Source Path](/static/creating-datasets-img/image-9.png)
+
+Here is the explample:
+
+- Example of `english.md`: [Querying Logical Operator with Airlines using Python](https://github.com/datawars-io-content/lab-87dg27-advance-sql-logical-operator-airlines/blob/master/english.md?plain=1#L10)
+- Example of `docker-compose.yml`: [Querying Logical Operator with Airlines using Python](https://github.com/datawars-io-content/lab-87dg27-advance-sql-logical-operator-airlines/blob/master/docker-compose.yml)
