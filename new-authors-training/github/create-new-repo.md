@@ -41,7 +41,7 @@ For your SQL projects, you have to setup the `docker-compose.yml` file. You can 
 
 Check the `.yml` file in the repository and change the `docker-compose.yml` file according to the database you want to use.
 
-> Check this document on how to find dataset from datasources playground: [Finding Datasets from Datasources Playground](http://localhost:5000/new-authors-training/your-first-project/choosing-a-dataset/)
+> Check this document on how to find dataset from datasources playground: [Finding Datasets from Datasources Playground](https://datawars-io-content.github.io/project-author-documentation/new-authors-training/your-first-project/choosing-a-dataset/)
 
 When you select the dataset from the datasources playground, you can get the name of the database and ip address of the database from the `docker-compose.yml` file and you can include the same in the `english.md` file.
 
