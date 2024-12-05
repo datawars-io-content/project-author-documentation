@@ -6,8 +6,6 @@ tags:
   - Project Review
   - Guide
 icon: bug
-author: Amritesh Kumar Tiwari
-category: Documentation
 ---
 
 
@@ -76,7 +74,7 @@ Instead of only pointing out errors, help the authors understand *why* they’re
 When you offer constructive solutions, you’re not just a tester—you’re a collaborator. By saving authors time, you enable them to produce better projects faster. This way, you’ll find a deeper satisfaction, knowing you’re leaving a lasting, positive impact—not just finding faults but also creating solutions.
 
 
-## How to report Issues?
+## How to Report Issues?
 
 The following video serves as guide on how to report issues on the platform.
 
