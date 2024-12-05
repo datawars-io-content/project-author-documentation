@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782817175308">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786731053234">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Project testing</title>
-    <meta name="title" content="Project testing">
-    <meta name="description" content="A step by step list of things to do and follow when testing a project.">
+    <title>Project Testing Guide for New Testers</title>
+    <meta name="title" content="Project Testing Guide for New Testers">
+    <meta name="description" content="First go through Good Practices for Project Authoring.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/content-creation-process/project-testing/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/content-creation-process/project-testing/">
-    <meta property="og:title" content="Project testing">
-    <meta property="og:description" content="A step by step list of things to do and follow when testing a project.">
+    <meta property="og:title" content="Project Testing Guide for New Testers">
+    <meta property="og:description" content="First go through Good Practices for Project Authoring.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/content-creation-process/project-testing/">
-    <meta property="twitter:title" content="Project testing">
-    <meta property="twitter:description" content="A step by step list of things to do and follow when testing a project.">
+    <meta property="twitter:title" content="Project Testing Guide for New Testers">
+    <meta property="twitter:description" content="First go through Good Practices for Project Authoring.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782817175308" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.786731053234" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782817175308" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786731053234" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782817175308" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786731053234" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -163,17 +163,147 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="project-testing" class="break-words">
+<doc-anchor-target id="project-testing-guide-for-new-testers" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#project-testing">#</doc-anchor-trigger>
-        <span>Project testing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#project-testing-guide-for-new-testers">#</doc-anchor-trigger>
+        <span>Project Testing Guide for New Testers</span>
     </h1>
 </doc-anchor-target>
-<p>A step by step list of things to do and follow when testing a project.</p>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Amritesh Kumar Tiwari</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div>In&nbsp;</div>
+    <div><a href="../../categories/documentation/">Documentation</a></div>
+</div>
+
+<p>First go through <a href="../../new-authors-training/your-first-project/good-practices-to-follow/">Good Practices for Project Authoring</a>.</p>
+<doc-anchor-target id="the-professors-mindset-for-testing">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-professors-mindset-for-testing">#</doc-anchor-trigger>
+        <span>The “Professor’s Mindset” for Testing</span>
+    </h2>
+</doc-anchor-target>
+<p>Imagine you are a 55-year-old college professor. You’ve dedicated decades to teaching science and engineering, watching your peers achieve recognition and make meaningful contributions to their fields. Yet, despite all those years, your name remains unknown. Quietly, you’ve begun to accept that perhaps you will never accomplish much. But surely, there must be a way to fill this void—a way to feel important, even if it means elevating yourself at others’ expense. And who better to target than your students?</p>
+<p>They’re inexperienced, uncertain, and easy to manipulate. By making concepts deliberately complex, by assigning impossible workloads, by reveling in their confusion, you can convince yourself that your own intellect towers above theirs. After all, if your students struggle to understand, then you must be brilliant, right? You may not be celebrated in journals or accolades, but here, within your classroom, you wield control and power—the kind that makes you feel superior, even if it’s at the cost of others&#x27; misery.</p>
+<p>In this case, you are the professor and project authors are your students. You cannot let them have an easy life. Below are the ways in which you can do so:</p>
+<doc-anchor-target id="areas-to-target-relentlessly">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#areas-to-target-relentlessly">#</doc-anchor-trigger>
+        <span>Areas to Target Relentlessly</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="1-spelling-and-grammar-mistakes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-spelling-and-grammar-mistakes">#</doc-anchor-trigger>
+        <span>1. <strong>Spelling and Grammar Mistakes</strong></span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li><a href="">Testing Projects</a></li>
+<li><strong>What to Look For</strong>: Spelling and grammar errors are easy catches, and even one mistake can leave a bad impression.</li>
+<li><strong>Why it Matters</strong>: Poor language skills make the project look unpolished and can frustrate users.</li>
+<li><strong>Your Task</strong>: Review every sentence carefully. Hunt down each misspelling, typo, or awkward phrase. Don’t let them slip up on the basics.</li>
 </ul>
-<p>Old video:</p>
+<doc-anchor-target id="2-relevance-and-accuracy-of-introductory-content">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-relevance-and-accuracy-of-introductory-content">#</doc-anchor-trigger>
+        <span>2. <strong>Relevance and Accuracy of Introductory Content</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Objective</strong>: Make sure that the <strong>Introduction</strong> section and <code v-pre>public.md</code> are on-topic and give a clear overview of the project. <code v-pre>public.md</code> is the first thing a user sees before starting the project.</li>
+<li><strong>Checklist</strong>:
+<ul>
+<li>Is the introduction relevant to the actual project content? Look for any vague language or misleading details.</li>
+<li>Ensure that all information is correct and aligned with the project’s purpose. Set the standard for a strong first impression.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="3-activity-descriptions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-activity-descriptions">#</doc-anchor-trigger>
+        <span>3. <strong>Activity Descriptions</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Purpose</strong>: The activity description should leave no room for confusion or misinterpretation.</li>
+<li><strong>What to Watch For</strong>:
+<ul>
+<li><strong>Clarity</strong>: If you see dense, jargon-filled paragraphs, insist they simplify. No user should feel lost while reading.</li>
+<li><strong>Conciseness</strong>: A description should be as short as possible while still clear. If long explanations are necessary, they should be broken into bullet points.</li>
+<li><strong>Completeness</strong>: Are the instructions thorough? If any step or detail is vague or missing, report it. Authors should know that clarity is non-negotiable.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="4-expected-outcome">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-expected-outcome">#</doc-anchor-trigger>
+        <span>4. <strong>Expected Outcome</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Importance</strong>: Users rely on a clear expected outcome to see if they’re on the right track.</li>
+<li><strong>What to Verify</strong>:
+<ul>
+<li>Check that the expected outcome exactly matches the solution. There’s no room for “almost.”</li>
+<li>If results might vary due to a solution that results in dynamic result, ensure there’s a <strong>note</strong> explaining this. Users should know what to expect or how to judge their answers if they differ from the example.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="5-solution-quality-and-explanation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-solution-quality-and-explanation">#</doc-anchor-trigger>
+        <span>5. <strong>Solution Quality and Explanation</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Goal</strong>: A solution should do more than just provide an answer—it should make the answer understandable.</li>
+<li><strong>Essentials</strong>:
+<ul>
+<li><strong>Code Comments</strong>: Ensure the solution code is well-commented so each step is clear. If anything is unclear, insist on explanations.</li>
+<li><strong>MCQ Activities</strong>: For multiple-choice questions, a simple correct answer isn’t enough. Users need to understand <em>why</em> an answer is correct. If the explanation is missing, it’s an issue.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="6-jupyter-notebook-content">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-jupyter-notebook-content">#</doc-anchor-trigger>
+        <span>6. <strong>Jupyter Notebook Content</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Objective</strong>: The Jupyter notebook should be carefully crafted to guide users without giving away answers.</li>
+<li><strong>What to Look For</strong>:
+<ul>
+<li>Ensure there are no hints or solutions provided within the notebook that the authors didn’t intend to reveal.</li>
+<li>Check that there are appropriate placeholders or empty code cells for users to fill in their own answers. This helps users engage actively.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="is-it-enough">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#is-it-enough">#</doc-anchor-trigger>
+        <span>Is It Enough?</span>
+    </h2>
+</doc-anchor-target>
+<p>After rigorously testing and pointing out every error in the project, you might still feel something is missing. Catching mistakes gave you a sense of accomplishment, but it’s starting to feel hollow. Watching the authors struggle at first brought some satisfaction, but now you see that this alone isn’t fulfilling. You risk being seen as harsh or unsympathetic.</p>
+<p>But there is another way to leave your mark, to redeem yourself: become a guide, not just a critic.</p>
+<p>Instead of only pointing out errors, help the authors understand <em>why</em> they’re wrong. Pinpoint the exact areas where they could improve and even go a step further: <strong>debug their code</strong> and identify potential improvements.</p>
+<p>When you offer constructive solutions, you’re not just a tester—you’re a collaborator. By saving authors time, you enable them to produce better projects faster. This way, you’ll find a deeper satisfaction, knowing you’re leaving a lasting, positive impact—not just finding faults but also creating solutions.</p>
+<doc-anchor-target id="how-to-report-issues">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-report-issues">#</doc-anchor-trigger>
+        <span>How to report Issues?</span>
+    </h2>
+</doc-anchor-target>
+<p>The following video serves as guide on how to report issues on the platform.</p>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -182,7 +312,26 @@
 </figure>
 </p>
 
-                                
+                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../../tags/testing/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>testing</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../tags/quality-assurance/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>quality assurance</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../tags/project-review/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>project review</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../tags/guide/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>guide</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
@@ -247,6 +396,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Project testing", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Project Testing Guide for New Testers", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
