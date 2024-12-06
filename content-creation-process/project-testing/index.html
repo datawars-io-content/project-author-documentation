@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786731308567">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786811873593">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -21,20 +21,22 @@
     <meta property="og:url" content="/content-creation-process/project-testing/">
     <meta property="og:title" content="Project Testing Guide for New Testers">
     <meta property="og:description" content="First go through Good Practices for Project Authoring.">
+    <meta property="og:image" content="/static/project-testing-images/introduction.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/content-creation-process/project-testing/">
     <meta property="twitter:title" content="Project Testing Guide for New Testers">
     <meta property="twitter:description" content="First go through Good Practices for Project Authoring.">
+    <meta property="twitter:image" content="/static/project-testing-images/introduction.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.786731308567" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.786811873593" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786731308567" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786811873593" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786731308567" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786811873593" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,15 +172,14 @@
     </h1>
 </doc-anchor-target>
 <p>First go through <a href="../../new-authors-training/your-first-project/good-practices-to-follow/">Good Practices for Project Authoring</a>.</p>
-<doc-anchor-target id="the-professors-mindset-for-testing">
+<doc-anchor-target id="the-detectives-mindset-for-testing">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-professors-mindset-for-testing">#</doc-anchor-trigger>
-        <span>The “Professor’s Mindset” for Testing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-detectives-mindset-for-testing">#</doc-anchor-trigger>
+        <span>The &quot;Detective&#x27;s Mindset&quot; for Testing</span>
     </h2>
 </doc-anchor-target>
-<p>Imagine you are a 55-year-old college professor. You’ve dedicated decades to teaching science and engineering, watching your peers achieve recognition and make meaningful contributions to their fields. Yet, despite all those years, your name remains unknown. Quietly, you’ve begun to accept that perhaps you will never accomplish much. But surely, there must be a way to fill this void—a way to feel important, even if it means elevating yourself at others’ expense. And who better to target than your students?</p>
-<p>They’re inexperienced, uncertain, and easy to manipulate. By making concepts deliberately complex, by assigning impossible workloads, by reveling in their confusion, you can convince yourself that your own intellect towers above theirs. After all, if your students struggle to understand, then you must be brilliant, right? You may not be celebrated in journals or accolades, but here, within your classroom, you wield control and power—the kind that makes you feel superior, even if it’s at the cost of others&#x27; misery.</p>
-<p>In this case, you are the professor and project authors are your students. You cannot let them have an easy life. Below are the ways in which you can do so:</p>
+<p>Imagine you are a detective, stepping into a mysterious case. The project before you is like a crime scene - every detail matters. Typos are the dropped breadcrumbs, unclear instructions are the smudged fingerprints, and incorrect solutions? They’re the smoking gun. With your magnifying glass in hand and an insatiable curiosity, your job is to uncover every imperfection, every inconsistency, and every missed opportunity.</p>
+<p>You revel in the thrill of discovery. There’s nothing quite like the satisfaction of finding a flaw no one else noticed. Below are the ways in which you can do so:</p>
 <doc-anchor-target id="areas-to-target-relentlessly">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#areas-to-target-relentlessly">#</doc-anchor-trigger>
@@ -194,7 +195,7 @@
 <ul>
 <li><strong>What to Look For</strong>: Spelling and grammar errors are easy catches, and even one mistake can leave a bad impression.</li>
 <li><strong>Why it Matters</strong>: Poor language skills make the project look unpolished and can frustrate users.</li>
-<li><strong>Your Task</strong>: Review every sentence carefully. Hunt down each misspelling, typo, or awkward phrase. Don’t let them slip up on the basics.</li>
+<li><strong>Your Task</strong>: Review every sentence carefully. Hunt down each misspelling, typo, or awkward phrase. Don&#x27;t let them slip up on the basics.</li>
 </ul>
 <doc-anchor-target id="2-relevance-and-accuracy-of-introductory-content">
     <h3>
@@ -207,9 +208,12 @@
 <li><strong>Checklist</strong>:
 <ul>
 <li>Is the introduction relevant to the actual project content? Look for any vague language or misleading details.</li>
-<li>Ensure that all information is correct and aligned with the project’s purpose. Set the standard for a strong first impression.</li>
+<li>Ensure that all information is correct and aligned with the project&#x27;s purpose. Set the standard for a strong first impression.</li>
 </ul>
 </li>
+<li><strong>Introduction</strong> and <code v-pre>public.md</code> are visible at following places in the project.
+<img src="../../static/project-testing-images/introduction.png" alt="Introduction" />
+<img src="../../static/project-testing-images/public-md.png" alt="public.md" /></li>
 </ul>
 <doc-anchor-target id="3-activity-descriptions">
     <h3>
@@ -234,13 +238,15 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Importance</strong>: Users rely on a clear expected outcome to see if they’re on the right track.</li>
+<li><strong>Importance</strong>: Users rely on a clear expected outcome to see if they&#x27;re on the right track.</li>
 <li><strong>What to Verify</strong>:
 <ul>
-<li>Check that the expected outcome exactly matches the solution. There’s no room for “almost.”</li>
-<li>If results might vary due to a solution that results in dynamic result, ensure there’s a <strong>note</strong> explaining this. Users should know what to expect or how to judge their answers if they differ from the example.</li>
+<li>Check that the expected outcome exactly matches the solution. There&#x27;s no room for &quot;almost.&quot;</li>
+<li>If results might vary due to a solution that results in dynamic result, ensure there&#x27;s a <strong>note</strong> explaining this. Users should know what to expect or how to judge their answers if they differ from the example.</li>
 </ul>
 </li>
+<li>The example below demonstrates the correct expected outcome.
+<img src="../../static/project-testing-images/expected-outcome-match.png" alt="Correct Expected Outcome" /></li>
 </ul>
 <doc-anchor-target id="5-solution-quality-and-explanation">
     <h3>
@@ -249,13 +255,15 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Goal</strong>: A solution should do more than just provide an answer—it should make the answer understandable.</li>
+<li><strong>Goal</strong>: A solution should do more than just provide an answer - it should make the answer understandable.</li>
 <li><strong>Essentials</strong>:
 <ul>
 <li><strong>Code Comments</strong>: Ensure the solution code is well-commented so each step is clear. If anything is unclear, insist on explanations.</li>
-<li><strong>MCQ Activities</strong>: For multiple-choice questions, a simple correct answer isn’t enough. Users need to understand <em>why</em> an answer is correct. If the explanation is missing, it’s an issue.</li>
+<li><strong>MCQ Activities</strong>: For multiple-choice questions, a simple correct answer isn&#x27;t enough. Users need to understand <em>why</em> an answer is correct. If the explanation is missing, it&#x27;s an issue.</li>
 </ul>
 </li>
+<li>The screenshot below illustrates an incorrect way of presenting a solution to the user. While it provides the final answer, it fails to show the necessary steps to arrive at that conclusion, leaving the user without proper guidance.
+<img src="../../static/project-testing-images/solution-bad.png" alt="Bad Solution" /></li>
 </ul>
 <doc-anchor-target id="6-jupyter-notebook-content">
     <h3>
@@ -267,10 +275,16 @@
 <li><strong>Objective</strong>: The Jupyter notebook should be carefully crafted to guide users without giving away answers.</li>
 <li><strong>What to Look For</strong>:
 <ul>
-<li>Ensure there are no hints or solutions provided within the notebook that the authors didn’t intend to reveal.</li>
+<li>Ensure there are no hints or solutions provided within the notebook that the authors didn&#x27;t intend to reveal.</li>
 <li>Check that there are appropriate placeholders or empty code cells for users to fill in their own answers. This helps users engage actively.</li>
 </ul>
 </li>
+<li>In the following example, the author has left a hint in the Jupyter notebook. This is an issue.
+<img src="../../static/project-testing-images/hint-bad.png" alt="Hint or solution should not be present in the jupyter notebook." /></li>
+<li>The example below highlights the absence of placeholders in the Jupyter notebook, which can lead to confusion.
+<img src="../../static/project-testing-images/placeholder-bad.png" alt="Absence of proper placeholders" /></li>
+<li>After adding placeholders in the previous example, we get clear, complete and easy to follow activities.
+<img src="../../static/project-testing-images/placeholder-good.png" alt="Correct Placeholders" /></li>
 </ul>
 <doc-anchor-target id="is-it-enough">
     <h2>
@@ -278,10 +292,9 @@
         <span>Is It Enough?</span>
     </h2>
 </doc-anchor-target>
-<p>After rigorously testing and pointing out every error in the project, you might still feel something is missing. Catching mistakes gave you a sense of accomplishment, but it’s starting to feel hollow. Watching the authors struggle at first brought some satisfaction, but now you see that this alone isn’t fulfilling. You risk being seen as harsh or unsympathetic.</p>
-<p>But there is another way to leave your mark, to redeem yourself: become a guide, not just a critic.</p>
-<p>Instead of only pointing out errors, help the authors understand <em>why</em> they’re wrong. Pinpoint the exact areas where they could improve and even go a step further: <strong>debug their code</strong> and identify potential improvements.</p>
-<p>When you offer constructive solutions, you’re not just a tester—you’re a collaborator. By saving authors time, you enable them to produce better projects faster. This way, you’ll find a deeper satisfaction, knowing you’re leaving a lasting, positive impact—not just finding faults but also creating solutions.</p>
+<p>After meticulously investigating and uncovering every flaw in the project, you might feel a surge of accomplishment. But after a while, the thrill of finding errors alone starts to fade. The case doesn’t feel closed. Something is missing.</p>
+<p>You’ve exposed every clue, but you haven’t solved the whole mystery. Instead of stopping at fault-finding, consider what a truly great detective would do: collaborate with the &quot;suspects&quot; to rewrite the story. Help the project authors understand not just <em>what</em> went wrong but <em>why</em> it went wrong and <em>how</em> to fix it. Debug their code, offer insights, and provide actionable feedback that saves them time and effort.</p>
+<p>When you take this approach, you’re no longer just a critic - you’re a partner.</p>
 <doc-anchor-target id="how-to-report-issues">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-report-issues">#</doc-anchor-trigger>
