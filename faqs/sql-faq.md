@@ -37,8 +37,9 @@ The path of the images directory is incorrect. Use:
 ![Invalid Database Error](images/sql-faq-3.png)  
 **Solution:**
 For SQL activities, ensure that the database device name in the code snippets matches the name in `docker-compose.yml`.
-![Device name in code snippet](images/sql-faq-4.png)
 Example:
+- Device name in code snippet.
+![Device name in code snippet](images/sql-faq-4.png)
 - Device name in `docker-compose.yml`: `MySQL`
 ![Device name in docker-compose.yml](images/sql-faq-5.png)
 ---
