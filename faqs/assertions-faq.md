@@ -1,6 +1,6 @@
 ---
 icon: check-circle
-title: FAQ: Assertions
+title: Assertions FAQ
 description: Troubleshooting and resolving issues related to assertions in Python.
 ---
 

@@ -1,6 +1,6 @@
 ---
-icon: gears
-title: FAQ: GitHub Actions
+icon: gear
+title: GitHub Actions FAQ
 description: Troubleshooting and resolving issues related to GitHub Actions.
 ---
 
@@ -39,7 +39,7 @@ To resolve this:
 ---
 
 ### 4. Platform Showing No Content
-![Error Image 4](images/github-actions-faq-4.png)  
+![No Content](images/github-actions-faq-4.png)  
 **Solution:**
 To display content on the platform:
 - Ensure that the GitHub Action completes at least once.

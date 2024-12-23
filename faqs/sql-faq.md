@@ -1,13 +1,13 @@
 ---
 icon: database
-title: FAQ: SQL
+title: SQL FAQ
 description: Solutions and best practices for common SQL project issues.
 ---
 
 # FAQ: SQL
 
 ### 1. What will be the template for the SQL project?
-![image](images/sql-faq-1.png)
+![Creating a new repository](images/sql-faq-1.png)
 **Solution:**
 Use the SQL read-only template for SQL projects.
 
@@ -25,7 +25,7 @@ Use the SQL read-only template for SQL projects.
 ---
 
 ### 3. I got this image path error while importing.
-![image](images/sql-faq-2.png)
+![Image Path Error](images/sql-faq-2.png)
 **Solution:**
 The path of the images directory is incorrect. Use:
 - Correct: `images/img-1.png`
@@ -34,11 +34,11 @@ The path of the images directory is incorrect. Use:
 ---
 
 ### 4. I got this database-related error.
-![Error Image 7](images/sql-faq-3.png)  
+![Invalid Database Error](images/sql-faq-3.png)  
 **Solution:**
 For SQL activities, ensure that the database device name in the code snippets matches the name in `docker-compose.yml`.
-![images](images/sql-faq-4.png)
+![Device name in code snippet](images/sql-faq-4.png)
 Example:
 - Device name in `docker-compose.yml`: `MySQL`
-![image](images/sql-faq-5.png)
+![Device name in docker-compose.yml](images/sql-faq-5.png)
 ---

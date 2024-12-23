@@ -1,6 +1,6 @@
 ---
-icon: info-circle
-title: FAQ: General Issues
+icon: info
+title: General Issues FAQ
 description: Resolving general issues.
 ---
 
