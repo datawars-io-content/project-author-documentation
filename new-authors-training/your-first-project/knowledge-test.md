@@ -28,7 +28,7 @@ What's the efficiency of the membership operation of a dictionary in python? (eg
 ### 2. Syntactical Questions
 These questions test the user's knowledge of syntax used in coding. They are specific to programming languages and help evaluate familiarity with code structure and rules.
 
-Examples:
+Example:
 ```
 In `pd.merge`, what's the name of the parameter used to specify the type of merge that will be performed (`inner`, `outer`, etc)?
 
@@ -48,6 +48,8 @@ What's the name of the Scikit Learn function used to separate testing and traini
 
 ### 3. Scenario-Based Questions
 These questions present a real-world scenario with associated dummy data. They simulate practical applications of the skill, requiring users to apply their knowledge in realistic situations.
+
+Example:
 ```
 Suppose you have two dataframes, `movies` and `directors` with the following structures:
 
