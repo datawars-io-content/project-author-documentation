@@ -1,14 +1,13 @@
 # Assessment Creation Documentation
 
----
 
-> *Welcome to the comprehensive guide for creating assessments within the DataWars learning platform. This document serves as your primary resource for understanding the components, best practices, and implementation details essential for developing effective skill assessments.*
+> *Welcome to the comprehensive guide for creating assessments within the DataWars platform. This document serves as your primary resource for understanding the components, best practices, and implementation details essential for developing effective skill assessments.*
 
 ## Platform Architecture
 
 ### 🏗️ Learning Hierarchy
 
-The DataWars learning platform implements a structured hierarchy that organizes content from broad career paths to specific learning objectives. Each level serves a distinct purpose in the learning journey:
+The DataWars platform implements a structured hierarchy that organizes content from broad career paths to specific learning objectives. Each level serves a distinct purpose in the learning journey:
 
 1. Career Path: 
 
@@ -26,7 +25,7 @@ The DataWars learning platform implements a structured hierarchy that organizes 
 
    Skills are further broken down into specific, measurable objectives. For the "Pandas Series Basics" skill, objectives include mastering series creation, understanding indexing operations, and implementing various series methods.
 
-### Real-World Example
+### Example
 
 ```
 Data Analysis (Career Path)
@@ -57,7 +56,7 @@ In the context of Pandas Series Basics, the distinction between projects and ass
 
 ### 1. Assessment Configuration Structure
 
-The assessment.json file requires specific configuration fields that define the assessment behavior:
+The `assessment.json` file requires specific configuration fields that define the assessment behavior:
 
 Required Fields:
 - `scoring_config`: Determines the scoring methodology
@@ -128,10 +127,10 @@ Implementation Example with Repository-Specific IDs:
 
 ### 📝 Page Attributes in english.md
 
-The english.md file implements specific page attributes that control assessment behavior and objective mapping. These attributes define how content is presented to users and ensure proper evaluation of skills.
+The `english.md` file implements specific page attributes that control assessment behavior and objective mapping. These attributes define how content is presented to users and ensure proper evaluation of skills.
 
 Required Attribute:
-- `objective`: Maps the page content to specific objectives defined in assessment.json
+- `objective`: Maps the page content to specific objectives defined in `assessment.json`
   - Format: `objective="tr54a-objective-11"`
   - Example: For a page covering Selection and Indexing, use the corresponding objective ID
 
@@ -162,7 +161,7 @@ Example Implementation:
       random-sample-amount="3">
 ```
 
-### english.md Content Implementation
+### `english.md` Content Implementation
 
 ```markdown
 <page id="dd36e9" 
