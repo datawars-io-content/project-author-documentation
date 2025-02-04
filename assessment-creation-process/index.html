@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791998724277">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791999618576">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Assessment Creation Documentation</title>
     <meta name="title" content="Assessment Creation Documentation">
-    <meta name="description" content="Welcome to the comprehensive guide for creating assessments within the DataWars learning platform.">
+    <meta name="description" content="Welcome to the comprehensive guide for creating assessments within the DataWars platform.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assessment-creation-process/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assessment-creation-process/">
     <meta property="og:title" content="Assessment Creation Documentation">
-    <meta property="og:description" content="Welcome to the comprehensive guide for creating assessments within the DataWars learning platform.">
+    <meta property="og:description" content="Welcome to the comprehensive guide for creating assessments within the DataWars platform.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assessment-creation-process/">
     <meta property="twitter:title" content="Assessment Creation Documentation">
-    <meta property="twitter:description" content="Welcome to the comprehensive guide for creating assessments within the DataWars learning platform.">
+    <meta property="twitter:description" content="Welcome to the comprehensive guide for creating assessments within the DataWars platform.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.791998724277" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.791999618576" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.791998724277" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.791998724277" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.791998724277" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.791999618576" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,9 +170,8 @@
         <span>Assessment Creation Documentation</span>
     </h1>
 </doc-anchor-target>
-<hr>
 <blockquote>
-<p><em>Welcome to the comprehensive guide for creating assessments within the DataWars learning platform. This document serves as your primary resource for understanding the components, best practices, and implementation details essential for developing effective skill assessments.</em></p>
+<p><em>Welcome to the comprehensive guide for creating assessments within the DataWars platform. This document serves as your primary resource for understanding the components, best practices, and implementation details essential for developing effective skill assessments.</em></p>
 </blockquote>
 <doc-anchor-target id="platform-architecture">
     <h2>
@@ -186,7 +185,7 @@
         <span><span class="docs-emoji">&#x1F3D7;&#xFE0F;</span> Learning Hierarchy</span>
     </h3>
 </doc-anchor-target>
-<p>The DataWars learning platform implements a structured hierarchy that organizes content from broad career paths to specific learning objectives. Each level serves a distinct purpose in the learning journey:</p>
+<p>The DataWars platform implements a structured hierarchy that organizes content from broad career paths to specific learning objectives. Each level serves a distinct purpose in the learning journey:</p>
 <ol>
 <li><p>Career Path:</p>
 <p>DataWars organizes learning content into career-focused paths. The Data Analysis career path, for instance, provides a comprehensive learning journey for aspiring data analysts and scientists.</p>
@@ -201,10 +200,10 @@
 <p>Skills are further broken down into specific, measurable objectives. For the &quot;Pandas Series Basics&quot; skill, objectives include mastering series creation, understanding indexing operations, and implementing various series methods.</p>
 </li>
 </ol>
-<doc-anchor-target id="real-world-example">
+<doc-anchor-target id="example">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#real-world-example">#</doc-anchor-trigger>
-        <span>Real-World Example</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -257,7 +256,7 @@
         <span>1. Assessment Configuration Structure</span>
     </h3>
 </doc-anchor-target>
-<p>The assessment.json file requires specific configuration fields that define the assessment behavior:</p>
+<p>The <code v-pre>assessment.json</code> file requires specific configuration fields that define the assessment behavior:</p>
 <p>Required Fields:</p>
 <ul>
 <li><code v-pre>scoring_config</code>: Determines the scoring methodology
@@ -335,10 +334,10 @@
         <span><span class="docs-emoji">&#x1F4DD;</span> Page Attributes in english.md</span>
     </h3>
 </doc-anchor-target>
-<p>The english.md file implements specific page attributes that control assessment behavior and objective mapping. These attributes define how content is presented to users and ensure proper evaluation of skills.</p>
+<p>The <code v-pre>english.md</code> file implements specific page attributes that control assessment behavior and objective mapping. These attributes define how content is presented to users and ensure proper evaluation of skills.</p>
 <p>Required Attribute:</p>
 <ul>
-<li><code v-pre>objective</code>: Maps the page content to specific objectives defined in assessment.json
+<li><code v-pre>objective</code>: Maps the page content to specific objectives defined in <code v-pre>assessment.json</code>
 <ul>
 <li>Format: <code v-pre>objective=&quot;tr54a-objective-11&quot;</code></li>
 <li>Example: For a page covering Selection and Indexing, use the corresponding objective ID</li>
@@ -379,7 +378,7 @@
 <doc-anchor-target id="englishmd-content-implementation">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#englishmd-content-implementation">#</doc-anchor-trigger>
-        <span>english.md Content Implementation</span>
+        <span><code v-pre>english.md</code> Content Implementation</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
