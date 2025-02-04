@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791971359241">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791998724277">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Assessment creation process</title>
-    <meta name="title" content="Assessment creation process">
+    <title>Assessment Creation Documentation</title>
+    <meta name="title" content="Assessment Creation Documentation">
+    <meta name="description" content="Welcome to the comprehensive guide for creating assessments within the DataWars learning platform.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/assessment-creation-process/">
@@ -18,20 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/assessment-creation-process/">
-    <meta property="og:title" content="Assessment creation process">
+    <meta property="og:title" content="Assessment Creation Documentation">
+    <meta property="og:description" content="Welcome to the comprehensive guide for creating assessments within the DataWars learning platform.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/assessment-creation-process/">
-    <meta property="twitter:title" content="Assessment creation process">
+    <meta property="twitter:title" content="Assessment Creation Documentation">
+    <meta property="twitter:description" content="Welcome to the comprehensive guide for creating assessments within the DataWars learning platform.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.791971359241" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.791998724277" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.791971359241" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.791998724277" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.791971359241" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.791998724277" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.791998724277" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -160,12 +164,312 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="assessment-creation-process" class="break-words">
+<doc-anchor-target id="assessment-creation-documentation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#assessment-creation-process">#</doc-anchor-trigger>
-        <span>Assessment creation process</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assessment-creation-documentation">#</doc-anchor-trigger>
+        <span>Assessment Creation Documentation</span>
     </h1>
 </doc-anchor-target>
+<hr>
+<blockquote>
+<p><em>Welcome to the comprehensive guide for creating assessments within the DataWars learning platform. This document serves as your primary resource for understanding the components, best practices, and implementation details essential for developing effective skill assessments.</em></p>
+</blockquote>
+<doc-anchor-target id="platform-architecture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#platform-architecture">#</doc-anchor-trigger>
+        <span>Platform Architecture</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="learning-hierarchy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#learning-hierarchy">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F3D7;&#xFE0F;</span> Learning Hierarchy</span>
+    </h3>
+</doc-anchor-target>
+<p>The DataWars learning platform implements a structured hierarchy that organizes content from broad career paths to specific learning objectives. Each level serves a distinct purpose in the learning journey:</p>
+<ol>
+<li><p>Career Path:</p>
+<p>DataWars organizes learning content into career-focused paths. The Data Analysis career path, for instance, provides a comprehensive learning journey for aspiring data analysts and scientists.</p>
+</li>
+<li><p>Skill Track:</p>
+<p>Within each career path, skill tracks focus on specific technologies or methodologies. The &quot;Intro to Pandas&quot; skill track, for example, provides a foundational understanding of the Pandas library for data manipulation.</p>
+</li>
+<li><p>Skills:</p>
+<p>Each skill track contains multiple skills that build upon each other. Within the &quot;Intro to Pandas&quot; track, &quot;Pandas Series Basics&quot; represents a fundamental skill that learners must master before progressing to more advanced concepts.</p>
+</li>
+<li><p>Objectives:</p>
+<p>Skills are further broken down into specific, measurable objectives. For the &quot;Pandas Series Basics&quot; skill, objectives include mastering series creation, understanding indexing operations, and implementing various series methods.</p>
+</li>
+</ol>
+<doc-anchor-target id="real-world-example">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#real-world-example">#</doc-anchor-trigger>
+        <span>Real-World Example</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Data Analysis (Career Path)
+└── Intro to Pandas (Skill Track)
+    └── Pandas Series Basics (Skill)
+        └── Objectives:
+            1. Understanding Series Creation
+            2. Selection and Indexing
+            3. Series Methods</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="assessment-development">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assessment-development">#</doc-anchor-trigger>
+        <span>Assessment Development</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="assessment-vs-project-distinction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assessment-vs-project-distinction">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CA;</span> Assessment vs. Project Distinction</span>
+    </h3>
+</doc-anchor-target>
+<p>In the context of Pandas Series Basics, the distinction between projects and assessments becomes clear:</p>
+<ol>
+<li><p>Coverage</p>
+<ul>
+<li>A project might focus on series creation and basic operations</li>
+<li>An assessment evaluates all three objectives: creation, indexing, and methods</li>
+</ul>
+</li>
+<li><p>New Requirements</p>
+<ul>
+<li>Assessment configuration specifies all three objectives</li>
+<li>Pages map directly to these fundamental Pandas operations</li>
+<li>Activities test comprehensive series manipulation skills</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="core-components">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-components">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F6E0;&#xFE0F;</span> Core Components</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="1-assessment-configuration-structure">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-assessment-configuration-structure">#</doc-anchor-trigger>
+        <span>1. Assessment Configuration Structure</span>
+    </h3>
+</doc-anchor-target>
+<p>The assessment.json file requires specific configuration fields that define the assessment behavior:</p>
+<p>Required Fields:</p>
+<ul>
+<li><code v-pre>scoring_config</code>: Determines the scoring methodology
+<ul>
+<li>Option 1: Per-objective scoring
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;scoring_method&quot;: &quot;per_objective&quot;
+}</code></pre>
+</doc-codeblock></div>
+</li>
+<li>Option 2: Global scoring
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;scoring_method&quot;: &quot;global&quot;,
+    &quot;min_global_score_to_pass&quot;: 3
+}</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+</li>
+<li><code v-pre>objectives</code>: List of testable objectives</li>
+<li><code v-pre>expiration_time</code>: Optional time limit in minutes</li>
+</ul>
+<p>Basic Structure Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;scoring_config&quot;: {
+        &quot;scoring_method&quot;: &quot;per_objective&quot;
+    },
+    &quot;objectives&quot;: [
+        {
+            &quot;id&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Series Creation&quot;,
+            &quot;min_points_to_pass&quot;: 3
+        },
+        {
+            &quot;id&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;Series Operations&quot;,
+            &quot;min_points_to_pass&quot;: 4
+        }
+    ]
+}</code></pre>
+</doc-codeblock></div>
+<p>Implementation Example with Repository-Specific IDs:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;scoring_config&quot;: {
+        &quot;scoring_method&quot;: &quot;per_objective&quot;
+    },
+    &quot;expiration_time&quot;: 60,
+    &quot;objectives&quot;: [
+        {
+            &quot;id&quot;: &quot;tr54a-objective-11&quot;,
+            &quot;name&quot;: &quot;Understanding Series Creation&quot;,
+            &quot;min_points_to_pass&quot;: 3
+        },
+        {
+            &quot;id&quot;: &quot;tr54a-objective-22&quot;, 
+            &quot;name&quot;: &quot;Selection and Indexing&quot;,
+            &quot;min_points_to_pass&quot;: 3
+        },
+        {
+            &quot;id&quot;: &quot;tr54a-objective-33&quot;,
+            &quot;name&quot;: &quot;Series Methods&quot;,
+            &quot;min_points_to_pass&quot;: 3
+        }
+    ]
+}</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="page-attributes-in-english-md">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#page-attributes-in-english-md">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4DD;</span> Page Attributes in english.md</span>
+    </h3>
+</doc-anchor-target>
+<p>The english.md file implements specific page attributes that control assessment behavior and objective mapping. These attributes define how content is presented to users and ensure proper evaluation of skills.</p>
+<p>Required Attribute:</p>
+<ul>
+<li><code v-pre>objective</code>: Maps the page content to specific objectives defined in assessment.json
+<ul>
+<li>Format: <code v-pre>objective=&quot;tr54a-objective-11&quot;</code></li>
+<li>Example: For a page covering Selection and Indexing, use the corresponding objective ID</li>
+</ul>
+</li>
+</ul>
+<p>Optional Attributes:</p>
+<ol>
+<li><p><code v-pre>shuffle-activities</code>: Randomizes the presentation order of activities within a page</p>
+<ul>
+<li>Different users see activities in different sequences</li>
+<li>Helps prevent pattern recognition and memorization</li>
+<li>Format: Add <code v-pre>shuffle-activities</code> to page tag</li>
+</ul>
+</li>
+<li><p><code v-pre>random-sample-amount</code>: Controls the number of activities shown to each user</p>
+<ul>
+<li>Specifies maximum activities displayed</li>
+<li>Format: <code v-pre>random-sample-amount=&quot;N&quot;</code> where N is the desired number</li>
+<li>Example: <code v-pre>random-sample-amount=&quot;5&quot;</code> shows 5 random activities from the available pool</li>
+</ul>
+</li>
+</ol>
+<p>Example Implementation:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-markdown"><code v-pre class="language-markdown"># Basic Page with Required Attribute
+&lt;page id=&quot;dd36e9&quot; 
+      name=&quot;Understanding Series Creation&quot;  
+      objective=&quot;tr54a-objective-11&quot;&gt;
+
+# Page with All Attributes
+&lt;page id=&quot;39c4b2&quot; 
+      name=&quot;Selection and Indexing&quot; 
+      objective=&quot;tr54a-objective-22&quot;
+      shuffle-activities 
+      random-sample-amount=&quot;3&quot;&gt;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="englishmd-content-implementation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#englishmd-content-implementation">#</doc-anchor-trigger>
+        <span>english.md Content Implementation</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-markdown"><code v-pre class="language-markdown">&lt;page id=&quot;dd36e9&quot; 
+      name=&quot;Understanding Series Creation&quot;  
+      objective=&quot;tr54a-objective-11&quot;&gt;
+
+# Introduction to Pandas Series
+Learn the fundamentals of creating and understanding Pandas Series objects.
+
+&lt;activity id=&quot;act1&quot; title=&quot;Basic Series Creation&quot;&gt;
+Create a Series named 'temperatures' with values [98.6, 98.9, 97.8, 99.2]
+&lt;correct-answer&gt;pd.Series([98.6, 98.9, 97.8, 99.2], name='temperatures')&lt;/correct-answer&gt;
+&lt;solution&gt;Use pd.Series() constructor with the name parameter&lt;/solution&gt;
+&lt;/activity&gt;
+&lt;/page&gt;
+
+&lt;page id=&quot;39c4b2&quot; 
+      name=&quot;Selection and Indexing&quot; 
+      objective=&quot;tr54a-objective-22&quot;
+      shuffle-activities 
+      random-sample-amount=&quot;3&quot;&gt;
+
+&lt;activity id=&quot;act2&quot; title=&quot;Series Indexing&quot;&gt;
+Select all temperatures above 98.5 from the 'temperatures' series
+&lt;correct-answer&gt;temperatures[temperatures &gt; 98.5]&lt;/correct-answer&gt;
+&lt;solution&gt;Use boolean indexing to filter values&lt;/solution&gt;
+&lt;/activity&gt;
+&lt;/page&gt;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="implementation-example">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#implementation-example">#</doc-anchor-trigger>
+        <span>Implementation Example</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="basic-repository-structure">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#basic-repository-structure">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4C2;</span> Basic Repository Structure</span>
+    </h3>
+</doc-anchor-target>
+<p>Using our Pandas Series project (lab-tr54a-badge-project-8):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">lab-tr54a-badge-project-8/
+├── assessment.json        # Defines Pandas Series objectives
+├── english.md            # Contains Series manipulation activities
+└── Project.ipynb         # Provides Series practice environment</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="objective-id-convention">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#objective-id-convention">#</doc-anchor-trigger>
+        <span>Objective ID Convention</span>
+    </h3>
+</doc-anchor-target>
+<p>The repository name influences the objective IDs:</p>
+<ul>
+<li>Repository: lab-tr54a-badge-project-8</li>
+<li>Objective IDs: tr54a-objective-11 (Series Creation)</li>
+<li>Page references: <code v-pre>objective=&quot;tr54a-objective-11&quot;</code></li>
+</ul>
+<doc-anchor-target id="frequently-asked-questions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#frequently-asked-questions">#</doc-anchor-trigger>
+        <span>Frequently Asked Questions</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Do we need chat.txt file?</strong></p>
+<p>No, chat.txt is not required for assessments.</p>
+</li>
+<li><p><strong>How do we handle activities in Project.ipynb?</strong></p>
+<p>Activity numbers and titles are not needed in Project.ipynb. The notebook should maintain its normal flow without specific activity markers.</p>
+</li>
+<li><p><strong>Will the docker-compose file configuration change?</strong></p>
+<p>No, use the same docker-compose configuration as existing projects.</p>
+</li>
+<li><p><strong>Should we transform existing projects into assessments?</strong></p>
+<p>No, create new projects instead of modifying existing ones. Each assessment should have its own new repository.</p>
+</li>
+<li><p><strong>How should we handle activity sampling and shuffling during beta testing?</strong></p>
+<p>During beta testing phase, do not implement any type of sampling or shuffling functionalities.</p>
+</li>
+<li><p><strong>How do repository names relate to objective IDs?</strong></p>
+<ul>
+<li>Extract prefix from repository name (e.g., &quot;tr54a&quot; from lab-tr54a-badge-project-8)</li>
+<li>Use format: prefix-objective-number (e.g., tr54a-objective-11)</li>
+</ul>
+</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
@@ -225,6 +529,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Assessment creation process", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Assessment Creation Documentation", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
