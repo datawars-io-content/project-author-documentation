@@ -1,6 +1,7 @@
 ---
+label: Tuple Assertions
 expanded: true
-order: C
+order: D
 ---
 
 In this notebook, you'll learn how to use most used Tuple assertion functions.

@@ -1,6 +1,7 @@
 ---
+label: List Assertions
 expanded: true
-order: B
+order: C
 ---
 
 In this notebook, you'll learn how to use most used List assertion functions. Below

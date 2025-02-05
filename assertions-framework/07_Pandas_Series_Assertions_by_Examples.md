@@ -1,6 +1,7 @@
 ---
+label: Pandas Series Assertions
 expanded: true
-order: F
+order: G
 ---
 
 

@@ -1,6 +1,7 @@
 ---
+label: Function Assertions
 expanded: true
-order: A
+order: B
 ---
 
 In this notebook, you'll learn how to use most used Functions checking assertion

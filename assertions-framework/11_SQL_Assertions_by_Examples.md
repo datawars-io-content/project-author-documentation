@@ -1,6 +1,7 @@
 ---
+label: SQL Assertions
 expanded: true
-order: G
+order: K
 ---
 
 In this notebook, you'll learn how to use most used SQL assertion functions. Below

@@ -1,6 +1,7 @@
 ---
+label: PyTorch Assertions
 expanded: true
-order: I
+order: L
 ---
 
 In this notebook, you'll learn how to use most used PyTorch assertion functions.

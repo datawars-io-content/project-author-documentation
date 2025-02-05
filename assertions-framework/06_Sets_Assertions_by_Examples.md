@@ -1,6 +1,7 @@
 ---
+label: Sets Assertions
 expanded: true
-order: E
+order: F
 ---
 
 In this notebook, you'll learn how to use most used Sets assertion functions. Below

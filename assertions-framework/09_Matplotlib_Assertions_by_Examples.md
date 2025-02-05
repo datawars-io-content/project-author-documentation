@@ -1,6 +1,7 @@
 ---
+label: Matplotlib Assertions
 expanded: true
-order: H
+order: I
 ---
 
 In this notebook, you'll learn how to use most used matplotlib assertion functions.

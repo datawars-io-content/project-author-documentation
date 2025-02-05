@@ -1,6 +1,7 @@
 ---
+label: Numbers Assertions
 expanded: true
-order: J
+order: A
 ---
 
 In this notebook, you'll learn how to use most used Numbers assertion functions. Below

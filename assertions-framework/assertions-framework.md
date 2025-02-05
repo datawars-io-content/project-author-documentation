@@ -1,6 +1,5 @@
 ---
 icon: codescan-checkmark
-expanded: true
 order: 500
 ---
 
