@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791999618576">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792079799885">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Sets Assertions by Examples</title>
-    <meta name="title" content="Sets Assertions by Examples">
-    <meta name="description" content="In this notebook, you'll learn how to use most used Sets assertion functions. Below are these functions:">
+    <title>PyTorch Assertions</title>
+    <meta name="title" content="PyTorch Assertions">
+    <meta name="description" content="In this notebook, you'll learn how to use most used PyTorch assertion functions.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/new-authors-training/assertions-framework/sets_assertions_by_examples/">
+    <link rel="canonical" href="/assertions-framework/12_pytorch-assertions/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/new-authors-training/assertions-framework/sets_assertions_by_examples/">
-    <meta property="og:title" content="Sets Assertions by Examples">
-    <meta property="og:description" content="In this notebook, you'll learn how to use most used Sets assertion functions. Below are these functions:">
+    <meta property="og:url" content="/assertions-framework/12_pytorch-assertions/">
+    <meta property="og:title" content="PyTorch Assertions">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used PyTorch assertion functions.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/new-authors-training/assertions-framework/sets_assertions_by_examples/">
-    <meta property="twitter:title" content="Sets Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Sets assertion functions. Below are these functions:">
+    <meta property="twitter:url" content="/assertions-framework/12_pytorch-assertions/">
+    <meta property="twitter:title" content="PyTorch Assertions">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used PyTorch assertion functions.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791999618576" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792079799885" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.791999618576" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792079799885" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">DataWars Project Author documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -164,18 +164,18 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="sets-assertions-by-examples" class="break-words">
+<doc-anchor-target id="pytorch-assertions" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sets-assertions-by-examples">#</doc-anchor-trigger>
-        <span>Sets Assertions by Examples</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-assertions">#</doc-anchor-trigger>
+        <span>PyTorch Assertions</span>
     </h1>
 </doc-anchor-target>
-<p>In this notebook, you&#x27;ll learn how to use most used Sets assertion functions. Below
-are these functions:</p>
+<p>In this notebook, you&#x27;ll learn how to use most used PyTorch assertion functions.</p>
 <ol>
-<li><code v-pre>assert_set_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks if student set variable is equals to expected set variable.</li>
-<li><code v-pre>assert_set_variable_equals_json(student_variable_name, json_file_name)</code>: Checks if student set variable is equals to expected json file.</li>
-<li><code v-pre>assert_set_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks if student set variable is equals to expected pickle file.</li>
+<li><code v-pre>assert_pytorch_tensor_variable_name_equals_serialized(student_variable_name, location)</code>: Checks if student tensor object is equals to expected tensor. The expected tensor is stored in a pickle file.</li>
+<li><code v-pre>assert_pytorch_tensor_variable_name_is_in_expected_device(student_variable_name, expected_device)</code>: Checks if student tensor object is in expected device. The expected device is a string.</li>
+<li><code v-pre>assert_vision_transform_variable_name_equals_serialized(student_variable_name, location, **kwargs)</code>: Checks if student transformation pipeline object is equals to expected transformation pipeline. The expected transformation pipeline is stored in a pickle file.</li>
+<li><code v-pre>assert_dataset_vision_image_folder_variable_name_equals_serialized(student_variable_name, location)</code>: Checks if student dataset(image directory) image folder object is equals to expected dataset image folder. The expected dataset image folder is stored in a pickle file.</li>
 </ol>
 <p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -191,94 +191,168 @@ are these functions:</p>
 <doc-tabs>
 <doc-tab v-cloak id="activity-1">
 <template #title>Activity 1</template>
-<doc-anchor-target id="1-course-enrollments-and-common-students">
+<doc-anchor-target id="1-create-a-2d-pytorch-tensor">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-course-enrollments-and-common-students">#</doc-anchor-trigger>
-        <span>1. Course Enrollments and Common Students</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-2d-pytorch-tensor">#</doc-anchor-trigger>
+        <span>1: Create a 2d PyTorch tensor.</span>
     </h5>
 </doc-anchor-target>
-<p>You have two sets of students enrolled in two different courses. The sets are as follows:</p>
+<p>Use below list to create a 2d PyTorch tensor ans store it in a variable <code v-pre>student</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">course_a_students = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;}
-course_b_students = {&quot;Bob&quot;, &quot;David&quot;, &quot;Eve&quot;, &quot;Frank&quot;}</code></pre>
+<pre class="language-python"><code v-pre class="language-python">data = [[1, 2, 3], [4, 5, 6]]</code></pre>
 </doc-codeblock></div>
-<p>Find the common students enrolled in both courses.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your solution here</code></pre>
+<pre class="language-python"><code v-pre class="language-python">import torch
+student = ...</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
 <p>Solution:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">course_a_students = {&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;}
-course_b_students = {&quot;Bob&quot;, &quot;David&quot;, &quot;Eve&quot;, &quot;Frank&quot;}
-common_students = course_a_students.intersection(course_b_students)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">import torch
+data = [[1, 2, 3], [4, 5, 6]]
+student = torch.tensor(data)
+print(student)</code></pre>
+</doc-codeblock></div>
+<p>As we have created a tensor, save the tensor in a file using below code in a pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import pickle
+with open('activity_solutions_files/expected_tensor_1.pt', 'wb') as f:
+    pickle.dump(student, f)</code></pre>
+</doc-codeblock></div>
+<p>or, serialize the tensor using the below code.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">location = 'expected_tensor_1.pt' # Using this, we don't need to mention the activity_solutions_files path in the assertion.
+serialize_pickle(student, location)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
-<p>As the expected set is small and have only few elements, we can easily compare it with the student set, we can use <code v-pre>assert_set_variable_equals_variable()</code> function to assert the solution with the student set.
-Assertions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">expected_common_students = {&quot;Bob&quot;, &quot;David&quot;}
-assert_set_variable_equals_variable(&quot;common_students&quot;, &quot;expected_common_students&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">assert_pytorch_tensor_variable_name_equals_serialized('student', 'expected_tensor_1.pt')</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
-<doc-anchor-target id="activities-on-badge-data">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activities-on-badge-data">#</doc-anchor-trigger>
-        <span>Activities on Badge Data</span>
-    </h3>
-</doc-anchor-target>
-<p>For other assertions examples, we will use the badge data. The badge data is stored in a JSON file named <code v-pre>badge_details.json</code>. The JSON file contains the details of three badges: Data Novice, Data Explorer, and Analytics Enthusiast. Each badge has a set of students who have earned that badge.(This dataset is large around 10000+ badge holders)</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import json
-
-# Load badge details from the JSON file
-with open(&quot;badge_details.json&quot;, &quot;r&quot;) as json_file:
-    badge_details = json.load(json_file)
-
-# Recreate badge sets from the loaded data
-data_novice_badge = set(badge_details[&quot;Data Novice&quot;])
-data_explorer_badge = set(badge_details[&quot;Data Explorer&quot;])
-analytics_enthusiast_badge = set(badge_details[&quot;Analytics Enthusiast&quot;])</code></pre>
-</doc-codeblock></div>
 <doc-tabs>
 <doc-tab v-cloak id="activity-2">
 <template #title>Activity 2</template>
-<doc-anchor-target id="2-add-new-student-to-data-novice-badge">
+<doc-anchor-target id="2-change-the-device-of-the-tensor">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-add-new-student-to-data-novice-badge">#</doc-anchor-trigger>
-        <span>2. Add New Student to Data Novice Badge</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-change-the-device-of-the-tensor">#</doc-anchor-trigger>
+        <span>2: Change the device of the tensor.</span>
     </h5>
 </doc-anchor-target>
-<p>Incorporate the new student named Sam into the Data Novice badge group.</p>
+<p>Change the device of the tensor to <code v-pre>cuda</code> and store it in a variable <code v-pre>student</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student = student...</code></pre>
+</doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
 <p>Solution:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">data_novice_badge.add(&quot;Sam&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">student = student.to('cuda')</code></pre>
+</doc-codeblock></div>
+<p>As we have changed the device of the tensor, save the tensor in a file using below code in a pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import pickle
+with open('activity_solutions_files/expected_tensor_2.pt', 'wb') as f:
+    pickle.dump(student, f)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
-<p>As we added only one student to set but the set is quite large(10000+ elements), we can save the set in a pickle file and assert it with the expected pickle file using <code v-pre>assert_set_variable_equals_pickle()</code> function.</p>
-<p>This is how you can save the set in a pickle file.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save in pickle
-import pickle
-with open(&quot;activity_solutions_files/solution_03.pickle&quot;, &quot;wb&quot;) as pickle_file:
-    pickle.dump(data_novice_badge, pickle_file)</code></pre>
-</doc-codeblock></div>
 <p>Assertions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">assert_set_variable_equals_pickle(&quot;data_novice_badge&quot;, &quot;solution_03.pickle&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">assert_pytorch_tensor_equals_serialized(student, 'expected_tensor_2.pt')</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="3-test-the-transformation-pipeline">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-test-the-transformation-pipeline">#</doc-anchor-trigger>
+        <span>3: Test the transformation pipeline.</span>
+    </h5>
+</doc-anchor-target>
+<p>If student create a transformation pipeline with below parameters, then assert it with the expected transformation pipeline.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.transforms as transforms
+student = transforms.Compose([
+    transforms.RandomResizedCrop(224),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.transforms as transforms
+student = transforms.Compose([
+    transforms.RandomResizedCrop(224),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])</code></pre>
+</doc-codeblock></div>
+<p>As we have created a transformation pipeline, save the transformation pipeline in a file using below code in a pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">location = 'expected_transform_1.pt' # Using this, we don't need to mention the activity_solutions_files path in the assertion.
+serialize_pickle(student, location)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_vision_transform_variable_name_equals_serialized('student', 'expected_transform_1.pt')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="4-test-the-dataset-image-folder">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-test-the-dataset-image-folder">#</doc-anchor-trigger>
+        <span>4: Test the dataset image folder.</span>
+    </h5>
+</doc-anchor-target>
+<p>If student create a dataset image folder with below parameters, then assert it with the expected dataset image folder.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.datasets as datasets
+student = datasets.ImageFolder(root='path/to/data', transform=student)</code></pre>
+</doc-codeblock></div>
+<blockquote>
+<p>Here, the <code v-pre>path/to/data</code> is the path to the image folder and <code v-pre>student</code> is the transformation pipeline created in the previous activity example.</p>
+</blockquote>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torchvision.datasets as datasets
+student = datasets.ImageFolder(root='path/to/data', transform=student)</code></pre>
+</doc-codeblock></div>
+<p>As we have created a dataset image folder, save the dataset image folder in a file using below code in a pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">location = 'expected_dataset_image_folder_1.pt' # Using this, we don't need to mention the activity_solutions_files path in the assertion.
+serialize_pickle(student, location)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_dataset_vision_image_folder_variable_name_equals_serialized('student', 'expected_dataset_image_folder_1.pt')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
 
                                 
                                 <!-- Required only on API pages -->
@@ -288,20 +362,20 @@ with open(&quot;activity_solutions_files/solution_03.pickle&quot;, &quot;wb&quot
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/dict_assertions_by_examples/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/11_sql_assertions_by_examples/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Dict Assertions by Examples</span>
+                                                <span class="block mt-1">SQL Assertions</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/pandas_dataframe_assertions_by_examples/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../content-creation-process/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Pandas Data​Frame Assertions by Examples</span>
+                                                <span class="block mt-1">Content creation process</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -345,6 +419,6 @@ with open(&quot;activity_solutions_files/solution_03.pickle&quot;, &quot;wb&quot
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Sets Assertions by Examples", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "PyTorch Assertions", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

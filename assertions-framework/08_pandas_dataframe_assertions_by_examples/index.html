@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791999618576">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792079799885">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Dict Assertions by Examples</title>
-    <meta name="title" content="Dict Assertions by Examples">
-    <meta name="description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
+    <title>Pandas DataFrame Assertions</title>
+    <meta name="title" content="Pandas DataFrame Assertions">
+    <meta name="description" content="In this notebook, you'll learn how to use most used Pandas Dataframe assertion functions. Below are these functions:">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/new-authors-training/assertions-framework/dict_assertions_by_examples/">
+    <link rel="canonical" href="/assertions-framework/08_pandas_dataframe_assertions_by_examples/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/new-authors-training/assertions-framework/dict_assertions_by_examples/">
-    <meta property="og:title" content="Dict Assertions by Examples">
-    <meta property="og:description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
+    <meta property="og:url" content="/assertions-framework/08_pandas_dataframe_assertions_by_examples/">
+    <meta property="og:title" content="Pandas DataFrame Assertions">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used Pandas Dataframe assertion functions. Below are these functions:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/new-authors-training/assertions-framework/dict_assertions_by_examples/">
-    <meta property="twitter:title" content="Dict Assertions by Examples">
-    <meta property="twitter:description" content="In this you'll learn how to use most used Dictionary assertion functions. Below are the functions that are covered.">
+    <meta property="twitter:url" content="/assertions-framework/08_pandas_dataframe_assertions_by_examples/">
+    <meta property="twitter:title" content="Pandas DataFrame Assertions">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Pandas Dataframe assertion functions. Below are these functions:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791999618576" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792079799885" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.791999618576" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792079799885" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">DataWars Project Author documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -164,22 +164,29 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="dict-assertions-by-examples" class="break-words">
+<doc-anchor-target id="pandas-dataframe-assertions" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dict-assertions-by-examples">#</doc-anchor-trigger>
-        <span>Dict Assertions by Examples</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pandas-dataframe-assertions">#</doc-anchor-trigger>
+        <span>Pandas DataFrame Assertions</span>
     </h1>
 </doc-anchor-target>
-<p>In this you&#x27;ll learn how to use most used Dictionary assertion
-functions. Below are the functions that are covered.</p>
+<p>In this notebook, you&#x27;ll learn how to use most used Pandas Dataframe assertion
+functions. Below are these functions:</p>
 <ol>
-<li><code v-pre>assert_dict_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary in <code v-pre>expected_variable_name</code>.</li>
-<li><code v-pre>assert_dict_variable_equals_json(student_variable_name, json_file_name)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary contained in the solution JSON file named <code v-pre>json_file_name</code>.</li>
-<li><code v-pre>assert_dict_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks that the student&#x27;s dictionary in <code v-pre>student_variable_name</code> matches the dictionary contained in the solution pickle file named <code v-pre>pickle_file_name</code>.</li>
+<li><code v-pre>assert_pd_dataframe_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks if student dataframe variable is equals to expected dataframe variable.</li>
+<li><code v-pre>assert_pd_dataframe_variable_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)</code>: Checks if student dataframe variable is equals to expected csv file.</li>
+<li><code v-pre>assert_pd_dataframe_variable_column_equals_csv(student_df_variable_name, colum_name, csv_name, read_csv_kwargs=None, series_testing_kwargs=None)</code>: Checks if student dataframe variable column is equals to expected csv file.</li>
+<li><code v-pre>assert_pd_dataframe_csv_equals_csv(student_csv_name, expected_csv_name, student_base_dir=&quot;.&quot;, read_csv_kwargs=None, dataframe_testing_kwargs=None)</code>: Checks if student csv file is equals to expected csv file.</li>
+<li><code v-pre>assert_pd_dataframe_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, dataframe_testing_kwargs=None)</code>: Checks if student dataframe variable is equals to expected pickle file. This is used when we have pivoted data or multi-column data in the dataframe.</li>
 </ol>
 <p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import pandas as pd
+
+df = pd.read_csv('Best_Books_Ever.csv')</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="activities">
     <h3>
@@ -187,212 +194,184 @@ functions. Below are the functions that are covered.</p>
         <span>Activities</span>
     </h3>
 </doc-anchor-target>
-<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions.</p>
-<p>We&#x27;ll use the below fruits data for the activities.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">fruits_data = [('apple', 'red', 0.99), ('banana', 'yellow', 0.59), ('orange', 'orange', 0.79), ('grape', 'purple', 1.29), ('kiwi', 'green', 1.09), ('pineapple', 'yellow', 1.99), ('strawberry', 'red', 0.69), ('watermelon', 'green', 2.49), ('mango', 'orange', 1.49), ('peach', 'orange', 1.79), ('pear', 'green', 0.89), ('plum', 'purple', 0.79), ('raspberry', 'red', 2.99), ('blueberry', 'blue', 3.99), ('blackberry', 'black', 4.99)]
-fruits_data</code></pre>
-</doc-codeblock></div>
+<p>Now, with activities examples, you&#x27;ll learn how to use the assertion functions. We&#x27;ll use the <code v-pre>df</code> dataframe that contains the data of best books ever.</p>
 <doc-tabs>
 <doc-tab v-cloak id="activity-1">
 <template #title>Activity 1</template>
-<doc-anchor-target id="1-create-a-student-dictionary">
+<doc-anchor-target id="1-create-a-dataframe-student_df-with-the-following-data">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-student-dictionary">#</doc-anchor-trigger>
-        <span>1. Create a student dictionary</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-create-a-dataframe-student_df-with-the-following-data">#</doc-anchor-trigger>
+        <span>1. Create a dataframe <code v-pre>student_df</code> with the following data:</span>
     </h5>
 </doc-anchor-target>
-<p>Use below data to create a dictionary named <code v-pre>student_dict</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_name = ['Albert', 'John', 'Peter', 'James', 'Robert']
-student_age = [23, 24, 22, 25, 23]
-student_city = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']</code></pre>
-</doc-codeblock></div>
-<p>Expected Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">{'Albert': {'age': 23, 'city': 'New York'},
- 'John': {'age': 24, 'city': 'Los Angeles'},
- 'Peter': {'age': 22, 'city': 'Chicago'},
- 'James': {'age': 25, 'city': 'Houston'},
- 'Robert': {'age': 23, 'city': 'Phoenix'}}</code></pre>
+<pre class="language-python"><code v-pre class="language-python">student_dict = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Age': [18, 17, 19, 18, 17],
+    'Grade': ['A', 'B', 'A', 'B', 'A']
+}</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
 <p>Solution:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_name = ['Albert', 'John', 'Peter', 'James', 'Robert']
-student_age = [23, 24, 22, 25, 23]
-student_city = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']
+<pre class="language-python"><code v-pre class="language-python">student_dict = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Age': [18, 17, 19, 18, 17],
+    'Grade': ['A', 'B', 'A', 'B', 'A']
+}
 
-student_dict = {}
-
-for i in range(len(student_name)):
-    student_dict[student_name[i]] = {'age': student_age[i], 'city': student_city[i]}
-
-student_dict</code></pre>
+student_df = pd.DataFrame(student_dict)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
-<p>As the expected output is small dictionary, so we use <code v-pre>assert_dict_variable_equals_variable()</code> function to assert the solution with the student dictionary.</p>
-<p>Assertions:</p>
+<p>As the expected dataframe is small and we can easily compare it with the student dataframe, we can use <code v-pre>assert_pd_dataframe_variable_equals_variable()</code> function to assert the solution with the student dataframe.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">expected_output = {'Albert': {'age': 23, 'city': 'New York'},
- 'John': {'age': 24, 'city': 'Los Angeles'},
- 'Peter': {'age': 22, 'city': 'Chicago'},
- 'James': {'age': 25, 'city': 'Houston'},
- 'Robert': {'age': 23, 'city': 'Phoenix'}}
-assert_dict_variable_equals_variable('student_dict', 'expected_output')</code></pre>
+<pre class="language-python"><code v-pre class="language-python">expected_student_dict = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Age': [18, 17, 19, 18, 17],
+    'Grade': ['A', 'B', 'A', 'B', 'A']
+}
+expected_student_df = pd.DataFrame(expected_student_dict)
+assert_pd_dataframe_variable_equals_variable('student_df', 'expected_student_df', delete_afterwards=True)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
 <doc-tabs>
 <doc-tab v-cloak id="activity-2">
 <template #title>Activity 2</template>
-<doc-anchor-target id="2-create-a-fruits-dictionary">
+<doc-anchor-target id="2-calculating-the-price-to-rating-ratio">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-create-a-fruits-dictionary">#</doc-anchor-trigger>
-        <span>2. Create a fruits dictionary</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-calculating-the-price-to-rating-ratio">#</doc-anchor-trigger>
+        <span>2. Calculating the Price-to-Rating Ratio</span>
     </h5>
 </doc-anchor-target>
-<p>Use the <code v-pre>fruits_data</code> list to create a dictionary named <code v-pre>fruits</code> where the key is the fruit name and the value is a dictionary containing the color and price of the fruit.</p>
-<p>Expected Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">{'apple': {'color': 'red', 'price': 0.99},
- 'banana': {'color': 'yellow', 'price': 0.59},
- 'orange': {'color': 'orange', 'price': 0.79},
- 'grape': {'color': 'purple', 'price': 1.29},
- ...
-}</code></pre>
-</doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your solution here
-fruits = ...</code></pre>
-</doc-codeblock></div>
+<p>Create a new column <code v-pre>Price-to-Rating Ratio</code> in the DataFrame that
+calculates the price-to-rating ratio for each book. This ratio will help
+us understand how the price of a book relates to its average rating.</p>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
 <p>Solution:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">fruits = {}
-for fruit in fruits_data:
-    name = fruit[0]
-    color = fruit[1]
-    price = fruit[2]
-    fruits[name] = {'color': color, 'price': price}
-
-fruits</code></pre>
+<pre class="language-python"><code v-pre class="language-python">df['price_to_rating'] = df['price'] / df['rating']</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
-<p>In the previous activity, we used <code v-pre>assert_dict_variable_equals_variable()</code> function to assert the solution with the student dictionary. But here the expected output is large, so we use <code v-pre>assert_dict_variable_equals_json()</code> function to assert the solution with the student dictionary.</p>
+<p>In this activity, we asked student to create a new column in the dataframe. So, we can use <code v-pre>assert_pd_dataframe_variable_column_equals_csv()</code> function to assert the solution with the student dataframe. We used this function to check the column <code v-pre>price_to_rating</code> with the expected column in the csv file.</p>
+<p>This is how you can save the dataframe to a new csv file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save json file
-import json
-with open('activity_solutions_files/solution_01.json', 'w') as f:
-    json.dump(fruits, f)</code></pre>
+<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
+df.to_csv('activity_solutions_files/sol_01.csv', index=True)</code></pre>
 </doc-codeblock></div>
 <p>Assertions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_dict_variable_equals_json('fruits', 'solution_01.json')</code></pre>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_dataframe_variable_column_equals_csv('df', 'price_to_rating', 'sol_01.csv')</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
 <doc-tabs>
 <doc-tab v-cloak id="activity-3">
 <template #title>Activity 3</template>
-<doc-anchor-target id="3-create-a-dictionary-of-only-red-color-fruits">
+<doc-anchor-target id="activity-3-remove-the-isbn-column">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-create-a-dictionary-of-only-red-color-fruits">#</doc-anchor-trigger>
-        <span>3. Create a Dictionary of only red color fruits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-3-remove-the-isbn-column">#</doc-anchor-trigger>
+        <span>Activity 3. Remove the &quot;isbn&quot; Column</span>
     </h5>
 </doc-anchor-target>
-<p>Store the result in a variable <code v-pre>red_fruits</code>.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your solution here
-red_fruits = ...</code></pre>
-</doc-codeblock></div>
+<p>The &quot;isbn&quot; column is not needed for our analysis. Write a script to
+remove this column from the dataframe.</p>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
 <p>Solution:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">red_fruits = {}
-
-for fruit in fruits:
-    name = fruit
-    if fruits[name]['color'] == 'red':
-        red_fruits[name] = fruits[name]
-        
-red_fruits</code></pre>
+<pre class="language-python"><code v-pre class="language-python">df.drop(columns='isbn', inplace=True)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
+<p>In this activity, we asked student to remove the column from the dataframe. So, we can use <code v-pre>assert_pd_dataframe_variable_equals_csv()</code> function to assert the solution with the student dataframe.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
+df.to_csv('activity_solutions_files/sol_02.csv', index=True)</code></pre>
+</doc-codeblock></div>
 <p>Assertions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">expected_red_fruits = {'apple': {'color': 'red', 'price': 0.99},
- 'strawberry': {'color': 'red', 'price': 0.69},
- 'raspberry': {'color': 'red', 'price': 2.99}}
-assert_dict_variable_equals_variable('red_fruits', 'expected_red_fruits')</code></pre>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_dataframe_variable_equals_csv('df', 'sol_02.csv')</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
 <doc-tabs>
 <doc-tab v-cloak id="activity-4">
 <template #title>Activity 4</template>
-<doc-anchor-target id="4-create-a-dictionary-of-only-red-and-blue-color-fruits">
+<doc-anchor-target id="activity-4-save-the-updated-dataframe-in-new-csv-file">
     <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-create-a-dictionary-of-only-red-and-blue-color-fruits">#</doc-anchor-trigger>
-        <span>4. Create a Dictionary of only red and blue color fruits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-4-save-the-updated-dataframe-in-new-csv-file">#</doc-anchor-trigger>
+        <span>Activity 4. Save the updated dataframe in new CSV file</span>
     </h5>
 </doc-anchor-target>
-<p>Store the result in a variable <code v-pre>red_blue_fruits</code>, here the key is the
-color and value is the tuple containing two values - color and its
-price.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Write your solution here
-red_blue_fruits = ...</code></pre>
-</doc-codeblock></div>
+<p>Save the updated dataframe <code v-pre>df</code> in a new CSV file named
+<code v-pre>updated_best_book.csv</code>. Save this file in current directory only.</p>
+<blockquote>
+<p>Make sure not to reset the index</p>
+</blockquote>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
 <p>Solution:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">red_blue_fruits = {}
-
-for fruit in fruits:
-    name = fruit
-    if fruits[name]['color'] == 'red' or fruits[name]['color'] == 'blue':
-        red_blue_fruits[name] = tuple(fruits[name].values())
-        
-red_blue_fruits</code></pre>
-</doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">{
-  'apple': ('red', 0.99),
-  'strawberry': ('red', 0.69),
-  'raspberry': ('red', 2.99),
-  'blueberry': ('blue', 3.99)
-}</code></pre>
+<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
+df.to_csv('updated_best_book.csv', index=False)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
-<p>As we know that when we save tuple in json file, it will be saved as list. So, we use pickle file to save the expected output and then use <code v-pre>assert_dict_variable_equals_pickle()</code> function to assert the solution with the student dictionary.</p>
+<p>In this activity, we asked student to save the dataframe in a new csv file. So, we can use <code v-pre>assert_pd_dataframe_csv_equals_csv()</code> function to assert the solution with the student dataframe.</p>
+<p>This is how you can save the dataframe to a new csv file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save in pickle file
-import pickle
-with open('activity_solutions_files/solution_04.pkl', 'wb') as f:
-    pickle.dump(red_blue_fruits, f)</code></pre>
+<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new csv file
+df.to_csv('activity_solutions_files/sol_08.csv', index=False)</code></pre>
 </doc-codeblock></div>
 <p>Assertions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># new assertions
-assert_dict_variable_equals_pickle('red_blue_fruits', 'solution_04.pkl')</code></pre>
+<pre class="language-python"><code v-pre class="language-python">read_csv_kwargs = {'index_col': 0}
+assert_pd_dataframe_csv_equals_csv('updated_best_book.csv', 'sol_08.csv', read_csv_kwargs=read_csv_kwargs)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-5">
+<template #title>Activity 5</template>
+<doc-anchor-target id="activity-5-save-the-updated-dataframe-in-a-pickle-file">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-5-save-the-updated-dataframe-in-a-pickle-file">#</doc-anchor-trigger>
+        <span>Activity 5. Save the updated dataframe in a pickle file</span>
+    </h5>
+</doc-anchor-target>
+<p>Create a pivoted dataframe <code v-pre>pivot_df</code> from the <code v-pre>df</code> dataframe.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">pivot_df = df.pivot(index='title', columns='author', values='rating')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>In this activity, we asked student to create a pivoted dataframe from the original dataframe. So, we can use <code v-pre>assert_pd_dataframe_variable_equals_pickle()</code> function to assert the solution with the student dataframe because CSV file can&#x27;t store the pivoted data.</p>
+<p>This is how you can save the dataframe to a new pickle file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># save the dataframe to a new pickle file
+pivot_df.to_pickle('activity_solutions_files/sol_05.pkl')</code></pre>
+</doc-codeblock></div>
+<p>Assertions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_pd_dataframe_variable_equals_pickle('pivot_df', 'sol_05.pkl')</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
@@ -405,20 +384,20 @@ assert_dict_variable_equals_pickle('red_blue_fruits', 'solution_04.pkl')</code><
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/tuple_assertions_by_examples/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/07_pandas_series_assertions_by_examples/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Tuple Assertions by Examples</span>
+                                                <span class="block mt-1">Pandas Series Assertions</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/sets_assertions_by_examples/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/09_matplotlib_assertions_by_examples/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Sets Assertions by Examples</span>
+                                                <span class="block mt-1">Matplotlib Assertions</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -462,6 +441,6 @@ assert_dict_variable_equals_pickle('red_blue_fruits', 'solution_04.pkl')</code><
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Dict Assertions by Examples", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Pandas DataFrame Assertions", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

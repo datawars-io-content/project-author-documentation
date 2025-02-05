@@ -9,34 +9,33 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Good Practices for Project Authoring</title>
-    <meta name="title" content="Good Practices for Project Authoring">
-    <meta name="description" content="Guidelines to create engaging and effective projects.">
+    <title>NumPy Array Assertion Functions</title>
+    <meta name="title" content="NumPy Array Assertion Functions">
+    <meta name="description" content="In this notebook, you’ll learn how to use the most common NumPy array assertion functions. Below are these functions:">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/new-authors-training/your-first-project/good-practices-to-follow/">
+    <link rel="canonical" href="/assertions-framework/10_numpy_assertions_by_examples/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/new-authors-training/your-first-project/good-practices-to-follow/">
-    <meta property="og:title" content="Good Practices for Project Authoring">
-    <meta property="og:description" content="Guidelines to create engaging and effective projects.">
-    <meta property="og:image" content="/static/good_practices_images/best_practices_prompt_1.png">
+    <meta property="og:url" content="/assertions-framework/10_numpy_assertions_by_examples/">
+    <meta property="og:title" content="NumPy Array Assertion Functions">
+    <meta property="og:description" content="In this notebook, you’ll learn how to use the most common NumPy array assertion functions. Below are these functions:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/new-authors-training/your-first-project/good-practices-to-follow/">
-    <meta property="twitter:title" content="Good Practices for Project Authoring">
-    <meta property="twitter:description" content="Guidelines to create engaging and effective projects.">
-    <meta property="twitter:image" content="/static/good_practices_images/best_practices_prompt_1.png">
+    <meta property="twitter:url" content="/assertions-framework/10_numpy_assertions_by_examples/">
+    <meta property="twitter:title" content="NumPy Array Assertion Functions">
+    <meta property="twitter:description" content="In this notebook, you’ll learn how to use the most common NumPy array assertion functions. Below are these functions:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.792079799885" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792079799885" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792079799885" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">DataWars Project Author documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -165,155 +164,252 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="good-practices-for-project-authoring" class="break-words">
+<doc-anchor-target id="numpy-array-assertion-functions" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#good-practices-for-project-authoring">#</doc-anchor-trigger>
-        <span>Good Practices for Project Authoring</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#numpy-array-assertion-functions">#</doc-anchor-trigger>
+        <span>NumPy Array Assertion Functions</span>
     </h1>
 </doc-anchor-target>
-<p>When designing a project, it’s crucial to keep two primary goals in mind:</p>
+<p>In this notebook, you’ll learn how to use the most common <strong>NumPy array assertion functions</strong>. Below are these functions:</p>
 <ol>
-<li><strong>Avoiding Boredom</strong></li>
-<li><strong>Preventing Exhaustion</strong></li>
+<li><p><strong><code v-pre>assert_variable_type_np_array(var_name)</code></strong><br />
+Checks whether a variable in <code v-pre>globals()</code> is a NumPy array (i.e., <code v-pre>np.ndarray</code>).</p>
+</li>
+<li><p><strong><code v-pre>assert_np_array_equal(student_array, expected_array, exact=True, rtol=1e-7, atol=0)</code></strong><br />
+Compares two arrays either <strong>exactly</strong> or <strong>approximately</strong> (if <code v-pre>exact=False</code>).</p>
+<ul>
+<li><strong>Exact</strong> checks each element is identical.</li>
+<li><strong>Approximate</strong> uses tolerances (<code v-pre>rtol</code>, <code v-pre>atol</code>) for floating-point comparisons.</li>
+</ul>
+</li>
+<li><p><strong><code v-pre>assert_np_array_variable_equals_variable(student_var_name, expected_var_name, **kwargs)</code></strong><br />
+Verifies two <strong>global</strong> variables contain matching arrays. Optionally set <code v-pre>exact=False</code> for approximate checks.</p>
+</li>
+<li><p><strong><code v-pre>assert_np_array_variable_equals(student_var_name, expected_array, **kwargs)</code></strong><br />
+Compares a <strong>global variable</strong> (student’s result) to an <strong>in-memory array</strong> (teacher’s or reference result).</p>
+</li>
+<li><p><strong><code v-pre>assert_np_array_equals_pickle(student_array, pickle_name, read_pickle_kwargs=None, array_testing_kwargs=None)</code></strong><br />
+Loads a <strong>pickle</strong> file containing a NumPy array, then compares it to <code v-pre>student_array</code>.</p>
+</li>
+<li><p><strong><code v-pre>assert_np_array_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, array_testing_kwargs=None)</code></strong><br />
+Loads a pickle file containing a NumPy array, then compares it to a <strong>global</strong> variable named <code v-pre>student_variable_name</code>.</p>
+</li>
 </ol>
-<p>The following guidelines will help you meet these goals effectively.</p>
-<doc-anchor-target id="1-define-and-manage-project-scope">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-define-and-manage-project-scope">#</doc-anchor-trigger>
-        <span>1. Define and Manage Project Scope</span>
-    </h2>
-</doc-anchor-target>
-<p>A well-defined <strong>scope</strong> is essential to ensure users face challenges that match their skill level and progress gradually. Understanding what the users already know and what they’re expected to learn is key.</p>
-<p>For example, if you&#x27;re creating a project within the <strong>Data Cleaning with Pandas</strong> skill track, asking users to perform a simple task like creating a <code v-pre>Series</code> from a column in a <code v-pre>DataFrame</code> may lead to boredom as it lacks sufficient challenge. Conversely, asking them to perform complex operations like merging datasets before covering the necessary concepts may overwhelm them. Ensure each project aligns with the skills already covered to keep users engaged without frustration.</p>
-<doc-anchor-target id="2-format-titles-and-descriptions-thoughtfully">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-format-titles-and-descriptions-thoughtfully">#</doc-anchor-trigger>
-        <span>2. Format Titles and Descriptions Thoughtfully</span>
-    </h2>
-</doc-anchor-target>
-<ul>
-<li><p><strong>Activity Titles</strong>: Always frame titles as questions to engage the user. For example, instead of “Capital of Argentina,” use “What is the Capital of Argentina?” This sparks curiosity and primes the user for problem-solving.</p>
-</li>
-<li><p><strong>Activity Descriptions</strong>: Ensure that descriptions are clear, concise, and well-structured. Avoid long blocks of text, as they can overwhelm users, especially those juggling full-time work or study alongside their learning. Most users are looking to learn Data Science through hands-on coding exercises, so lengthy descriptions can exhaust them and make the project less enjoyable.</p>
-<ul>
-<li>Use <strong>bold</strong> or <em>italics</em> to emphasize key points.</li>
-<li>Enclose code elements (e.g., variable or column names) in backticks (&#x60;) to distinguish them from text.</li>
-<li>Use triple backticks (&#x60;&#x60;&#x60;) for code blocks to improve readability.</li>
-</ul>
-</li>
-</ul>
-<p>If you can’t avoid lengthy descriptions, such as in <strong>capstone projects</strong>, try breaking the task into smaller activities. If that’s not feasible, use tools like ChatGPT to improve clarity and structure.</p>
-<p><strong>Example Prompt</strong>:<br />
-<em>You are a data science professor. I need your help improving the formatting and clarity of my activity descriptions. I&#x27;ll provide the title and description, and you will revise them.</em></p>
-<p>Example: Notice how ChatGPT transformed the activity title and description.</p>
-<p>Before:<br />
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_prompt_1.png" alt="Activity Before Formatting">
-    <figcaption class="caption">Activity Before Formatting</figcaption>
-</figure>
-</p>
-<p>After:<br />
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_prompt_2.png" alt="Activity After Formatting">
-    <figcaption class="caption">Activity After Formatting</figcaption>
-</figure>
-</p>
-<ul>
-<li><strong>The Activities Should Be Atomic</strong>: One major drawback of longer activity descriptions is that they often lead to multiple steps within a single task. This complexity makes it harder to test and pinpoint errors. If an activity fails, users may not know where they made a mistake. For example, consider the following activity that requires users to complete four steps: calculating <code v-pre>common_chatbots</code>, defining the <code v-pre>fill_chatbot</code> function, applying this function to the <code v-pre>chatbot_name</code> column to impute missing values, and filling any remaining missing values with the string <code v-pre>&quot;Unknown&quot;</code>. If the task fails, users might struggle to identify the specific step where they made an error.</li>
-</ul>
-<p><figure class="content-center">
-    <img src="../../../static/good_practices_images/good_practices_atomic_activities.png" alt="Not an Atomic Activity">
-    <figcaption class="caption">Not an Atomic Activity</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="3-use-placeholders-in-jupyter-notebook">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-use-placeholders-in-jupyter-notebook">#</doc-anchor-trigger>
-        <span>3. Use Placeholders in Jupyter Notebook</span>
-    </h2>
-</doc-anchor-target>
-<p>Provide placeholders whenever users are asked to complete an activity. For example, if they need to store results in a variable or create a new column in a <code v-pre>DataFrame</code>, placeholders help guide them. This minimizes confusion and helps keep the task focused.</p>
-<p>Examples of placeholders:<br />
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_placeholder_var.png" alt="Variable Placeholder">
-    <figcaption class="caption">Variable Placeholder</figcaption>
-</figure>
-<br />
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_placeholder_col.png" alt="Column Placeholder">
-    <figcaption class="caption">Column Placeholder</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_placeholder_func.png" alt="Function Placeholder">
-    <figcaption class="caption">Function Placeholder</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="4-provide-a-preview-of-expected-outcomes">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-provide-a-preview-of-expected-outcomes">#</doc-anchor-trigger>
-        <span>4. Provide a Preview of Expected Outcomes</span>
-    </h2>
-</doc-anchor-target>
-<p>Where possible, include a preview of the expected result. For example, in a visualization project, show the desired plot, or when manipulating a <code v-pre>DataFrame</code>, provide a snapshot of the expected output. These visual or textual cues help users understand what the end goal looks like, reducing frustration and ensuring they are on the right path.</p>
-<p>Examples:<br />
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_exp_1.png" alt="Expected Outcome DataFrame">
-    <figcaption class="caption">Expected Outcome DataFrame</figcaption>
-</figure>
-<br />
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_exp_2.png" alt="Expected Outcome Visualization">
-    <figcaption class="caption">Expected Outcome Visualization</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="5-practice-empathy">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-practice-empathy">#</doc-anchor-trigger>
-        <span>5. Practice Empathy</span>
-    </h2>
-</doc-anchor-target>
-<p>Think from the user’s perspective and ask:</p>
-<ul>
-<li>What might confuse or challenge the user at this stage?</li>
-<li>Are the instructions clear for someone with the expected level of knowledge?</li>
-<li>Would I feel confident completing this task, given what I’ve learned so far?</li>
-</ul>
-<p>Empathy-driven design leads to a smoother learning experience by anticipating user needs.</p>
-<p>Example:<br />
-<figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_empathy_1.png" alt="Example Activity">
-    <figcaption class="caption">Example Activity</figcaption>
-</figure>
-</p>
-<p>Consider the activity in the screenshot above where users are asked to input answers. If they can&#x27;t solve it and request a solution, they receive the correct value to pass. But pause and think—what was on their minds?</p>
-<p>The users requested help because:</p>
-<ul>
-<li>They wrote code but got the wrong result, or</li>
-<li>They didn’t know how to approach the problem.</li>
-</ul>
-<p>In both cases, just giving the answers isn’t enough. They expect to learn how to solve the problem. The solution should include code or explanations demonstrating the correct process, reinforcing their learning for future tasks.</p>
-<doc-anchor-target id="6-anticipate-and-address-edge-cases">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-anticipate-and-address-edge-cases">#</doc-anchor-trigger>
-        <span>6. Anticipate and Address Edge Cases</span>
-    </h2>
-</doc-anchor-target>
-<p>Be mindful of edge cases and provide detailed instructions to address them. Whenever an edge case arises, clearly outline the steps users should follow to handle it. This prevents users from feeling stuck or confused when encountering unexpected situations.</p>
-<p>For example: Look how different ways of calculating frequency counts result in different order of index when their values are equal. In this case, we should mention in the activity description that the user should use <code v-pre>value_counts()</code>.</p>
-<p><figure class="content-center">
-    <img src="../../../static/good_practices_images/best_practices_edge.png" alt="Edge Case Example">
-    <figcaption class="caption">Edge Case Example</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="7-manage-time-expectations-and-feedback">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#7-manage-time-expectations-and-feedback">#</doc-anchor-trigger>
-        <span>7. Manage Time Expectations and Feedback</span>
-    </h2>
-</doc-anchor-target>
-<p>Consider the time required to complete the project. For <strong>Learn</strong> and <strong>Practice</strong> projects, aim for 25–30 minutes, while for <strong>Assignments</strong> and <strong>Capstone Projects</strong>, a duration of 45–60 minutes is ideal. Managing time expectations ensures the project remains engaging and manageable without overwhelming users.</p>
 <hr>
-<p>By following these best practices, you’ll create projects that are engaging, appropriately challenging, and enjoyable for learners. This balance will help keep users motivated and make their learning experience both rewarding and frustration-free.</p>
+<doc-anchor-target id="loading-the-utility">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#loading-the-utility">#</doc-anchor-trigger>
+        <span>Loading the Utility</span>
+    </h2>
+</doc-anchor-target>
+<p>To use these assertion functions, ensure they are defined or imported in your notebook:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
+</doc-codeblock></div>
+<p>Now you can start asserting student solutions with your reference arrays or data files.</p>
+<hr>
+<doc-anchor-target id="activities">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activities">#</doc-anchor-trigger>
+        <span>Activities</span>
+    </h2>
+</doc-anchor-target>
+<p>Below are sample <strong>activities</strong> demonstrating typical usage of these NumPy assertion functions. Each activity shows an example <strong>solution</strong> and the <strong>assertion</strong> that validates it.</p>
+<doc-tabs>
+<doc-tab v-cloak id="activity-1">
+<template #title>Activity 1</template>
+<doc-anchor-target id="1-basic-variable-type-check">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-basic-variable-type-check">#</doc-anchor-trigger>
+        <span>1. Basic Variable Type Check</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Create a global variable <code v-pre>my_array</code> that should be a <strong>NumPy array</strong>. If it’s not (e.g., a list, dict, etc.), it should fail.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">my_array = np.array([10, 20, 30])</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_variable_type_np_array(&quot;my_array&quot;)</code></pre>
+</doc-codeblock></div>
+<p>If <code v-pre>my_array</code> isn’t found in <code v-pre>globals()</code> or is not an <code v-pre>np.ndarray</code>, it raises an <code v-pre>AssertionError</code>.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-tabs>
+<doc-tab v-cloak id="activity-2">
+<template #title>Activity 2</template>
+<doc-anchor-target id="2-exact-element-by-element-comparison">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-exact-element-by-element-comparison">#</doc-anchor-trigger>
+        <span>2. Exact Element-by-Element Comparison</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Create an array named <code v-pre>student_arr</code> that exactly matches <code v-pre>[1, 2, 3]</code>.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_arr = np.array([1, 2, 3])</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">expected_arr = np.array([1, 2, 3])
+assert_np_array_equal(student_arr, expected_arr)</code></pre>
+</doc-codeblock></div>
+<p>Because we didn’t pass <code v-pre>exact=False</code>, the check is performed <strong>element-by-element</strong> with no tolerance for floating-point differences.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-tabs>
+<doc-tab v-cloak id="activity-3">
+<template #title>Activity 3</template>
+<doc-anchor-target id="3-approximate-floating-point-comparison">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-approximate-floating-point-comparison">#</doc-anchor-trigger>
+        <span>3. Approximate Floating-Point Comparison</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Create a variable <code v-pre>floats_approx</code> close to <code v-pre>[1.0, 2.0, 3.0]</code> but with small floating differences.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">floats_approx = np.array([1.00001, 2.0001, 3.0])</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">expected = np.array([1.0, 2.0, 3.0])
+# Use approximate comparison: exact=False, small rtol
+assert_np_array_equal(floats_approx, expected, exact=False, rtol=1e-3)</code></pre>
+</doc-codeblock></div>
+<p>If the differences are within <code v-pre>rtol=1e-3</code>, the test passes.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="4-comparing-two-global-variables">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-comparing-two-global-variables">#</doc-anchor-trigger>
+        <span>4. Comparing Two Global Variables</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Suppose you produce two arrays, <code v-pre>student_result</code> and <code v-pre>expected_result</code>, in <code v-pre>globals()</code>. Ensure they match exactly.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_result = np.array([4, 5, 6])
+expected_result = np.array([4, 5, 6])</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_np_array_variable_equals_variable(&quot;student_result&quot;, &quot;expected_result&quot;)</code></pre>
+</doc-codeblock></div>
+<p>After the assertion, <code v-pre>expected_result</code> is <strong>deleted</strong> from <code v-pre>globals()</code> to avoid polluting the environment.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-tabs>
+<doc-tab v-cloak id="activity-5">
+<template #title>Activity 5</template>
+<doc-anchor-target id="5-using-pickle-for-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-using-pickle-for-data">#</doc-anchor-trigger>
+        <span>5. Using Pickle for Data</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Load a pickle file named <code v-pre>array_data.pkl</code> that contains a 2D array, and store it in a variable <code v-pre>student_matrix</code>.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_matrix = np.array([[1, 2], [3, 4]])</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Save the array in a pickle file
+import pickle
+
+with open('array_data.pkl', 'rb') as f:
+    student_matrix = pickle.load(f)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># If we want to directly compare a loaded array to an in-memory expected array:
+expected_matrix = np.array([[1, 2], [3, 4]])
+assert_np_array_equal(student_matrix, expected_matrix)
+
+# Alternatively, if we want to test student_matrix against the same pickle file:
+assert_np_array_equals_pickle(student_matrix, 'array_data.pkl')</code></pre>
+</doc-codeblock></div>
+<p>This ensures the student’s loaded array matches the <strong>original</strong> in the pickle.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-tabs>
+<doc-tab v-cloak id="activity-6">
+<template #title>Activity 6</template>
+<doc-anchor-target id="6-comparing-a-global-variable-against-a-pickle">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-comparing-a-global-variable-against-a-pickle">#</doc-anchor-trigger>
+        <span>6. Comparing a Global Variable Against a Pickle</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Suppose the student’s code populates <code v-pre>my_pickled_data</code> in <code v-pre>globals()</code> and you want to confirm it matches the official reference data stored in <code v-pre>official_data.pkl</code>.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Student code might do:
+my_pickled_data = np.array([[7, 8], [9, 10]])
+# or maybe they loaded it from a pickle</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Save it in a pickle file
+import pickle
+
+with open('official_data.pkl', 'wb') as f:
+    pickle.dump(my_pickled_data, f)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_np_array_variable_equals_pickle(
+    student_variable_name=&quot;my_pickled_data&quot;,
+    pickle_name=&quot;official_data.pkl&quot;
+)</code></pre>
+</doc-codeblock></div>
+<p>If the file is missing, or if the unpickled data is not a NumPy array, or if the arrays differ in shape or values, it raises <code v-pre>AssertionError</code>.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-anchor-target id="additional-notes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-notes">#</doc-anchor-trigger>
+        <span>Additional Notes</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Pass <code v-pre>exact=False, rtol=..., atol=...</code> to any of these functions if you need <strong>approximate</strong> floating-point comparisons.</li>
+<li>If your pickle contains something other than a NumPy array (e.g., a Python list), <code v-pre>AssertionError</code> is raised.</li>
+<li>If you want to compare arrays with <strong>complex</strong> data types or <strong>object</strong> arrays, these functions still work; any mismatch in shape or values triggers a fail.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -323,20 +419,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/your-first-project/choosing-a-dataset/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/09_matplotlib_assertions_by_examples/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Choosing a dataset</span>
+                                                <span class="block mt-1">Matplotlib Assertions</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/your-first-project/knowledge-test/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/11_sql_assertions_by_examples/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Knowledge Tests</span>
+                                                <span class="block mt-1">SQL Assertions</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -380,6 +476,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Good Practices for Project Authoring", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "NumPy Assertions", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

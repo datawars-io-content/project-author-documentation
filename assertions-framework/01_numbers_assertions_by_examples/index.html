@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791999618576">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792079799885">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tuple Assertions by Examples</title>
-    <meta name="title" content="Tuple Assertions by Examples">
-    <meta name="description" content="In this notebook, you'll learn how to use most used Tuple assertion functions. Below are these functions:">
+    <title>Numbers Assertions</title>
+    <meta name="title" content="Numbers Assertions">
+    <meta name="description" content="In this notebook, you'll learn how to use most used Numbers assertion functions. Below are these functions:">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/new-authors-training/assertions-framework/tuple_assertions_by_examples/">
+    <link rel="canonical" href="/assertions-framework/01_numbers_assertions_by_examples/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/new-authors-training/assertions-framework/tuple_assertions_by_examples/">
-    <meta property="og:title" content="Tuple Assertions by Examples">
-    <meta property="og:description" content="In this notebook, you'll learn how to use most used Tuple assertion functions. Below are these functions:">
+    <meta property="og:url" content="/assertions-framework/01_numbers_assertions_by_examples/">
+    <meta property="og:title" content="Numbers Assertions">
+    <meta property="og:description" content="In this notebook, you'll learn how to use most used Numbers assertion functions. Below are these functions:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/new-authors-training/assertions-framework/tuple_assertions_by_examples/">
-    <meta property="twitter:title" content="Tuple Assertions by Examples">
-    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Tuple assertion functions. Below are these functions:">
+    <meta property="twitter:url" content="/assertions-framework/01_numbers_assertions_by_examples/">
+    <meta property="twitter:title" content="Numbers Assertions">
+    <meta property="twitter:description" content="In this notebook, you'll learn how to use most used Numbers assertion functions. Below are these functions:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791999618576" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792079799885" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791999618576" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.791999618576" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792079799885" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792079799885" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">DataWars Project Author documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -164,21 +164,46 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tuple-assertions-by-examples" class="break-words">
+<doc-anchor-target id="numbers-assertions" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tuple-assertions-by-examples">#</doc-anchor-trigger>
-        <span>Tuple Assertions by Examples</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#numbers-assertions">#</doc-anchor-trigger>
+        <span>Numbers Assertions</span>
     </h1>
 </doc-anchor-target>
-<p>In this notebook, you&#x27;ll learn how to use most used Tuple assertion functions.
-Below are these functions:</p>
+<p>In this notebook, you&#x27;ll learn how to use most used Numbers assertion functions. Below
+are these functions:</p>
 <ol>
-<li><code v-pre>assert_tuple_variable_equals_variable(student_variable_name, expected_variable_name, delete_afterwards=True)</code>: Checks if student tuple variable is equals to expected tuple variable.</li>
-<li><code v-pre>assert_tuple_variable_equals_pickle(student_variable_name, pickle_file_name)</code>: Checks if student tuple variable is equals to expected pickle file.</li>
+<li><code v-pre>assert_variable_almost_equals(student_variable_name, expected_value, tolerance_in_decimals=2)</code>: Checks that the student&#x27;s variable in <code v-pre>student_variable_name</code> matches the expected value within the given tolerance.</li>
+<li><code v-pre>assert_variable_almost_equals_variable(student_variable_name, expected_variable_name, tolerance_in_decimals=2, delete_afterwards=True)</code>: Checks that the student&#x27;s variable in <code v-pre>student_variable_name</code> matches the expected variable in <code v-pre>expected_variable_name</code> within the given tolerance.</li>
 </ol>
 <p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">exec(open(&quot;utils.py&quot;).read())</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="student-data-for-activities">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#student-data-for-activities">#</doc-anchor-trigger>
+        <span>Student Data for Activities</span>
+    </h3>
+</doc-anchor-target>
+<p>In the activities, we&#x27;ll use the below student data. Format of the data is <code v-pre>name, marks, age, grade, subject</code>.</p>
+<blockquote>
+<p>There are total 500 students in the list, but we are showing only a few here.</p>
+</blockquote>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Import the data from the text file into a list
+student_list = [['Gabriel', '53', '18', 'D', 'English'],
+                ['Nora', '79', '18', 'F', 'Math'],
+                ['Luna', '2', '18', 'A', 'English'],
+                ['Anthony', '76', '18', 'A', 'Math'],
+                ['Logan', '56', '17', 'D', 'History'],
+                ['Luna', '25', '18', 'E', 'Geography'],
+                ['Daniel', '29', '18', 'C', 'History'],
+                ['Sarah', '92', '17', 'B', 'History'],
+                ['Victoria', '91', '17', 'D', 'History'],
+                ['Zoe', '47', '18', 'E', 'Geography']
+                ...
+                ]</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="activities">
     <h3>
@@ -186,100 +211,82 @@ Below are these functions:</p>
         <span>Activities</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Below are two tuples having students records of two cohorts for
-Computer Science course this semester, each cohort has 30 students</strong></p>
-<p>Each tuple is as <code v-pre>(student_name, overall_grade)</code>.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_data_a = (
-    (&quot;John&quot;, 85), (&quot;Emily&quot;, 92), (&quot;Michael&quot;, 78), (&quot;Sophia&quot;, 95),
-    (&quot;Jacob&quot;, 88), (&quot;Emma&quot;, 90), (&quot;Joshua&quot;, 81), (&quot;Olivia&quot;, 87),
-    (&quot;Daniel&quot;, 93), (&quot;Ava&quot;, 89), (&quot;Matthew&quot;, 77), (&quot;Isabella&quot;, 94),
-    (&quot;Ethan&quot;, 83), (&quot;Mia&quot;, 91), (&quot;Alexander&quot;, 86), (&quot;Charlotte&quot;, 84),
-    (&quot;William&quot;, 82), (&quot;Amelia&quot;, 96), (&quot;James&quot;, 79), (&quot;Liam&quot;, 97),
-    (&quot;Abigail&quot;, 80), (&quot;Benjamin&quot;, 85), (&quot;Harper&quot;, 88), (&quot;Henry&quot;, 92),
-    (&quot;Ella&quot;, 89), (&quot;Samuel&quot;, 83), (&quot;Sofia&quot;, 90), (&quot;David&quot;, 94),
-    (&quot;Victoria&quot;, 87), (&quot;Joseph&quot;, 91)
-)</code></pre>
-</doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">student_data_b = (
-    (&quot;Lily&quot;, 88), (&quot;Christopher&quot;, 94), (&quot;Grace&quot;, 79), (&quot;Andrew&quot;, 91),
-    (&quot;Samantha&quot;, 85), (&quot;Jack&quot;, 90), (&quot;Avery&quot;, 82), (&quot;Daniel&quot;, 96),
-    (&quot;Madison&quot;, 89), (&quot;Ryan&quot;, 77), (&quot;Evelyn&quot;, 93), (&quot;Nicholas&quot;, 84),
-    (&quot;Chloe&quot;, 92), (&quot;Joshua&quot;, 81), (&quot;Zoe&quot;, 95), (&quot;Luke&quot;, 86),
-    (&quot;Hannah&quot;, 83), (&quot;Gabriel&quot;, 90), (&quot;Aria&quot;, 87), (&quot;Caleb&quot;, 78),
-    (&quot;Lillian&quot;, 94), (&quot;Isaac&quot;, 84), (&quot;Audrey&quot;, 91), (&quot;Owen&quot;, 89),
-    (&quot;Brooklyn&quot;, 82), (&quot;Nathan&quot;, 95), (&quot;Elizabeth&quot;, 88), (&quot;Elijah&quot;, 93),
-    (&quot;Scarlett&quot;, 86), (&quot;David&quot;, 90)
-)</code></pre>
-</doc-codeblock></div>
 <doc-tabs>
 <doc-tab v-cloak id="activity-1">
 <template #title>Activity 1</template>
-<doc-anchor-target id="1-concatenate-the-records-of-both-collections-into-one-tuple">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-concatenate-the-records-of-both-collections-into-one-tuple">#</doc-anchor-trigger>
-        <span>1. Concatenate the records of both collections into one tuple</span>
-    </h5>
+<doc-anchor-target id="1-calculate-the-average-marks-of-the-students-in-english-subject">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-calculate-the-average-marks-of-the-students-in-english-subject">#</doc-anchor-trigger>
+        <span>1. Calculate the average marks of the students in <code v-pre>English</code> subject.</span>
+    </h4>
 </doc-anchor-target>
-<p>Combine the records of both cohorts into one tuple named <code v-pre>combined</code>.</p>
+<p>Loop through the list <code v-pre>student_list</code>, access the marks of the students who have <code v-pre>English</code> as their favorite subject, and calculate the average marks of those students. Store the average marks in the variable <code v-pre>average_marks_english</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your code here
-combined = ...</code></pre>
+<pre class="language-python"><code v-pre class="language-python">average_marks_english = ...</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
-<p>Solution:</p>
+<p>Solutions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">combined = student_data_a + student_data_b</code></pre>
+<pre class="language-python"><code v-pre class="language-python">total_marks = 0
+count = 0
+
+for student in student_list:
+    if student[4] == 'English':
+        total_marks += int(student[1])
+        count += 1
+
+average_marks_english = total_marks / count
+print(average_marks_english)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
-<p>As the expected tuple is quite large, we can save it in a pickle file and then use <code v-pre>assert_tuple_variable_equals_pickle()</code> function to assert the solution with the student tuple.</p>
-<p>This is how you can save the tuple in a pickle file.</p>
+<p>As the expected output is a float, so we use <code v-pre>assert_variable_almost_equals()</code> function to assert the solution with the student variable.</p>
+<p>Assertion:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># save pickle file
-with open('activity_solutions_files/solution_02.pkl', 'wb') as f:
-    pickle.dump(combined, f)</code></pre>
-</doc-codeblock></div>
-<p>Assertions:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">assert_tuple_variable_equals_pickle('combined', 'solution_02.pkl')</code></pre>
+<pre class="language-python"><code v-pre class="language-python">assert_variable_almost_equals(&quot;average_marks_english&quot;, 52.0)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
 <doc-tabs>
 <doc-tab v-cloak id="activity-2">
 <template #title>Activity 2</template>
-<doc-anchor-target id="2-find-the-student-with-the-highest-grade">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-find-the-student-with-the-highest-grade">#</doc-anchor-trigger>
-        <span>2. Find the student with the highest grade</span>
-    </h5>
+<doc-anchor-target id="2-calculate-the-average-marks-of-the-students-in-math-subject">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-calculate-the-average-marks-of-the-students-in-math-subject">#</doc-anchor-trigger>
+        <span>2. Calculate the average marks of the students in <code v-pre>Math</code> subject.</span>
+    </h4>
 </doc-anchor-target>
-<p>First, find the highest grade and then find the student with that grade
-then store the details in a tuple named <code v-pre>top_student</code>.</p>
+<p>Loop through the list <code v-pre>student_list</code>, access the marks of the students who have <code v-pre>Math</code> as their favorite subject, and calculate the average marks of those students. Store the average marks in the variable <code v-pre>average_marks_math</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Try your code here
-top_student = ...</code></pre>
+<pre class="language-python"><code v-pre class="language-python">average_marks_math = ...</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="solution">
 <template #title>Solution</template>
-<p>Solution:</p>
+<p>Solutions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">top_student = sorted_combine[-1]</code></pre>
+<pre class="language-python"><code v-pre class="language-python">total_marks = 0
+count = 0
+
+for student in student_list:
+    if student[4] == 'Math':
+        total_marks += int(student[1])
+        count += 1
+
+average_marks_math = total_marks / count
+print(average_marks_math)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="assertions">
 <template #title>Assertions</template>
-<p>As the expected tuple only contains one student, we can easily compare it with the student tuple, we can use <code v-pre>assert_tuple_variable_equals_variable()</code> function to assert the solution with the student tuple.</p>
-<p>Assertions:</p>
+<p>As the expected output is a float, so we use <code v-pre>assert_variable_almost_equals_variable()</code> function to assert the solution with the student variable.</p>
+<p>Assertion:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">expected_top_student = ('Zoa', 95)
-assert_tuple_variable_equals_variable('top_student', 'expected_top_student')</code></pre>
+<pre class="language-python"><code v-pre class="language-python">expected_average_marks_math = 72.5
+assert_variable_almost_equals_variable(&quot;average_marks_math&quot;, &quot;expected_average_marks_math&quot;)</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
@@ -292,20 +299,20 @@ assert_tuple_variable_equals_variable('top_student', 'expected_top_student')</co
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/list_assertions_by_examples/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">List Assertions by Examples</span>
+                                                <span class="block mt-1">Assertion Framework Documentation</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../new-authors-training/assertions-framework/dict_assertions_by_examples/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../assertions-framework/02_function_assertions_by_examples/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Dict Assertions by Examples</span>
+                                                <span class="block mt-1">Function Assertions</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -349,6 +356,6 @@ assert_tuple_variable_equals_variable('top_student', 'expected_top_student')</co
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tuple Assertions by Examples", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Numbers Assertions", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
