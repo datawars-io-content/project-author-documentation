@@ -9,34 +9,34 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>SQL FAQ</title>
-    <meta name="title" content="SQL FAQ">
-    <meta name="description" content="Solutions and best practices for common SQL project issues.">
+    <title>Generate Dynamic Solution Files</title>
+    <meta name="title" content="Generate Dynamic Solution Files">
+    <meta name="description" content="Guidelines to generate solution files every time an update is pushed to the repo.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/faqs/sql-faq/">
+    <link rel="canonical" href="/new-authors-training/github/github-repo-artifacts/generate_solutions-py/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/faqs/sql-faq/">
-    <meta property="og:title" content="SQL FAQ">
-    <meta property="og:description" content="Solutions and best practices for common SQL project issues.">
-    <meta property="og:image" content="/faqs/images/sql-faq-1.png">
+    <meta property="og:url" content="/new-authors-training/github/github-repo-artifacts/generate_solutions-py/">
+    <meta property="og:title" content="Generate Dynamic Solution Files">
+    <meta property="og:description" content="Guidelines to generate solution files every time an update is pushed to the repo.">
+    <meta property="og:image" content="/static/github/github-repo-artifacts/generate_solution-py.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/faqs/sql-faq/">
-    <meta property="twitter:title" content="SQL FAQ">
-    <meta property="twitter:description" content="Solutions and best practices for common SQL project issues.">
-    <meta property="twitter:image" content="/faqs/images/sql-faq-1.png">
+    <meta property="twitter:url" content="/new-authors-training/github/github-repo-artifacts/generate_solutions-py/">
+    <meta property="twitter:title" content="Generate Dynamic Solution Files">
+    <meta property="twitter:description" content="Guidelines to generate solution files every time an update is pushed to the repo.">
+    <meta property="twitter:image" content="/static/github/github-repo-artifacts/generate_solution-py.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793352966630" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.793352966630" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793352966630" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793352966630" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.793352966630" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.793352966630" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,7 +51,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">DataWars Project Author documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -165,90 +165,35 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="faq-sql" class="break-words">
+<doc-anchor-target id="generate_solutionspy" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#faq-sql">#</doc-anchor-trigger>
-        <span>FAQ: SQL</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generate_solutionspy">#</doc-anchor-trigger>
+        <span>generate_solutions.py</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="1-what-will-be-the-template-for-the-sql-project">
+<p>Hi everyone! I wanted to share a finding with you regarding our ongoing update of the base images for our labs (including updating pandas, numpy, matplotlib, and other packages). We&#x27;ve encountered an issue related to the activity solution files, particularly with Matplotlib, though it could apply to other files as well.</p>
+<p>For instance:<br />
+If we create a solution image using Matplotlib version 3.9.0 and later update the lab with the latest version, 3.10.0, we face a problem. When comparing the solution image we created (with version 3.9.0) to a user’s solution image (which uses version 3.10.0), the images will look identical, but the user won&#x27;t pass the assertion due to version differences.</p>
+<doc-anchor-target id="possible-solution">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-what-will-be-the-template-for-the-sql-project">#</doc-anchor-trigger>
-        <span>1. What will be the template for the SQL project?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#possible-solution">#</doc-anchor-trigger>
+        <span>Possible Solution:</span>
     </h3>
 </doc-anchor-target>
-<p><figure class="content-center">
-    <img src="../images/sql-faq-1.png" alt="Creating a new repository">
-    <figcaption class="caption">Creating a new repository</figcaption>
-</figure>
-<strong>Solution:</strong>
-Use the SQL read-only template for SQL projects.</p>
-<hr>
-<doc-anchor-target id="2-in-the-pandas-project-activity-we-tested-the-assertions-in-the-notebook-for-the-sql-project-what-is-the-process-to-test-the-assertions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-in-the-pandas-project-activity-we-tested-the-assertions-in-the-notebook-for-the-sql-project-what-is-the-process-to-test-the-assertions">#</doc-anchor-trigger>
-        <span>2. In the pandas project activity, we tested the assertions in the notebook. For the SQL project, what is the process to test the assertions?</span>
-    </h3>
-</doc-anchor-target>
-<p><strong>Solution:</strong></p>
+<p>We’re considering generating dynamic solution files. Each time we push changes to the project on GitHub, the solution files will be automatically regenerated. This way, the solution files will always match the latest version of the packages in the lab.</p>
+<p>Here’s what we have done in this repo: <a href="https://github.com/datawars-io-content/lab-843g8gf-plotting-basics-hotel-rating-trip-types">https://github.com/datawars-io-content/lab-843g8gf-plotting-basics-hotel-rating-trip-types</a></p>
 <ol>
-<li><strong>Create a GitHub Repository:</strong> Follow the instructions here: <a href="https://datawars-io-content.github.io/project-author-documentation/new-authors-training/github/create-new-repo/">Create a New Repo</a>.</li>
-<li><strong>Update <code v-pre>docker-compose.yml</code>:</strong> Modify the <code v-pre>docker-compose.yml</code> file according to the databases you’re using (refer to the GitHub repository creation documentation linked above).</li>
-<li><strong>Share Your Repo:</strong> Once ready, share your repository with Anurag to update Airtable.</li>
-<li><strong>Build and Test Activities:</strong>
-<ul>
-<li>Start creating the activities.</li>
-<li>Push activities and test them directly on the platform to ensure functionality.</li>
-</ul>
+<li><p><strong>New <code v-pre>generate_solutions.py</code> file</strong>:<br />
+We have added a new file in the <code v-pre>notebooks/</code> directory called <code v-pre>generate_solutions.py</code>. This file contains all the code from the <code v-pre>Solution.ipynb</code> notebook and generates the activity solution files. The code must contain same activity solution file names that are used in <code v-pre>english.md</code>.
+<img src="../../../../static/github/github-repo-artifacts/generate_solution-py.png" alt="Location of generate_solutions.py" /></p>
+</li>
+<li><p><strong>Dockerfile Update</strong>:<br />
+In the <code v-pre>notebooks/</code> directory, We have updated the Dockerfile to include:<br />
+<code v-pre>RUN [ -f generate_solutions.py ] &amp;&amp; python generate_solutions.py</code><br />
+This ensures that new solution files are created every time we push an update to the GitHub repo.
+<img src="../../../../static/github/github-repo-artifacts/dockerfile.png" alt="Dockerfile contents" /></p>
 </li>
 </ol>
-<hr>
-<doc-anchor-target id="3-i-got-this-image-path-error-while-importing">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-i-got-this-image-path-error-while-importing">#</doc-anchor-trigger>
-        <span>3. I got this image path error while importing.</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="../images/sql-faq-2.png" alt="Image Path Error">
-    <figcaption class="caption">Image Path Error</figcaption>
-</figure>
-<strong>Solution:</strong>
-The path of the images directory is incorrect. Use:</p>
-<ul>
-<li>Correct: <code v-pre>images/img-1.png</code></li>
-<li>Incorrect: <code v-pre>images\img-1.png</code></li>
-</ul>
-<hr>
-<doc-anchor-target id="4-i-got-this-database-related-error">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-i-got-this-database-related-error">#</doc-anchor-trigger>
-        <span>4. I got this database-related error.</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="../images/sql-faq-3.png" alt="Invalid Database Error">
-    <figcaption class="caption">Invalid Database Error</figcaption>
-</figure>
-<br />
-<strong>Solution:</strong>
-For SQL activities, ensure that the database device name in the code snippets matches the name in <code v-pre>docker-compose.yml</code>.
-Example:</p>
-<ul>
-<li>Device name in code snippet.
-<figure class="content-center">
-    <img src="../images/sql-faq-4.png" alt="Device name in code snippet">
-    <figcaption class="caption">Device name in code snippet</figcaption>
-</figure>
-</li>
-<li>Device name in <code v-pre>docker-compose.yml</code>: <code v-pre>MySQL</code>
-<figure class="content-center">
-    <img src="../images/sql-faq-5.png" alt="Device name in docker-compose.yml">
-    <figcaption class="caption">Device name in docker-compose.yml</figcaption>
-</figure>
-</li>
-</ul>
-<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -258,20 +203,20 @@ Example:</p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../faqs/github-actions-faq/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../new-authors-training/github/github-repo-artifacts/docker-compose/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Git​Hub Actions FAQ</span>
+                                                <span class="block mt-1">docker-​compose.​yml</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../new-authors-training/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../../new-authors-training/github/creating-github-account/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">New authors training</span>
+                                                <span class="block mt-1">Getting started with Github</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -315,6 +260,6 @@ Example:</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "SQL FAQ", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Generate Dynamic Solution Files", level: 4, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
