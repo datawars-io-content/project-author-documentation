@@ -1,7 +1,6 @@
 ---
 icon: code
-title: Generate Dynamic Solution Files
-description: Guidelines to generate solution files every time an update is pushed to the repo.
+order: F
 ---
 
 
