@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793353162876">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793698518766">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793353162876" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.793698518766" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793353162876" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793698518766" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793353162876" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793353162876" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793698518766" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793698518766" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -193,6 +193,12 @@ Loads a <strong>pickle</strong> file containing a NumPy array, then compares it 
 </li>
 <li><p><strong><code v-pre>assert_np_array_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, array_testing_kwargs=None)</code></strong><br />
 Loads a pickle file containing a NumPy array, then compares it to a <strong>global</strong> variable named <code v-pre>student_variable_name</code>.</p>
+</li>
+<li><p><strong><code v-pre>assert_np_array_variable_equals_parquet(student_variable_name, parquet_name, read_parquet_kwargs=None, array_testing_kwargs=None)</code></strong><br />
+Loads a <strong>Parquet</strong> file containing a NumPy array, then compares it to a <strong>global</strong> variable named <code v-pre>student_variable_name</code>.</p>
+</li>
+<li><p><strong><code v-pre>assert_np_array_variable_equals_npy(student_variable_name, npy_name, array_testing_kwargs=None)</code></strong><br />
+Loads a <strong>.npy</strong> file containing a NumPy array, then compares it to a <strong>global</strong> variable named <code v-pre>student_variable_name</code>.</p>
 </li>
 </ol>
 <hr>
@@ -396,6 +402,75 @@ with open('official_data.pkl', 'wb') as f:
 )</code></pre>
 </doc-codeblock></div>
 <p>If the file is missing, or if the unpickled data is not a NumPy array, or if the arrays differ in shape or values, it raises <code v-pre>AssertionError</code>.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-tabs>
+<doc-tab v-cloak id="activity-7">
+<template #title>Activity 7</template>
+<doc-anchor-target id="7-loading-a-numpy-array-from-a-parquet-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-loading-a-numpy-array-from-a-parquet-file">#</doc-anchor-trigger>
+        <span>7. Loading a NumPy Array from a Parquet File</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Load a Parquet file named <code v-pre>data.parquet</code> that contains a NumPy array, and store it in a variable <code v-pre>student_data</code>.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_data = np.array([[11, 12], [13, 14]])</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Save the array in a Parquet file
+import pandas as pd
+
+df = pd.DataFrame(student_data)
+df.to_parquet('data.parquet')</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_np_array_variable_equals_parquet(
+    student_variable_name=&quot;student_data&quot;,
+    parquet_name=&quot;data.parquet&quot;
+)</code></pre>
+</doc-codeblock></div>
+<p>This assertion checks if the student’s array matches the one stored in the Parquet file.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-tabs>
+<doc-tab v-cloak id="activity-8">
+<template #title>Activity 8</template>
+<doc-anchor-target id="8-loading-a-numpy-array-from-a-npy-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-loading-a-numpy-array-from-a-npy-file">#</doc-anchor-trigger>
+        <span>8. Loading a NumPy Array from a .npy File</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Task</strong>: Load a NumPy array from a file named <code v-pre>data.npy</code> and store it in a variable <code v-pre>student_data</code>.</p>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">student_data = np.array([[15, 16], [17, 18]])</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Save the array in a .npy file
+np.save('data.npy', student_data)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_np_array_variable_equals_npy(
+    student_variable_name=&quot;student_data&quot;,
+    npy_name=&quot;data.npy&quot;
+)</code></pre>
+</doc-codeblock></div>
+<p>This assertion checks if the student’s array matches the one stored in the .npy file.</p>
 </doc-tab>
 </doc-tabs>
 <hr>
