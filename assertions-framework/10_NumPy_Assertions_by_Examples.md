@@ -28,6 +28,12 @@ In this notebook, you’ll learn how to use the most common **NumPy array assert
 6. **`assert_np_array_variable_equals_pickle(student_variable_name, pickle_name, read_pickle_kwargs=None, array_testing_kwargs=None)`**  
    Loads a pickle file containing a NumPy array, then compares it to a **global** variable named `student_variable_name`.
 
+7. **`assert_np_array_variable_equals_parquet(student_variable_name, parquet_name, read_parquet_kwargs=None, array_testing_kwargs=None)`**  
+   Loads a **Parquet** file containing a NumPy array, then compares it to a **global** variable named `student_variable_name`.
+
+8. **`assert_np_array_variable_equals_npy(student_variable_name, npy_name, array_testing_kwargs=None)`**  
+   Loads a **.npy** file containing a NumPy array, then compares it to a **global** variable named `student_variable_name`.
+
 ---
 
 ## Loading the Utility
@@ -209,6 +215,73 @@ assert_np_array_variable_equals_pickle(
 ```
 
 If the file is missing, or if the unpickled data is not a NumPy array, or if the arrays differ in shape or values, it raises `AssertionError`.
+
+
++++
+
+---
+
++++Activity 7
+### 7. Loading a NumPy Array from a Parquet File
+
+**Task**: Load a Parquet file named `data.parquet` that contains a NumPy array, and store it in a variable `student_data`.
+
++++Solution
+
+```python
+student_data = np.array([[11, 12], [13, 14]])
+```
+
+```python
+# Save the array in a Parquet file
+import pandas as pd
+
+df = pd.DataFrame(student_data)
+df.to_parquet('data.parquet')
+```
+
++++Assertions
+
+```python
+assert_np_array_variable_equals_parquet(
+    student_variable_name="student_data",
+    parquet_name="data.parquet"
+)
+```
+
+This assertion checks if the student’s array matches the one stored in the Parquet file.
+
++++
+
+---
+
++++Activity 8
+
+### 8. Loading a NumPy Array from a .npy File
+
+**Task**: Load a NumPy array from a file named `data.npy` and store it in a variable `student_data`.
+
++++Solution
+
+```python
+student_data = np.array([[15, 16], [17, 18]])
+```
+
+```python
+# Save the array in a .npy file
+np.save('data.npy', student_data)
+```
+
++++Assertions
+
+```python
+assert_np_array_variable_equals_npy(
+    student_variable_name="student_data",
+    npy_name="data.npy"
+)
+```
+
+This assertion checks if the student’s array matches the one stored in the .npy file.
 
 +++
 
