@@ -1,3 +1,8 @@
+---
+icon: pulse
+order: 900
+---
+
 To get paid, you need to send an invoice of the previous month to `ap@datawars.io`.
 The invoice has to be in US Dollars and contain your full name and instructions to get paid (your bank account details).
 
