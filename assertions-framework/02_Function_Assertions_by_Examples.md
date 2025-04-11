@@ -46,7 +46,7 @@ Out expected function should return the sum of the two arguments. So, we use `as
 Assertions:
 
 ``` python
-assert_function_name_equals('add', (2, 6), expected_value=8)
+assert_student_function_name_equals('add', (2, 6), expected_value=8)
 ```
 +++
 
