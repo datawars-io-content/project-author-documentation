@@ -6,7 +6,7 @@ description: This checklist outlines the criteria that must be met for a project
 
 ## Project: Ready to Publish? Verify with This Checklist
 
-This checklist outlines the criteria that **must** be met for a project to be considered complete. It ensures that all necessary activities **are** finished and all required files **are** present and accounted for.
+This checklist outlines the criteria that **must** be met for a project to be considered complete. It ensures that all activities are finished and all required files are present and accounted for.
 
 Regarding activities:
 
