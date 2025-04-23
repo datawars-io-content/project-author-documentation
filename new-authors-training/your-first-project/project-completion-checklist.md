@@ -4,11 +4,14 @@ icon: checklist
 description: This checklist outlines the criteria that must be met for a project to be considered complete. It ensures that all necessary activities are finished and all required files are present and accounted for.
 ---
 
-## Project Completion Checklist
+## Project: Ready to Publish? Verify with this Checklist
 
 This checklist outlines the criteria that must be met for a project to be considered complete. It ensures that all necessary activities are finished and all required files are present and accounted for.
 
-- [ ] All activities have passed with the official solution..
+- [ ] All activities have passed GPT Test.
+- [ ] All activities have passed with the official solutions.
+- [ ] All activities are atomic. An activity should not ask multiple things at once.
+- [ ] Author has finished the project in the platform.
 - [ ] Difficulty level has been mentioned.
 - [ ] Expected Outcome must be present wherever necessary.
 - [ ] Required files are present:
