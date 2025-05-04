@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799311996579">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799682195171">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.7.0.799311996579" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.799682195171" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799311996579" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799682195171" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799311996579" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.799311996579" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799682195171" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.799682195171" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,6 +174,7 @@ functions. Below are the functions that I&#x27;ve covered in this notebook.</p>
 <ol>
 <li><code v-pre>assert_student_function_name_equals(student_function_name, fn_args=None, fn_kwargs=None, expected_value=DataWarsConstants.EMPTY)</code>: Checks that the student&#x27;s function named <code v-pre>student_function_name</code> returns the expected value.</li>
 <li><code v-pre>assert_student_function_test_cases(student_function_name, test_cases)</code>: Checks that the student&#x27;s function named <code v-pre>student_function_name</code> returns the expected value for each test case in the list <code v-pre>test_cases</code>.</li>
+<li><code v-pre>assert_student_function_test_cases_dictionary(student_function_name, test_cases)</code>: Similar to <code v-pre>assert_student_function_test_cases</code>, but each test case is a dictionary in the list <code v-pre>test_cases</code>. This allows you to specify positional and keyword arguments, expected return values, or expected exceptions (with optional messages).</li>
 </ol>
 <p>Load the <code v-pre>utils.py</code> file to use the assertion functions.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -329,6 +330,47 @@ assert_student_function_test_cases(
      
     #  Add one more in expeted_roles_1
     student_function_test_case((expedted_roles_1, 4, 'Singer'), expected_value={4: {'role': ['Actor', 'Singer']}}),
+    ]
+)</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab v-cloak id="activity-4">
+<template #title>Activity 4</template>
+<doc-anchor-target id="4-create-a-function-divide_numbers">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-create-a-function-divide_numbers">#</doc-anchor-trigger>
+        <span>4. Create a function <code v-pre>divide_numbers</code></span>
+    </h5>
+</doc-anchor-target>
+<p>Create a function <code v-pre>divide_numbers(a, b)</code> that returns the result of <code v-pre>a / b</code>. Raise a <code v-pre>ZeroDivisionError</code> if <code v-pre>b == 0</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">def divide_numbers(a, b):
+    # Your code here
+    pass</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="solution">
+<template #title>Solution</template>
+<p>Solution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">def divide_numbers(a, b):
+    if b == 0:
+        raise ZeroDivisionError(&quot;division by zero&quot;)
+    return a / b</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="assertions">
+<template #title>Assertions</template>
+<p>Here we use <code v-pre>assert_student_function_test_cases_dictionary()</code> to check return values and exception handling.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">assert_student_function_test_cases_dictionary(
+    &quot;divide_numbers&quot;,
+    [
+        {&quot;args&quot;: (10, 2), &quot;return_value&quot;: 5.0},
+        {&quot;args&quot;: (5, 0), &quot;exception&quot;: ZeroDivisionError, &quot;exception_message&quot;: &quot;division by zero&quot;},
+        {&quot;args&quot;: (9, 3), &quot;return_value&quot;: 3.0}
     ]
 )</code></pre>
 </doc-codeblock></div>
