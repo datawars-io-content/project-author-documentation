@@ -9,6 +9,7 @@ functions. Below are the functions that I've covered in this notebook.
 
 1.  `assert_student_function_name_equals(student_function_name, fn_args=None, fn_kwargs=None, expected_value=DataWarsConstants.EMPTY)`: Checks that the student's function named `student_function_name` returns the expected value.
 2.  `assert_student_function_test_cases(student_function_name, test_cases)`: Checks that the student's function named `student_function_name` returns the expected value for each test case in the list `test_cases`.
+3.  `assert_student_function_test_cases_dictionary(student_function_name, test_cases)`: Similar to `assert_student_function_test_cases`, but each test case is a dictionary in the list `test_cases`. This allows you to specify positional and keyword arguments, expected return values, or expected exceptions (with optional messages).
 
 Load the `utils.py` file to use the assertion functions.
 
@@ -161,4 +162,43 @@ assert_student_function_test_cases(
     ]
 )
 ```
++++
+
+
++++Activity 4
+##### 4. Create a function `divide_numbers`
+
+Create a function `divide_numbers(a, b)` that returns the result of `a / b`. Raise a `ZeroDivisionError` if `b == 0`.
+
+```python
+def divide_numbers(a, b):
+    # Your code here
+    pass
+```
+
++++Solution
+Solution:
+
+```python
+def divide_numbers(a, b):
+    if b == 0:
+        raise ZeroDivisionError("division by zero")
+    return a / b
+```
+
++++Assertions
+
+Here we use `assert_student_function_test_cases_dictionary()` to check return values and exception handling.
+
+```python
+assert_student_function_test_cases_dictionary(
+    "divide_numbers",
+    [
+        {"args": (10, 2), "return_value": 5.0},
+        {"args": (5, 0), "exception": ZeroDivisionError, "exception_message": "division by zero"},
+        {"args": (9, 3), "return_value": 3.0}
+    ]
+)
+```
+
 +++
