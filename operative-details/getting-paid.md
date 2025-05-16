@@ -26,3 +26,7 @@ Line items related to the role you were assigned
 Amount in full in $USD
 Instructions to get paid
 ```
+
+### Proportional invoices
+
+If you started on an odd date that is not the beginning of the month, you must send a proportional invoice for your services. So for example, if you started on September 15th, and your salary is $100/month, you should send on the first day of October an invoice for `$100/30 * 15`. Next month, you'll send a full invoice and go back to schedule.
