@@ -19,13 +19,23 @@ The invoice should contain:
 
 ```
 Date
+
 Line items related to the role you were assigned
 - Project Author
 - Project QA
 - etc
+
 Amount in full in $USD
+
+Personal Information:
+  - Full Name
+  - Email
+  - Address
+  - Phone Number
+
 Instructions to get paid
 ```
+> For Indian team members, the *Intstuctions to get paid* must include **SWIFT Code**, **Account Number** and **IFSC Code**.
 
 ### Proportional invoices
 
