@@ -35,7 +35,7 @@ Personal Information:
 
 Instructions to get paid
 ```
-> For Indian team members, the *Intstuctions to get paid* must include **SWIFT Code**, **Account Number** and **IFSC Code**.
+> For Indian team members, the *Instructions to get paid* must include **SWIFT Code**, **Account Number** and **IFSC Code**.
 
 ### Proportional invoices
 
