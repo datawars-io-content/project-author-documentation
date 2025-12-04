@@ -18,16 +18,16 @@ pd.__version__
 
 Similarly, you can check the version of other libraries like `numpy`, `matplotlib`, etc.
 
-- [Functions Assertion](02_Function_Asseertions_by_Examples.md)
-- [Python List Assertion](03_List_Assertions_by_Examples.md)
-- [Python Tuple Assertion](04_Tuple_Assertions_by_Examples.md)
-- [Python Dictionary Assertion](05_Dictionary_Assertions_by_Examples.md)
-- [Python Sets Assertion](06_Sets_Assertions_by_Examples.md)
-- [Pandas Series Assertion](07_Pandas_Series_Assertions_by_Examples.md)
-- [Pandas DataFrame Assertion](08_Pandas_DataFrame_Assertions_by_Examples.md)
-- [SQL Assertion](SQL_Assertions_by_Examples.md)
-- [Matplotlib Assertion](09_Matplotlib_Assertions_by_Examples.md)
-- [PyTorch Assertion](12_PyTorch-Assertions.md)
-- [Numbers Assertion](01_Numbers_Assertions_by_Examples.md)
+- [Functions Assertion](./02_Function_Assertions_by_Examples.md)
+- [Python List Assertion](./03_List_Assertions_by_Examples.md)
+- [Python Tuple Assertion](./04_Tuple_Assertions_by_Examples.md)
+- [Python Dictionary Assertion](./05_Dict_Assertions_by_Examples.md)
+- [Python Sets Assertion](./06_Sets_Assertions_by_Examples.md)
+- [Pandas Series Assertion](./07_Pandas_Series_Assertions_by_Examples.md)
+- [Pandas DataFrame Assertion](./08_Pandas_DataFrame_Assertions_by_Examples.md)
+- [SQL Assertion](./11_SQL_Assertions_by_Examples.md)
+- [Matplotlib Assertion](./09_Matplotlib_Assertions_by_Examples.md)
+- [PyTorch Assertion](./12_PyTorch-Assertions.md)
+- [Numbers Assertion](./01_Numbers_Assertions_by_Examples.md)
 
 [!embed](https://www.loom.com/embed/a5b4f16f168f40968990d0249a13aace?sid=a8c2dcff-60eb-4106-80ab-81b1f1ca1b73)
