@@ -1,3 +1,8 @@
+---
+order: 975
+icon: book
+---
+
 # Code of Conduct
 
 ## Purpose
