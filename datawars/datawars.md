@@ -12,3 +12,4 @@ order: 1000
 * [Structure of a project](structure-of-a-project.md)
 * [What makes a good Dataset?](good-datasets.md)
 * [Examples of great projects](examples-of-great-projects.md)
+* [Code of conduct](code-of-conduct.md)
