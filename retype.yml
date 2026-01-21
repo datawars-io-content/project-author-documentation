@@ -2,7 +2,7 @@ input: .
 output: .retype
 url: # Add your website address here
 branding:
-  title: DataWars Project Author documentation
+  title: DataWars Employee Handbook
   label: Docs
 links:
 - text: DataWars platform
